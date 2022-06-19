@@ -16,7 +16,7 @@ vim.opt.splitbelow = true                       -- force all horizontal splits t
 vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
 vim.opt.swapfile = false                        -- creates a swapfile
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
-vim.opt.timeoutlen = 100                        -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.timeoutlen = 400                        -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program) it is not allowed to be edited
@@ -35,7 +35,7 @@ vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.fillchars.eob=" "
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append "c"                    -- don't show redundant messages from ins-completion-menu
 vim.opt.whichwrap:append("<,>,[,],h,l")         -- move to next line with theses keys
 vim.opt.iskeyword:append("-")                   -- Treat dash separated words as a word text object"
 

@@ -60,7 +60,6 @@ map('n' , '<C-S-Down>'  , ':resize +2<CR>')
 map('n' , '<C-S-Left>'  , ':vertical resize -2<CR>')
 map('n' , '<C-S-Right>' , ':vertical resize +2<CR>')
 
-
 -- In insert mode jk or kj is escape !
 map('i', 'jk', '<ESC>')
 map('i', 'kj', '<ESC>')
@@ -68,6 +67,14 @@ map('i', 'kj', '<ESC>')
 -- Move selected line / block of text in visual mode
 map('x', 'K', ':move \'<-2<CR>gv-gv')
 map('x', 'J', ':move \'>+1<CR>gv-gv')
+
+-- LSP mapping see lsp.handlers
+-- map('n', '[d', ':vim.lsp.diagnostic.goto_prev()<CR>')
+-- map('n', ']d', ':vim.lsp.diagnostic.goto_next()<CR>')
+
+-- Better indenting
+map('v', '<', '<gv')
+map('v', '>', '>gv')
 
 -- https://github.com/folke/which-key.nvim
 -- Using which-key to register some keymappings.
@@ -87,21 +94,45 @@ if status_ok then
 
       b = {
         name = "+browse Telescope" ,
-        g = { ":Telescope git_files<CR>"       , "Browse git files" }           ,
-        h = { ":Telescope help_tags<CR>"       , "Help tags"}                   ,
-        m = { ":Telescope man_pages<CR>"       , "man pages" }               ,
+        g = { ":Telescope git_files<CR>"   , "Browse git files" }  ,
+        h = { ":Telescope help_tags<CR>"   , "Help tags"}          ,
+        m = { ":Telescope man_pages<CR>"   , "man pages" }         ,
       } ,
+      l = {
+        name = "LSP",
+        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        d = { ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
+        w = { ":Telescope diagnostics<cr>", "Diagnostics" },
+        i = { ":LspInfo<cr>", "Info" },
+        I = { ":LspInstallInfo<cr>", "Installer Info" },
+        j = { vim.diagnostic.goto_next, "Next Diagnostic", },
+        k = { vim.diagnostic.goto_prev, "Prev Diagnostic", },
+        l = { vim.lsp.codelens.run, "CodeLens Action" },
+-- lunarvim routines
+--        f = { require("lvim.lsp.utils").format, "Format" },
+--        p = {
+--          name = "Peek",
+--          d = { "<cmd>lua require('lvim.lsp.peek').Peek('definition')<cr>", "Definition" },
+--          t = { "<cmd>lua require('lvim.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
+--          i = { "<cmd>lua require('lvim.lsp.peek').Peek('implementation')<cr>", "Implementation" },
+--        },
+        q = { vim.diagnostic.setloclist, "Quickfix" },
+        r = { vim.lsp.buf.rename, "Rename" },
+        s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
+        S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", },
+        e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
+      },
 
       ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
       ["h"] = { ":set hlsearch!<CR>"       , "toggle search highlight" }    ,
-      ["s"] = { ":w<CR><cmd>source %<CR>"  , "save&source current buffer" } ,
-      ["l"] = { ":w<CR><cmd>luafile %<CR>" , "save&luafile current buffer"} ,
+      ["S"] = { ":w<CR>:source %<CR>"      , "save&source current buffer" } ,
+      ["s"] = { ":w<CR>:luafile %<CR>"     , "save&luafile current buffer"} ,
       ["w"] = { ":set wrap!<CR>"           , "toggle word wrap" }           ,
       ["0"] = { ":set relativenumber!<CR>" , "toggle rel. line #" }         ,
       ["9"] = { ":set number!<CR>"         , "toggle line #" }              ,
       ["/"] = { ":CommentToggle<CR>"       , "toggle comment" }             ,
       ["?"] = { ":Cheatsheet<CR>"          , "cheat Sheet" }                ,
-    }                                          ,
+    } ,
   })
   local visualmappings={
     ["<leader>"] = {
@@ -115,7 +146,7 @@ if status_ok then
       } ,
 
       ["/"] = { ":CommentToggle<CR>"         , "toggle comments" }       ,
-    }                                        ,
+    } ,
   }
   wk.register( visualmappings , { mode = "v" } )
 end
@@ -128,7 +159,4 @@ end
 --     }
 -- wk.register(vmappings, {mode = 'v'} )
 
--- better indenting
-map('v', '<', '<gv')
-map('v', '>', '>gv')
 
