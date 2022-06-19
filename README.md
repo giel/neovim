@@ -36,6 +36,12 @@ Manual install
 
 ## install
 
+Start in directory `~/.config/nvim`. If not present create this directory from the repo and `cd` into it:
+
+    cd ~/.config
+    git clone git@bitbucket.org:giel/neovim.git nvim
+    cd nvim
+
 If previous install existed, clean caches:
 
     clean_nvim_caches.sh
@@ -63,7 +69,7 @@ Installed will be in the following locations:
     /usr/local/share/locale/tr/LC_MESSAGES/nvim.mo
     /usr/local/share/nvim/
 
-Remove the binaries (see above)
+The binaries (see above) can be removed with the following command:
 
     uninstall_nvim_installed_binaries.sh
 

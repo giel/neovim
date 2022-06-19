@@ -29,19 +29,19 @@ lualine.setup{
         },
         sections = {
           lualine_a = { {'mode', upper = false} },
-          lualine_b = { {'branch', icon = ''}, 'diagnostics' },
-          lualine_c = { {'filename', file_status = true} },
+          lualine_b = { {'branch', icon = ''} },
+          lualine_c = { {'filename', file_status = true, path = 3}, 'diagnostics', 'diff' },
           lualine_x = { 'encoding', 'fileformat', 'filetype' },
           lualine_y = { 'progress' },
           lualine_z = { 'location'  },
         },
         inactive_sections = {
-          lualine_a = {  },
+          lualine_a = { {'mode', upper = false} },
           lualine_b = {  },
           lualine_c = { 'filename' },
-          lualine_x = { 'location' },
+          lualine_x = {  },
           lualine_y = {  },
-          lualine_z = {  }
+          lualine_z = { 'location'  },
         },
         tabline = {},
         extensions = { 'nvim-tree' }

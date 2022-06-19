@@ -35,5 +35,6 @@ bufferline.setup {
         guifg = { attribute = "fg", highlight = "#ff0000" },
         guibg = { attribute = "bg", highlight = "TabLine" },
       },
+
   }
 }

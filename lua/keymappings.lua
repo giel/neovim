@@ -70,7 +70,10 @@ map('x', 'J', ':move \'>+1<CR>gv-gv')
 
 -- Telescope
 map('n', '<leader>fh', ':Telescope help_tags<cr>')
---vim.api.nvim_set_keymap('n', '<leader>pp', ':Telescope planets<cr>', {noremap = true, silent=true})
+map("n", "<leader>ff", ":Telescope find_files<CR>")
+map("n", "<leader>ft", ":Telescope live_grep<CR>")
+map("n", "<leader>fp", ":Telescope projects<CR>")
+map("n", "<leader>fb", ":Telescope buffers<CR>")
 
 
 -- Better nav for omnicomplete
