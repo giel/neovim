@@ -36,13 +36,13 @@ Manual install
 
 ## install
 
-Start in directory `~/.config/nvim`. If not present create this directory from the repo and `cd` into it:
+Start in directory `~/.config/nvim`. If not present, create this directory from the repo and `cd` into it:
 
     cd ~/.config
     git clone git@bitbucket.org:giel/neovim.git nvim
     cd nvim
 
-If previous install existed, clean caches:
+If previous installation existed, clean caches:
 
     clean_nvim_caches.sh
 
@@ -86,5 +86,6 @@ Install the LSP modules:
 
 ## links
 
-- [neovim github](https://github.com/neovim/neovim)
+- [neovim GitHub](https://github.com/neovim/neovim)
 - [neovim-basic-ide](https://github.com/LunarVim/nvim-basic-ide)
+

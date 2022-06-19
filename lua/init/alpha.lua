@@ -5,8 +5,22 @@ end
 
 local dashboard = require "alpha.themes.dashboard"
 dashboard.section.header.val = {
-  [[ Giel's neovim  ]],
+[[  _______  ___   _______  ___      __   _______     ]],
+[[ |       ||   | |       ||   |    |  | |       |    ]],
+[[ |    ___||   | |    ___||   |    |__| |  _____|    ]],
+[[ |   | __ |   | |   |___ |   |         | |_____     ]],
+[[ |   ||  ||   | |    ___||   |___      |_____  |    ]],
+[[ |   |_| ||   | |   |___ |       |      _____| |    ]],
+[[ |_______||___| |_______||_______|     |_______|    ]],
+[[  __    _  _______  _______  __   __  ___   __   _ _]],
+[[ |  |  | ||       ||       ||  | |  ||   | |  |_|  |]],
+[[ |   |_| ||    ___||   _   ||  |_|  ||   | |       |]],
+[[ |       ||   |___ |  | |  ||       ||   | |       |]],
+[[ |  _    ||    ___||  |_|  ||       ||   | |       |]],
+[[ | | |   ||   |___ |       | |     | |   | | ||_|| |]],
+[[ |_|  |__||_______||_______|  |___|  |___| |_|   |_|]],
 }
+
 dashboard.section.buttons.val = {
   dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
   dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
@@ -17,7 +31,7 @@ dashboard.section.buttons.val = {
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 local function footer()
-  return "chrisatmachine.com"
+  return "https://bitbucket.org/giel/neovim"
 end
 
 dashboard.section.footer.val = footer()
