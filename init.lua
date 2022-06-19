@@ -18,5 +18,6 @@ require('init.nvim-tree')    -- treeview of files
 require('init.project')      -- project detection
 require('init.telescope')    -- highly extendable fuzzy finder over lists
 require('init.which-key')    -- cheetsheet for keybindings
+require('init.alpha')        -- splash screen
 require('lsp')               -- global lsp install
 

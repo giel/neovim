@@ -39,6 +39,7 @@ vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")         -- move to next line with theses keys
 vim.opt.iskeyword:append("-")                   -- Treat dash separated words as a word text object"
 
+
 -------------------------------------------------------------------------------
 -- https://github.com/nanotee/nvim-lua-guide#using-meta-accessors
 -- vim.o:  behaves like :set

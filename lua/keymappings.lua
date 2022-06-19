@@ -1,7 +1,8 @@
 local opt = { noremap = true, silent = true }
 -- local term_opts = { silent = true }
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+-- local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opt)
@@ -68,22 +69,6 @@ map('i', 'kj', '<ESC>')
 map('x', 'K', ':move \'<-2<CR>gv-gv')
 map('x', 'J', ':move \'>+1<CR>gv-gv')
 
--- Telescope
-map('n', '<leader>fh', ':Telescope help_tags<cr>')
-map("n", "<leader>ff", ":Telescope find_files<CR>")
-map("n", "<leader>ft", ":Telescope live_grep<CR>")
-map("n", "<leader>fp", ":Telescope projects<CR>")
-map("n", "<leader>fb", ":Telescope buffers<CR>")
-
-
--- Better nav for omnicomplete
--- vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
--- vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
--- vim.cmd('inoremap <expr> <TAB> (\"\\<C-n>\")')
--- vim.cmd('inoremap <expr> <S-TAB> (\"\\<C-p>\")')
-
--- vim.api.nvim_set_keymap('i', '<C-TAB>', 'compe#complete()', {noremap = true, silent = true, expr = true})
-
 -- https://github.com/folke/which-key.nvim
 -- Using which-key to register some keymappings.
 -- Only if succefully loaded, probably the second start after clean install.
@@ -92,40 +77,43 @@ if status_ok then
   wk.register({
     ["<leader>"] = {
       f = {
-        name = "+file" ,
-        b = { "<cmd>Telescope buffers<cr>"    , "Buffers" }            ,
-        f = { "<cmd>Telescope find_files<cr>" , "Find File" }          ,
-        g = { "<cmd>Telescope live_grep<cr>"  , "Grep File" }          ,
-        h = { ":Telescope help_tags<cr>"      , "Telescope help tags"} ,
-        r = { "<cmd>Telescope oldfiles<cr>"   , "Open Recent File" }   ,
-        n = { "<cmd>enew<cr>"                 , "New File" }           ,
+        name = "+file Telescope" ,
+        b = { ":Telescope buffers<CR>"    , "Buffers" }            ,
+        f = { ":Telescope find_files<CR>" , "Find File" }          ,
+        g = { ":Telescope live_grep<CR>"  , "Grep File" }          ,
+        p = { ":Telescope projects<CR>"   , "Projects"}            ,
+        n = { ":enew<CR>"                 , "New File" }           ,
       } ,
+
       b = {
-        name = "+browse" ,
-        f = { "<cmd>Telescope file_browser<CR>" , "Browse Files" }               ,
-        g = { "<cmd>Telescope git_files<CR>"    , "Browse git files" }           ,
+        name = "+browse Telescope" ,
+        g = { ":Telescope git_files<CR>"       , "Browse git files" }           ,
+        h = { ":Telescope help_tags<CR>"       , "Help tags"}                   ,
+        m = { ":Telescope man_pages<CR>"       , "man pages" }               ,
       } ,
-      ["e"] = { "<cmd>NvimTreeToggle<CR>"       , "toggle tree" }                ,
-      ["h"] = { "<cmd>set hlsearch!<CR>"        , "toggle search highlight" }    ,
-      ["s"] = { "<cmd>w<CR><cmd>source %<CR>"   , "save&source current buffer" } ,
-      ["l"] = { "<cmd>w<CR><cmd>luafile %<CR>"  , "save&luafile current buffer"} ,
-      ["w"] = { "<cmd>set wrap!<CR>"            , "toggle word wrap" }           ,
-      ["0"] = { "<cmd>set relativenumber!<CR>"  , "toggle rel. line #" }         ,
-      ["9"] = { "<cmd>set number!<CR>"          , "toggle line #" }              ,
-      ["/"] = { "<cmd>CommentToggle<CR>"        , "toggle comment" }             ,
-      ["?"] = { "<cmd>Cheatsheet<CR>"           , "cheat Sheet" }                ,
-    } ,
+
+      ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
+      ["h"] = { ":set hlsearch!<CR>"       , "toggle search highlight" }    ,
+      ["s"] = { ":w<CR><cmd>source %<CR>"  , "save&source current buffer" } ,
+      ["l"] = { ":w<CR><cmd>luafile %<CR>" , "save&luafile current buffer"} ,
+      ["w"] = { ":set wrap!<CR>"           , "toggle word wrap" }           ,
+      ["0"] = { ":set relativenumber!<CR>" , "toggle rel. line #" }         ,
+      ["9"] = { ":set number!<CR>"         , "toggle line #" }              ,
+      ["/"] = { ":CommentToggle<CR>"       , "toggle comment" }             ,
+      ["?"] = { ":Cheatsheet<CR>"          , "cheat Sheet" }                ,
+    }                                          ,
   })
   local visualmappings={
     ["<leader>"] = {
       t = {
-        name= "+tabularize"                   ,
+        name= "+tabularize" ,
         ["|"]  = { "<cmd>Tabularize/|/<CR>"   , " | " }    ,
         ["\\"] = { "<cmd>Tabularize/|/<CR>"   , " | " }    ,
         ["d"]  = { "<cmd>Tabularize/--/<CR>"  , " -- " }   ,
         ["="]  = { "<cmd>Tabularize/=/<CR>"   , " = " }    ,
-        [","]  = { "<cmd>Tabularize/ , /<CR>" , " , " }    ,
-      }                                      ,
+        [","]  = { "<cmd>Tabularize/,/<CR>"   , " , " }    ,
+      } ,
+
       ["/"] = { ":CommentToggle<CR>"         , "toggle comments" }       ,
     }                                        ,
   }

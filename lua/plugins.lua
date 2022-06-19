@@ -42,14 +42,18 @@ packer.init {
 return packer.startup(function(use)
 
   -- Packer can manage itself as an optional plugin
-  use { "wbthomason/packer.nvim"        ,  commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" } -- Have packer manage itself
-  use { "nvim-lua/plenary.nvim"         ,  commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" } -- Useful lua functions used by lots of plugins
-  use { "kyazdani42/nvim-web-devicons"  ,  commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" } -- web icons needed a lot (nvim-tree i.e.)
-  use { "kyazdani42/nvim-tree.lua"      ,  commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" } -- File Explorer nvim-tree
-  use { "moll/vim-bbye"                 ,  commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- provide Bdelete function
-  use { "ahmedkhalf/project.nvim"       ,  commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" } -- projects
-  use { "akinsho/bufferline.nvim"       ,  commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" } -- Visual tabs for buffers!
-  use { "nvim-lualine/lualine.nvim"     ,  commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" } -- Status Line
+  use { "wbthomason/packer.nvim"        , commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" } -- Have packer manage itself
+  use { "nvim-lua/plenary.nvim"         , commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" } -- Useful lua functions used by lots of plugins
+  use { "kyazdani42/nvim-web-devicons"  , commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" } -- web icons needed a lot (nvim-tree i.e.)
+  use { "kyazdani42/nvim-tree.lua"      , commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" } -- File Explorer nvim-tree
+  use { "moll/vim-bbye"                 , commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- provide Bdelete function
+  use { "ahmedkhalf/project.nvim"       , commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" } -- projects
+  use { "akinsho/bufferline.nvim"       , commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" } -- Visual tabs for buffers!
+  use { "nvim-lualine/lualine.nvim"     , commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" } -- Status Line
+  use { 'godlygeek/tabular'             , commit = "339091ac4dd1f17e225fe7d57b48aff55f99b23a" } -- Tabular for aligning tables https://github.com/godlygeek/tabular
+  use { "terrortylor/nvim-comment"      , commit = "861921706a39144ea528a6200a059a549b02d8f0" } -- commenter
+  use { "lewis6991/impatient.nvim"      , commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" } -- Speed up loading Lua modules in Neovim
+  use { "goolord/alpha-nvim"            , commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" } -- Splash screen
 
   -- Information
   use 'nanotee/nvim-lua-guide'  -- :help nvim-lua-guide
@@ -76,7 +80,6 @@ return packer.startup(function(use)
   use { 'tamago324/nlsp-settings.nvim'     , commit = '527cdfef1b1eb47eb3e6e6f737575a710f307d3a' } -- language server settings defined in json for
   use { "jose-elias-alvarez/null-ls.nvim"  , commit = "ff40739e5be6581899b43385997e39eecdbf9465" } -- for formatters and linters
   use { "RRethy/vim-illuminate"            , commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" } -- highlight word under curso
-
   -- use 'onsails/lspkind-nvim'
   -- use 'kosayoda/nvim-lightbulb'
   -- use 'mfussenegger/nvim-jdtls'
@@ -96,13 +99,10 @@ return packer.startup(function(use)
   -- use 'tpope/vim-fugitive'
   -- use 'tpope/vim-rhubarb'
 
-  use { 'godlygeek/tabular' , commit = "339091ac4dd1f17e225fe7d57b48aff55f99b23a" } -- Tabular for aligning tables https://github.com/godlygeek/tabular
-  use { "terrortylor/nvim-comment"  , commit = "861921706a39144ea528a6200a059a549b02d8f0"} -- commenter
-
   -- surround brackets, qoutes, tags: https://tpope.io/vim/surround.git
   -- and repeat to enable repeating surround commands: https://github.com/tpope/vim-repeat
-  use 'https://tpope.io/vim/surround.git'
-  use 'https://github.com/tpope/vim-repeat'
+  use { 'https://tpope.io/vim/surround.git'   , commit = "bf3480dc9ae7bea34c78fbba4c65b4548b5b1fea" }
+  use { 'https://github.com/tpope/vim-repeat' , commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
 
   -- another simple surround plugin. https://github.com/ur4ltz/surround.nvim
   -- use {

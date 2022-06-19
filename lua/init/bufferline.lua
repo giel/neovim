@@ -27,14 +27,6 @@ bufferline.setup {
         separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
         enforce_regular_tabs = false,
         view = "multiwindow",
-        always_show_bufferline = true,
-        -- mappings = false -- default, else <leader>1-9 will be mapped
-    },
-    highlights = {
-      fill = {
-        guifg = { attribute = "fg", highlight = "#ff0000" },
-        guibg = { attribute = "bg", highlight = "TabLine" },
-      },
-
-  }
+        always_show_bufferline = true
+    }
 }

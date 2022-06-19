@@ -2,21 +2,21 @@
 
 How to install my neovim configuration.
 
-## prerequesites
+## Prerequisites
 
 ### Packages for build
 
-- cmake  (macOS)
-- automake (macOS)
+- `cmake`  
+- `automake` 
 
 ### Packages to install for LSP
 
-Via mgpak (package installer):
+Via `mgpak` (package installer`):`
 
-- prettier
-- stylua
-- black
-- node
+- `prettier`
+- `stylua`
+- `black`
+- `node`
 
 Node packages:
 
@@ -46,11 +46,11 @@ If previous install existed, clean caches:
 
     clean_nvim_caches.sh
 
-Build the neovim binary from scratch, 
+Build the `nvim` binary from scratch, 
 
     install_nvim_from_src_build.sh
 
-Install the build, this will ask for sudo password:
+Install the build, this will ask for `sudo` password:
 
     install_nvim_from_src_install.sh
 
@@ -73,7 +73,7 @@ The binaries (see above) can be removed with the following command:
 
     uninstall_nvim_installed_binaries.sh
 
-Now startup nvim, it should download all needed packages. Maybe exit it once and startup again.
+Now startup `nvim`, it should download all needed packages. Maybe exit it once and startup again.
 
     nvim
     :q!
