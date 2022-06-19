@@ -1,0 +1,38 @@
+## surround
+change surround ' to "                                                          | cs'"
+delete surround '  (removes single quote around word)                           | ds'
+yank surround inner word '  (adds single qoute around word under cursor)        | ysiw'
+yank surround inner sentence ' (adds single qoute around sentence under cursor) | ysis'
+yank surround in word [  (adds brackets arround word with spaces)               | ysiw[
+yank surround in word ]  (adds brackets arround word)                           | ysiw]
+yank surround inner word <>  ( adds < > around word under cursor)               | ysiw>
+yank surround inner word <tag>  ( adds <tag> around word under cursor)          | ysiw<
+
+## help-vim
+jump to tag under cursor | CTRL-]
+jump back                | CTRL-O
+
+## tips
+re-indent file (make sure tabsettings are like you want) | gg=G
+twiddle two characters                                   | xp
+next automatch/autocomplete                              | <C-n>
+previous automatch/autocomplete                          | <C-p>
+
+## lsp-tips
+lua vim.lsp.buf.declaration()<CR>                                | gD
+lua vim.lsp.buf.definition()<CR>                                 | gd
+lua vim.lsp.buf.hover()<CR>                                      | K
+lua vim.lsp.buf.implementation()<CR>                             | gi
+lua vim.lsp.buf.signature_help()<CR>                             | <C-k>
+lua vim.lsp.buf.add_workspace_folder()<CR>                       | <space>wa
+lua vim.lsp.buf.remove_workspace_folder()<CR>                    | <space>wr
+lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR> | <space>wl
+lua vim.lsp.buf.type_definition()<CR>                            | <space>D
+lua vim.lsp.buf.rename()<CR>                                     | <space>rn
+lua vim.lsp.buf.references()<CR>                                 | gr
+lua vim.lsp.diagnostic.show_line_diagnostics()<CR>               | <space>e
+lua vim.lsp.diagnostic.goto_prev()<CR>                           | [d
+lua vim.lsp.diagnostic.goto_next()<CR>                           | ]d
+lua vim.lsp.diagnostic.set_loclist()<CR>                         | <space>q
+lua vim.lsp.buf.formatting()<CR>                                 | <space>f
+lua vim.lsp.buf.range_formatting()<CR>                           | <space>f
