@@ -45,9 +45,11 @@ Build the neovim binary from scratch,
     install_nvim_from_src_build.sh
 
 Install the build, this will ask for sudo password:
+
     install_nvim_from_src_install.sh
 
 Remove the source and build files:
+
     install_nvim_from_src_remove_build_files.sh
 
 Installed will be in the following locations:
@@ -62,6 +64,7 @@ Installed will be in the following locations:
     /usr/local/share/nvim/
 
 Remove the binaries (see above)
+
     uninstall_nvim_installed_binaries.sh
 
 Now startup nvim, it should download all needed packages. Maybe exit it once and startup again.
