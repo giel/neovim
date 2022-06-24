@@ -6,17 +6,26 @@ How to install my neovim configuration.
 
 ### Packages for build
 
+install the following packages:
+
 - `cmake`  
 - `automake` 
+
+If above does not suffice check [prerequisites at neovim website](https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites)
+
 
 ### Packages to install for LSP
 
 Via `mgpak` (package installer`):`
 
-- `prettier`
+- `node` or `npm`
+- `prettier` or `npm install --save-dev --save-exact prettier`
 - `stylua`
-- `black`
-- `node`
+- `black` or `pip install black`
+- `ripgrep`
+- `fd` (or download from [shardp/fd](https://github.com/sharkdp/fd)
+
+`pip` can be installed with `python3-pip`
 
 Node packages:
 
