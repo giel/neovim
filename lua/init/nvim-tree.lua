@@ -26,8 +26,8 @@ nvim_tree.setup {
   hijack_cursor = false,
   update_cwd = true,
   diagnostics = {
-    enable    = true,
-    icons     = {
+    enable = true,
+    icons  = {
       hint    = "",
       info    = "",
       warning = "",
@@ -80,7 +80,7 @@ nvim_tree.setup {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
-        { key = "?",  cb = tree_cb("toggle_help") },
+        { key = "?", cb = tree_cb("toggle_help") },
       },
     },
     number = false,
@@ -116,7 +116,7 @@ nvim_tree.setup {
         default = "",
         symlink = "",
 
-        git         = {
+        git = {
           unstaged  = "",
           staged    = "S",
           unmerged  = "",
@@ -125,7 +125,7 @@ nvim_tree.setup {
           untracked = "U",
           ignored   = "◌",
         },
-        folder       = {
+        folder = {
           default    = "",
           open       = "",
           empty      = "",

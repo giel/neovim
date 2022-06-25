@@ -32,4 +32,3 @@ parser_configs.hcl = {
 -- Use `TSInstallInfo` to see available modules
 -- Use `TSInstall` modulename to actually install modulename
 -- TSInstall bash c_sharp css go gomod hcl html json lua markdown python toml yaml
-

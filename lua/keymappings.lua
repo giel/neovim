@@ -61,6 +61,13 @@ map('x', 'J', ':move \'>+1<CR>gv-gv')
 map('v', '<', '<gv')
 map('v', '>', '>gv')
 
+-- Illuminate plugin (higlights same words as cursor is on)
+-- map('n', '<a-n>', '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>')
+-- map('n', '<a-p>', '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>')
+-- vim.api.nvim_set_keymap('n', '<a-n>', '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>', {noremap=true})
+-- vim.api.nvim_set_keymap('n', '<a-p>', '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>', {noremap=true})
+
+
 -- https://github.com/folke/which-key.nvim
 -- Using which-key to register some keymappings.
 -- Only if succefully loaded, probably the second start after clean install.

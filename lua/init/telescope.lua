@@ -6,7 +6,7 @@ if not status_ok then
   return
 end
 
-telescope.setup{
+telescope.setup {
   defaults = {
 
     prompt_prefix = " ",
@@ -20,4 +20,3 @@ telescope.setup{
 
   }
 }
-

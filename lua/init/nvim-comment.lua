@@ -40,4 +40,3 @@ configs.setup {
 --         gcip comment/uncomment a paragraph
 --         gc4w comment/uncomment current line
 --         gc4j comment/uncomment 4 lines below the current line
-
