@@ -17,6 +17,7 @@ re-indent file (make sure tabsettings are like you want) | gg=G
 twiddle two characters                                   | xp
 next automatch/autocomplete                              | <C-n>
 previous automatch/autocomplete                          | <C-p>
+change tab to spaces                                     | :retab
 
 ## lsp-tips
 lua vim.lsp.buf.declaration()<CR>                                | gD
@@ -30,3 +31,20 @@ lua vim.lsp.diagnostic.goto_next()<CR>                           | ]d
 lua vim.lsp.diagnostic.set_loclist()<CR>                         | <space>q
 lua vim.lsp.buf.formatting()<CR>                                 | <space>f
 lua vim.lsp.buf.range_formatting()<CR>                           | <space>f
+
+lua vim.lsp.buf.declaration()<CR>            | gD
+lua vim.lsp.buf.definition()<CR>             | gd
+lua vim.lsp.buf.implementation()<CR>         | gi
+lua vim.lsp.buf.references()<CR>             | gr
+lua vim.diagnostic.open_float()<CR>          | gl
+lua vim.lsp.buf.hover()<CR>                  | K
+lua vim.lsp.buf.signature_help()<CR>         | <C-k>
+lua vim.lsp.buf.formatting()<cr>             | <leader>lf
+LspInfo<cr>                                  | <leader>li
+LspInstallInfo<cr>                           | <leader>lI
+lua vim.lsp.buf.code_action()<cr>            | <leader>la
+lua vim.diagnostic.goto_next({buffer=0})<cr> | <leader>lj
+lua vim.diagnostic.goto_prev({buffer=0})<cr> | <leader>lk
+lua vim.lsp.buf.rename()<cr>                 | <leader>lr
+lua vim.lsp.buf.signature_help()<CR>         | <leader>ls
+lua vim.diagnostic.setloclist()<CR>          | <leader>lq

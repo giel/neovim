@@ -1,11 +1,6 @@
 local opt = { noremap = true, silent = true }
--- local term_opts = { silent = true }
--- Shorten function name
--- local keymap = vim.api.nvim_set_keymap
-local keymap = vim.keymap.set
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -23,14 +18,8 @@ end
 -- map('n', '<Leader>qaz' , ':qall!<CR>')
 
 -- buffers (and bufferline) actions
-map('n', '<leader>,', ':bfirst<CR>')    -- got firts buffer
-map('n', '<leader>.', ':blast<CR>')     -- goto last buffer
-map('n', '<leader>c', ':Bdelete<CR>')   -- close buffer
 map("n", "<S-t>", [[<Cmd>tabnew<CR>]], opt)  -- new tab
 map("n", "<S-x>", [[<Cmd>bdelete<CR>]], opt) -- close tab
--- Tab to switch buffers in Normal mode
---map("n", "<Tab>", ":bnext<CR>")
---map("n", "<S-Tab>", ":bprevious<CR>")
 
 -- move between tabs
 map("n", "<TAB>", [[<Cmd>BufferLineCycleNext<CR>]])
@@ -68,10 +57,6 @@ map('i', 'kj', '<ESC>')
 map('x', 'K', ':move \'<-2<CR>gv-gv')
 map('x', 'J', ':move \'>+1<CR>gv-gv')
 
--- LSP mapping see lsp.handlers
--- map('n', '[d', ':vim.lsp.diagnostic.goto_prev()<CR>')
--- map('n', ']d', ':vim.lsp.diagnostic.goto_next()<CR>')
-
 -- Better indenting
 map('v', '<', '<gv')
 map('v', '>', '>gv')
@@ -99,15 +84,15 @@ if status_ok then
         m = { ":Telescope man_pages<CR>"   , "man pages" }         ,
       } ,
       l = {
+        -- LSP mapping see also lsp.handlers
         name = "LSP",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         d = { ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
         w = { ":Telescope diagnostics<cr>", "Diagnostics" },
-        i = { ":LspInfo<cr>", "Info" },
-        I = { ":LspInstallInfo<cr>", "Installer Info" },
-        j = { vim.diagnostic.goto_next, "Next Diagnostic", },
-        k = { vim.diagnostic.goto_prev, "Prev Diagnostic", },
-        l = { vim.lsp.codelens.run, "CodeLens Action" },
+        q = { vim.diagnostic.setloclist, "Quickfix" },
+        r = { vim.lsp.buf.rename, "Rename" },
+        s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
+        S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", },
+        e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
 -- lunarvim routines
 --        f = { require("lvim.lsp.utils").format, "Format" },
 --        p = {
@@ -116,13 +101,11 @@ if status_ok then
 --          t = { "<cmd>lua require('lvim.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
 --          i = { "<cmd>lua require('lvim.lsp.peek').Peek('implementation')<cr>", "Implementation" },
 --        },
-        q = { vim.diagnostic.setloclist, "Quickfix" },
-        r = { vim.lsp.buf.rename, "Rename" },
-        s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", },
-        e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
       },
 
+      [","] = { ":bfirst<CR>"              , "go to first buffer" }         ,
+      ["."] = { ":blast<CR>"               , "go to last buffer" }          ,
+      ["c"] = { ":Bdelete<CR>"             , "close buffer" }               ,
       ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
       ["h"] = { ":set hlsearch!<CR>"       , "toggle search highlight" }    ,
       ["S"] = { ":w<CR>:source %<CR>"      , "save&source current buffer" } ,
@@ -150,7 +133,6 @@ if status_ok then
   }
   wk.register( visualmappings , { mode = "v" } )
 end
-
 
 -- does not work
 -- vmappings = {

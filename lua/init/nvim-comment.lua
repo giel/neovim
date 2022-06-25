@@ -8,7 +8,23 @@ if not status_ok then
 end
 
 configs.setup {
-  comment_empty = false,   -- should comment out empty or whitespace only lines
+  -- Linters prefer comment and line to have a space in between markers
+  marker_padding = true,
+  -- should comment out empty or whitespace only lines
+  comment_empty = true,
+  -- trim empty comment whitespace
+  comment_empty_trim_whitespace = true,
+  -- Should key mappings be created
+  create_mappings = false,
+  -- Normal mode mapping left hand side
+  line_mapping = "gcc",
+  -- Visual/Operator mapping left hand side
+  operator_mapping = "gc",
+  -- text object mapping, comment chunk,,
+  comment_chunk_text_object = "ic",
+  -- Hook function to call before commenting takes place
+  hook = nil
+
 }
 
 -- Either use the command CommentToggle, e.g.:
@@ -17,7 +33,7 @@ configs.setup {
 --     67,69CommentToggle comment/uncomment a range
 --    '<,'>CommentToggle comment/uncomment a visual selection
 
--- Or use the default mappings:
+-- Or use the default mappings, NOW TURNED OFF !:
 
 --     gcc comment/uncomment current line, this does not take a count, if you want a count use the gc{count}{motion}
 --     gc{motion} comment/uncomment selection defined by a motion (as lines are commented, any comment toggling actions will default to a linewise):
