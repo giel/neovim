@@ -11,7 +11,7 @@ bufferline.setup {
     close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
     offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
-    indicator_icon = "▎",
+    indicator = { style = "icon", icon = "▎" },
     buffer_close_icon = "",
     modified_icon = "",
     close_icon = "",

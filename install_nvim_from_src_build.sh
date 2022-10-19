@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # fill out version branch below
-branch="release-0.7"
+branch="release-0.8"
 
 pushd ~/.config/nvim/
 
