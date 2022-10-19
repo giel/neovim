@@ -89,9 +89,10 @@ Now startup `nvim`, it should download all needed packages. Maybe exit it once a
     nvim
     :q!
 
-Install the LSP modules:
+## LSP modules
 
-    init_nvim_lsp.sh
+LSP modules are installed with `Mason`. Add the desired module to the servers list in the file `lsp\masun.lua`. Keep the list sorted.
+
 
 ## links
 
