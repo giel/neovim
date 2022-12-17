@@ -42,18 +42,18 @@ packer.init {
 return packer.startup(function(use)
 
   -- Packer can manage itself as an optional plugin
-  use { "wbthomason/packer.nvim"        , commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
+  use { "wbthomason/packer.nvim"        , commit = "64ae65fea395d8dc461e3884688f340dd43950ba" } -- Have packer manage itself
   use { "nvim-lua/plenary.nvim"         , commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" } -- Useful lua functions used by lots of plugins
-  use { "kyazdani42/nvim-web-devicons"  , commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" } -- web icons needed a lot (nvim-tree i.e.)
-  use { "kyazdani42/nvim-tree.lua"      , commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" } -- File Explorer nvim-tree
+  use { "kyazdani42/nvim-web-devicons"  , commit = "05e1072f63f6c194ac6e867b567e6b437d3d4622" } -- web icons needed a lot (nvim-tree i.e.)
+  use { "kyazdani42/nvim-tree.lua"      , commit = "29788cc32a153e42b2fe48344d315da8367fc6fa" } -- File Explorer nvim-tree
   use { "moll/vim-bbye"                 , commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- provide Bdelete function
-  use { "ahmedkhalf/project.nvim"       , commit = "628de7e433dd503e782831fe150bb750e56e55d6" } -- projects
-  use { "akinsho/bufferline.nvim"       , commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4" } -- Visual tabs for buffers!
-  use { "nvim-lualine/lualine.nvim"     , commit = "a52f078026b27694d2290e34efa61a6e4a690621" } -- Status Line
+  use { "ahmedkhalf/project.nvim"       , commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4" } -- projects
+  use { "akinsho/bufferline.nvim"       , commit = "4ecfa81e470a589e74adcde3d5bb1727dd407363" } -- Visual tabs for buffers!
+  use { "nvim-lualine/lualine.nvim"     , commit = "bfa0d99ba6f98d077dd91779841f1c88b7b5c165" } -- Status Line
   use { 'godlygeek/tabular'             , commit = "339091ac4dd1f17e225fe7d57b48aff55f99b23a" } -- * Tabular for aligning tables https://github.com/godlygeek/tabular
-  use { "terrortylor/nvim-comment"      , commit = "861921706a39144ea528a6200a059a549b02d8f0" } -- * commenter
-  use { "lewis6991/impatient.nvim"      , commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" } -- Speed up loading Lua modules in Neovim
-  use { "goolord/alpha-nvim"            , commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" } -- Splash screen
+  use { "terrortylor/nvim-comment"      , commit = "e9ac16ab056695cad6461173693069ec070d2b23" } -- * commenter
+  use { "lewis6991/impatient.nvim"      , commit = "9f7eed8133d62457f7ad2ca250eb9b837a4adeb7" } -- Speed up loading Lua modules in Neovim
+  use { "goolord/alpha-nvim"            , commit = "21a0f2520ad3a7c32c0822f943368dc063a569fb" } -- Splash screen
 
   -- Information
   use 'nanotee/nvim-lua-guide'  -- :help nvim-lua-guide

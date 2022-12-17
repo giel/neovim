@@ -100,6 +100,13 @@ if status_ok then
         s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", },
         e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
+      },
+      p = {
+        name = "Packer",
+        c = { ":PackerClean<CR>", "Packer Clean" },
+        s = { ":PackerSync<CR>", "Packer Sync" },
+        t = { ":PackerStatus<CR>", "Packer Status" },
+      },
 -- lunarvim routines
 --        f = { require("lvim.lsp.utils").format, "Format" },
 --        p = {
@@ -108,7 +115,6 @@ if status_ok then
 --          t = { "<cmd>lua require('lvim.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
 --          i = { "<cmd>lua require('lvim.lsp.peek').Peek('implementation')<cr>", "Implementation" },
 --        },
-      },
 
       [","] = { ":bfirst<CR>"              , "go to first buffer" }         ,
       ["."] = { ":blast<CR>"               , "go to last buffer" }          ,
