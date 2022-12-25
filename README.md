@@ -55,7 +55,7 @@ If previous installation existed, clean caches:
 
     clean_nvim_caches.sh
 
-Build the `nvim` binary from scratch, 
+Build the `nvim` binary from scratch, or redo a build
 
     install_nvim_from_src_build.sh
 
