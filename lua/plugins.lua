@@ -80,7 +80,7 @@ return packer.startup(function(use)
   -- use { 'tamago324/nlsp-settings.nvim'     , commit = '527cdfef1b1eb47eb3e6e6f737575a710f307d3a' } -- * language server settings defined in json for
   use { "williamboman/mason.nvim",           commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" } -- * new
   use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" } -- * new
- 
+
 
   use { "jose-elias-alvarez/null-ls.nvim"  , commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
   use { "RRethy/vim-illuminate"            , commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" } -- highlight word under curso
@@ -89,24 +89,24 @@ return packer.startup(function(use)
   -- use 'mfussenegger/nvim-jdtls'
 
   -- Treesitter syntax highlighting
-  use {'nvim-treesitter/nvim-treesitter' , commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac", run = ':TSUpdate'}
+  use {'nvim-treesitter/nvim-treesitter' , commit = "4bcd3a3cc31b9628a48ff126938262292b1ed988", run = ':TSUpdate'}
   -- use 'nvim-treesitter/nvim-treesitter-refactor'
   -- use 'nvim-treesitter/playground'
   -- use 'p00f/nvim-ts-rainbow'
 
   -- Telescope (a highly extendable fuzzy finder over lists)
-  use {'nvim-telescope/telescope.nvim', commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
+  use {'nvim-telescope/telescope.nvim', commit = "e960efa60e97df58e089b00270f09d60f27202c8" }
 
   -- Git
-  use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
+  use { "lewis6991/gitsigns.nvim", commit = "2ab3bdf0a40bab53033048c6be75bda86316b55d" }
   -- use 'f-person/git-blame.nvim'
   -- use 'tpope/vim-fugitive'
   -- use 'tpope/vim-rhubarb'
 
   -- surround brackets, qoutes, tags: https://tpope.io/vim/surround.git
   -- and repeat to enable repeating surround commands: https://github.com/tpope/vim-repeat
-  use { 'https://tpope.io/vim/surround.git'   , commit = "bf3480dc9ae7bea34c78fbba4c65b4548b5b1fea" } -- *
-  use { 'https://github.com/tpope/vim-repeat' , commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" } -- *
+  use { 'tpope/vim-surround' , commit = "3d188ed2113431cf8dac77be61b842acb64433d9" } -- *
+  use { 'tpope/vim-repeat'   , commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" } -- *
 
   -- another simple surround plugin. https://github.com/ur4ltz/surround.nvim
   -- use {
@@ -120,7 +120,7 @@ return packer.startup(function(use)
   -- https://github.com/machakann/vim-sandwich
 
   use { 'norcalli/nvim-colorizer.lua' , commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" }  -- * colors the css hex values
-  use { 'folke/which-key.nvim'        , commit = "6885b669523ff4238de99a7c653d47b081b5506d" }  -- cheetsheet for keys
+  use { 'folke/which-key.nvim'        , commit = "8682d3003595017cd8ffb4c860a07576647cc6f8" }  -- cheetsheet for keys
   use { 'sudormrfbin/cheatsheet.nvim' , commit = "9716f9aaa94dd1fd6ce59b5aae0e5f25e2a463ef" }  -- cheesheet for cheetsheet.txt
 
   -- colorschemes

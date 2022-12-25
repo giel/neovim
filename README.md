@@ -14,6 +14,11 @@ install the following packages:
 If above does not suffice check [prerequisites at neovim website](https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites)
 
 
+### Packages usefull for neovim
+
+- `xclip` (on x11 linux, to make copy/paste work between os and neovim).
+- `wl-copy` and `wl-paste` if using Wayland.
+
 ### Packages to install for LSP
 
 Via `mgpak` (package installer`):`
