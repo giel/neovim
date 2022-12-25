@@ -14,7 +14,7 @@ if [[ ! -d $srcdir ]] ; then
   git clone https://github.com/neovim/neovim.git $srcdir
 fi
 cd $srcdir
-echo === checkout & pull
+echo === checkout and pull
 git checkout $branch
 git pull
 
