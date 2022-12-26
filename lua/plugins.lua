@@ -61,32 +61,32 @@ return packer.startup(function(use)
   -- Helper functions for nvim in lua
   -- use 'norcalli/nvim_utils'
 
-  -- cmp plugins
-  use { "hrsh7th/nvim-cmp"          , commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
-  use { "hrsh7th/cmp-buffer"        , commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" } -- buffer completions
-  use { "hrsh7th/cmp-path"          , commit = "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1" } -- path completions
-  use { "hrsh7th/cmp-cmdline"       , commit = "c36ca4bc1dedb12b4ba6546b96c43896fd6e7252" } -- cmdline completions
-  use { "saadparwaiz1/cmp_luasnip"  , commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
-  use { "hrsh7th/cmp-nvim-lsp"      , commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
-  use { "hrsh7th/cmp-nvim-lua"      , commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
-
-  -- snippets
-  use { "L3MON4D3/LuaSnip"            , commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } -- snippet engine
-  use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
-
   -- LSP
-  use { "neovim/nvim-lspconfig"            , commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
-  -- use { "williamboman/nvim-lsp-installer"  , commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- * simple to use language server installer
-  -- use { 'tamago324/nlsp-settings.nvim'     , commit = '527cdfef1b1eb47eb3e6e6f737575a710f307d3a' } -- * language server settings defined in json for
-  use { "williamboman/mason.nvim",           commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" } -- * new
-  use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" } -- * new
+  use { "neovim/nvim-lspconfig"            , commit = "a63d2c75c6880d45209baff596939343e8a431fd" } -- enable LSP
+  use { "williamboman/mason.nvim",           commit = "61af398d5cf7129564bcd65e2622d21883b9321b" } -- * new
+  use { "williamboman/mason-lspconfig.nvim", commit = "fc78caa46e306103818137759afcc908ab6be948" } -- * new
 
+  use { "j-hui/fidget.nvim", commit = "44585a0c0085765195e6961c15529ba6c5a2a13b" } -- Useful status updates for LSP
+  use { "folke/neodev.nvim", commit = "c5f0a814abf89b5b1e3cfed95322813939bdc0c5" }  -- Additional lua configuration, makes nvim stuff amazing
 
-  use { "jose-elias-alvarez/null-ls.nvim"  , commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
-  use { "RRethy/vim-illuminate"            , commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" } -- highlight word under curso
+  use { "jose-elias-alvarez/null-ls.nvim"  , commit = "b26851b3e7ac1c0c85666f8a74e36aef2acb89c6" } -- for formatters and linters
+  use { "RRethy/vim-illuminate"            , commit = "a6d0b28ea7d6b9d139374be1f94a16bd120fcda3" } -- highlight word under curso
   -- use 'onsails/lspkind-nvim'
   -- use 'kosayoda/nvim-lightbulb'
   -- use 'mfussenegger/nvim-jdtls'
+
+  -- cmp plugins
+  use { "hrsh7th/nvim-cmp"          , commit = "d09b0c396aaa078cdfe78316ec06940971136e85" } -- The completion plugin
+  use { "hrsh7th/cmp-buffer"        , commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" } -- buffer completions
+  use { "hrsh7th/cmp-path"          , commit = "91ff86cd9c29299a64f968ebb45846c485725f23" } -- path completions
+  use { "hrsh7th/cmp-cmdline"       , commit = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063" } -- cmdline completions
+  use { "saadparwaiz1/cmp_luasnip"  , commit = "18095520391186d634a0045dacaa346291096566" } -- snippet completions
+  use { "hrsh7th/cmp-nvim-lsp"      , commit = "59224771f91b86d1de12570b4070fe4ad7cd1eeb" } -- neovim's built-in language server client.
+  use { "hrsh7th/cmp-nvim-lua"      , commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" } -- neovim Lua API.
+  --
+  -- snippets
+  use { "L3MON4D3/LuaSnip"            , commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } -- snippet engine
+  use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
 
   -- Treesitter syntax highlighting
   use {'nvim-treesitter/nvim-treesitter' , commit = "4bcd3a3cc31b9628a48ff126938262292b1ed988", run = ':TSUpdate'}
