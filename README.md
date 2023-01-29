@@ -28,7 +28,7 @@ Via `mgpak` (package installer`):`
 - `stylua`
 - `black` or `pip install black`
 - `ripgrep`
-- `fd` (or download from [shardp/fd](https://github.com/sharkdp/fd)
+- `fd` (or download from [shardp/fd](https://github.com/sharkdp/fd))
 
 `pip` can be installed with `python3-pip`
 
@@ -96,11 +96,18 @@ Now startup `nvim`, it should download all needed packages. Maybe exit it once a
 
 ## LSP modules
 
-LSP modules are installed with `Mason`. Add the desired module to the servers list in the file `lsp\masun.lua`. Keep the list sorted.
+LSP modules are installed with `Mason`. Add the desired module to the servers list in the file `lsp\mason.lua`. Keep the list sorted.
+
+## Checks
+To check how all is installed and ho healthy your neovim installation is:
+
+    :checkhealth
+
+The `space-h` starting commands will bring up Packer options. Choose `space-ps` to sync Packer packages.
 
 
 ## links
 
 - [neovim GitHub](https://github.com/neovim/neovim)
 - [neovim-basic-ide](https://github.com/LunarVim/nvim-basic-ide)
-
+- [kickstart neovim](https://github.com/nvim-lua/kickstart.nvim)
