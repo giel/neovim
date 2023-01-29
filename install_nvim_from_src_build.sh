@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # fill out version branch below
-# branch="release-0.8"
-branch="stable"
+branch="release-0.8"
+# commit dd086292c727e5ae1640e114a5d08feef4816e4e
+# branch="master"
 
 srcdir="neovim_src"
 

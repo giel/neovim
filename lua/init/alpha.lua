@@ -26,10 +26,11 @@ dashboard.section.buttons.val = {
   dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
   dashboard.button("c", " " .. " Config", ":e " .. vim.fn.stdpath("config") .. "/init.lua <CR>"),
   dashboard.button("v", " " .. " Neovim version", ":version<CR>"),
+  dashboard.button("h", " " .. " Check health", ":checkhealth<CR>"),
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 local function footer()
-  return "https://bitbucket.org/giel/neovim"
+  return ":Alpha - https://bitbucket.org/giel/neovim"
 end
 
 dashboard.section.footer.val = footer()

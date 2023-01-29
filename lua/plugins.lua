@@ -45,7 +45,7 @@ return packer.startup(function(use)
   use { "wbthomason/packer.nvim"        , commit = "64ae65fea395d8dc461e3884688f340dd43950ba" } -- Have packer manage itself
   use { "nvim-lua/plenary.nvim"         , commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" } -- Useful lua functions used by lots of plugins
   use { "kyazdani42/nvim-web-devicons"  , commit = "05e1072f63f6c194ac6e867b567e6b437d3d4622" } -- web icons needed a lot (nvim-tree i.e.)
-  use { "kyazdani42/nvim-tree.lua"      , commit = "29788cc32a153e42b2fe48344d315da8367fc6fa" } -- File Explorer nvim-tree
+  use { "kyazdani42/nvim-tree.lua"      , commit = "e14989c0eaa6f9c299d48f7e45ce1ed04b21180f" } -- File Explorer nvim-tree
   use { "moll/vim-bbye"                 , commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- provide Bdelete function
   use { "ahmedkhalf/project.nvim"       , commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4" } -- projects
   use { "akinsho/bufferline.nvim"       , commit = "4ecfa81e470a589e74adcde3d5bb1727dd407363" } -- Visual tabs for buffers!
