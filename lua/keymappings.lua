@@ -1,8 +1,8 @@
 local opt = { noremap = true, silent = true }
 
 --Remap space as leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = " "
 
 local function map(mode, lhs, rhs, opts)
   local options = {noremap = true, silent = true}
@@ -100,12 +100,6 @@ if status_ok then
         s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", },
         e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
-      },
-      p = {
-        name = "Packer",
-        c = { ":PackerClean<CR>", "Packer Clean" },
-        s = { ":PackerSync<CR>", "Packer Sync" },
-        t = { ":PackerStatus<CR>", "Packer Status" },
       },
 -- lunarvim routines
 --        f = { require("lvim.lsp.utils").format, "Format" },
