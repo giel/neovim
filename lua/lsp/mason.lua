@@ -7,7 +7,7 @@ local servers = {
   "marksman",
 	"pyright",
 	"rust_analyzer",
-	"sumneko_lua",
+	"lua_ls",
 	"terraformls",
 	"tsserver",
 	"yamlls",
