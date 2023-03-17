@@ -4,7 +4,7 @@
 
 local Plugin = {'nvim-telescope/telescope.nvim'}
 
-Plugin.commit = "e960efa60e97df58e089b00270f09d60f27202c8" 
+Plugin.commit = "a486ac3e8fb2198f3636da1927ed57a28836fbd8" 
 
 Plugin.cmd = 'Telescope'
 

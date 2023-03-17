@@ -3,8 +3,8 @@
 
 return {
 
--- { 'folke/which-key.nvim' , commit = "8682d3003595017cd8ffb4c860a07576647cc6f8" },
 "folke/which-key.nvim",
+commit = "fb027738340502b556c3f43051f113bcaa7e8e63",
 config = function()
   vim.o.timeout = true
   vim.o.timeoutlen = 300
@@ -29,8 +29,6 @@ config = function()
     z = true,            -- bindings for folds, spelling and others prefixed with z
     g = true,            -- bindings for prefixed with g
   },
-
-
 
   })
 end,

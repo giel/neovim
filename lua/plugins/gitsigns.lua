@@ -1,11 +1,13 @@
 -- https://github.com/lewis6991/gitsigns.nvim
 
-local status_ok, gitsigns = pcall(require, "gitsigns")
-if not status_ok then
-  return
-end
+return {
 
-gitsigns.setup {
+"lewis6991/gitsigns.nvim",
+commit = "2ab3bdf0a40bab53033048c6be75bda86316b55d",
+
+config = function()
+
+require("gitsigns").setup {
   signs = {
     add          = { hl = 'GitSignsAdd'    , text = '▎'  , numhl = 'GitSignsAddNr'    , linehl = 'GitSignsAddLn' }    ,
     change       = { hl = 'GitSignsChange' , text = '▎'  , numhl = 'GitSignsChangeNr' , linehl = 'GitSignsChangeLn' } ,
@@ -28,4 +30,7 @@ gitsigns.setup {
   update_debounce = 200,
   status_formatter = nil, -- Use default
   --  use_decoration_api = false
+}
+end
+
 }

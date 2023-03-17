@@ -1,11 +1,14 @@
 -- https://github.com/norcalli/nvim-colorizer.lua
+ -- * colors the css hex values, like #FEDC56 or Red
 
-local status_ok, colorizer = pcall(require, "colorizer")
-if not status_ok then
-  return
-end
 
-colorizer.setup(
+return {
+
+'norcalli/nvim-colorizer.lua',
+commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" ,
+
+config = function()
+  require("colorizer").setup(
   { '*'; },
   {
     RGB      = true; -- #RGB hex codes
@@ -17,3 +20,6 @@ colorizer.setup(
     css_fn   = true; -- Enable all CSS *functions*: rgb_fn, hsl_fn
     -- names    = true; -- "Name" codes like Blue
   })
+end
+
+}

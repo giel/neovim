@@ -4,7 +4,8 @@
 return {
 
 "goolord/alpha-nvim",
-dependencies = { "kyazdani42/nvim-web-devicons" },
+commit = "3847d6baf74da61e57a13e071d8ca185f104dc96",
+dependencies = { "nvim-tree/nvim-web-devicons" },
 lazy = false,
 config = function()
 
@@ -24,11 +25,12 @@ dashboard.section.header.val = {
 }
 
 dashboard.section.buttons.val = {
+  dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
   dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
-  dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
   dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
   dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
   dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
+  dashboard.button("e", " " .. " Explore files", ":Neotree toggle<CR>"),
   dashboard.button("c", " " .. " Config", ":e " .. vim.fn.stdpath("config") .. "/init.lua <CR>"),
   dashboard.button("v", " " .. " Neovim version", ":version<CR>"),
   dashboard.button("h", " " .. " Check health", ":checkhealth<CR>"),

@@ -113,7 +113,7 @@ if status_ok then
       [","] = { ":bfirst<CR>"              , "go to first buffer" }         ,
       ["."] = { ":blast<CR>"               , "go to last buffer" }          ,
       ["c"] = { ":Bdelete<CR>"             , "close buffer" }               ,
-      ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
+      ["e"] = { ":Neotree toggle<CR>"      , "toggle tree" }                ,
       ["h"] = { ":set hlsearch!<CR>"       , "toggle search highlight" }    ,
       ["S"] = { ":w<CR>:source %<CR>"      , "save&source current buffer" } ,
       ["s"] = { ":w<CR>:luafile %<CR>"     , "save&luafile current buffer"} ,

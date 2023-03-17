@@ -1,9 +1,14 @@
 -- https://github.com/sudormrfbin/cheatsheet.nvim
+-- cheesheet for cheetsheet.txt
 
-local status_ok, cheatsheet = pcall(require, "cheatsheet")
-if not status_ok then
-  return
-end
+
+local Plugin = {'sudormrfbin/cheatsheet.nvim' }
+
+Plugin.commit = "9716f9aaa94dd1fd6ce59b5aae0e5f25e2a463ef"
+
+function Plugin.config()
+
+local cheatsheet = require("cheatsheet")
 
 cheatsheet.setup({
   -- Whether to show bundled cheatsheets
@@ -34,3 +39,6 @@ cheatsheet.setup({
     ['<C-E>'] = require('cheatsheet.telescope.actions').edit_user_cheatsheet,
   }
 })
+end
+
+return Plugin

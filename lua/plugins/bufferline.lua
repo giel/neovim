@@ -3,8 +3,7 @@
 
 local Plugin = {"akinsho/bufferline.nvim"}
 
-Plugin.commit = "4ecfa81e470a589e74adcde3d5bb1727dd407363" 
-
+Plugin.commit = "3677aceb9a72630b0613e56516c8f7151b86f95c"
 
 function Plugin.config()
 

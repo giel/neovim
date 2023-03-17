@@ -1,15 +1,8 @@
 return {
 
-
-{ "nvim-lua/plenary.nvim"         , commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" }, -- Useful lua functions used by lots of plugins
-{ "kyazdani42/nvim-web-devicons"  , commit = "05e1072f63f6c194ac6e867b567e6b437d3d4622" }, -- web icons needed a lot (nvim-tree i.e.)
---{ "kyazdani42/nvim-tree.lua"      , commit = "e14989c0eaa6f9c299d48f7e45ce1ed04b21180f" }, -- File Explorer nvim-tree
+{ "nvim-lua/plenary.nvim"         , commit = "253d34830709d690f013daf2853a9d21ad7accab" }, -- Useful lua functions used by lots of plugins
 { "moll/vim-bbye"                 , commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }, -- provide Bdelete function
-{ "ahmedkhalf/project.nvim"       , commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4" }, -- projects
--- { "akinsho/bufferline.nvim"       , commit = "4ecfa81e470a589e74adcde3d5bb1727dd407363" }, -- Visual tabs for buffers!
--- { "nvim-lualine/lualine.nvim"     , commit = "bfa0d99ba6f98d077dd91779841f1c88b7b5c165" }, -- Status Line
 { 'godlygeek/tabular'             , commit = "339091ac4dd1f17e225fe7d57b48aff55f99b23a" }, -- * Tabular for aligning tables https://github.com/godlygeek/tabular
-{ "terrortylor/nvim-comment"      , commit = "e9ac16ab056695cad6461173693069ec070d2b23" }, -- * commenter
 { "lewis6991/impatient.nvim"      , commit = "9f7eed8133d62457f7ad2ca250eb9b837a4adeb7" }, -- Speed up loading Lua modules in Neovim
 
 -- Information
@@ -26,13 +19,13 @@ return {
 { "j-hui/fidget.nvim", commit = "44585a0c0085765195e6961c15529ba6c5a2a13b" }, -- Useful status updates for LSP
 { "folke/neodev.nvim", commit = "c5f0a814abf89b5b1e3cfed95322813939bdc0c5" },  -- Additional lua configuration, makes nvim stuff amazing
 { "jose-elias-alvarez/null-ls.nvim"  , commit = "b26851b3e7ac1c0c85666f8a74e36aef2acb89c6" }, -- for formatters and linters
-{ "RRethy/vim-illuminate"            , commit = "a6d0b28ea7d6b9d139374be1f94a16bd120fcda3" }, -- highlight word under curso
+-- { "RRethy/vim-illuminate"            , commit = "a6d0b28ea7d6b9d139374be1f94a16bd120fcda3" }, -- highlight word under curso
   
 -- {'onsails/lspkind-nvim'},
 -- {'kosayoda/nvim-lightbulb'},
 -- {'mfussenegger/nvim-jdtls'},
 
--- cmp plugins
+-- -- cmp plugins
 { "hrsh7th/nvim-cmp"          , commit = "d09b0c396aaa078cdfe78316ec06940971136e85" }, -- The completion plugin
 { "hrsh7th/cmp-buffer"        , commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }, -- buffer completions
 { "hrsh7th/cmp-path"          , commit = "91ff86cd9c29299a64f968ebb45846c485725f23" }, -- path completions
@@ -46,7 +39,8 @@ return {
 { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }, -- a bunch of snippets to use
 
 -- Treesitter syntax highlighting
-{'nvim-treesitter/nvim-treesitter' , commit = "4bcd3a3cc31b9628a48ff126938262292b1ed988", run = ':TSUpdate'},
+-- {'nvim-treesitter/nvim-treesitter' , commit = "4bcd3a3cc31b9628a48ff126938262292b1ed988", run = ':TSUpdate'},
+
 -- {'nvim-treesitter/nvim-treesitter-refactor'},
 -- {'nvim-treesitter/playground'},
 -- {'p00f/nvim-ts-rainbow'},
@@ -55,7 +49,7 @@ return {
 -- {'nvim-telescope/telescope.nvim', commit = "e960efa60e97df58e089b00270f09d60f27202c8" },
 
 -- Git
-{ "lewis6991/gitsigns.nvim", commit = "2ab3bdf0a40bab53033048c6be75bda86316b55d" },
+-- { "lewis6991/gitsigns.nvim", commit = "2ab3bdf0a40bab53033048c6be75bda86316b55d" },
 -- {'f-person/git-blame.nvim'},
 -- {'tpope/vim-fugitive'},
 -- {'tpope/vim-rhubarb'},
@@ -76,9 +70,6 @@ return {
 -- other surround plugin.
 -- https://github.com/machakann/vim-sandwich
 
-{ 'norcalli/nvim-colorizer.lua' , commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" },  -- * colors the css hex values
--- { 'folke/which-key.nvim'        , commit = "8682d3003595017cd8ffb4c860a07576647cc6f8" },  -- cheetsheet for keys
-{ 'sudormrfbin/cheatsheet.nvim' , commit = "9716f9aaa94dd1fd6ce59b5aae0e5f25e2a463ef" },  -- cheesheet for cheetsheet.txt
 
 -- colorschemes
 {'NLKNguyen/papercolor-theme'},
