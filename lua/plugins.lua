@@ -105,8 +105,13 @@ return packer.startup(function(use)
 
   -- surround brackets, qoutes, tags: https://tpope.io/vim/surround.git
   -- and repeat to enable repeating surround commands: https://github.com/tpope/vim-repeat
-  use { 'tpope/vim-surround' , commit = "3d188ed2113431cf8dac77be61b842acb64433d9" } -- *
+  -- use { 'tpope/vim-surround' , commit = "3d188ed2113431cf8dac77be61b842acb64433d9" } -- *
   use { 'tpope/vim-repeat'   , commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" } -- *
+
+
+  use { 'kylechui/nvim-surround',
+         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+      }
 
   -- another simple surround plugin. https://github.com/ur4ltz/surround.nvim
   -- use {
