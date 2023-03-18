@@ -56,8 +56,11 @@ return {
 
 -- surround brackets, qoutes, tags: https://tpope.io/vim/surround.git
 -- and repeat to enable repeating surround commands: https://github.com/tpope/vim-repeat
-{ 'tpope/vim-surround' , commit = "3d188ed2113431cf8dac77be61b842acb64433d9" }, -- *
-{ 'tpope/vim-repeat'   , commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" }, -- *
+-- { 'tpope/vim-surround' , commit = "3d188ed2113431cf8dac77be61b842acb64433d9" }, -- *
+-- { 'tpope/vim-repeat'   , commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" }, -- *
+
+-- replaced by:
+-- https://github.com/kylechui/nvim-surround
 
 -- another simple surround plugin. https://github.com/ur4ltz/surround.nvim
 -- {
