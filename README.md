@@ -105,6 +105,12 @@ To check how all is installed and ho healthy your neovim installation is:
 
 The `space-h` starting commands will bring up Packer options. Choose `space-ps` to sync Packer packages.
 
+## package managers
+
+At this moment master uses the package manager `Packer`. But a new package manager `lazy` is getting a lot of attention and seems to be better than packer. I create a new branch ` lazy-nvim-plugin-manager` where I am updating the packages to the new package manager.
+
+     git checkout lazy-nvim-plugin-manager   # switch to lazy
+     git checkout master                     # switch to Packer
 
 ## links
 
