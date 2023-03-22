@@ -1,8 +1,6 @@
 local opt = { noremap = true, silent = true }
 
---Remap space as leader key
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = " "
+--Leader key already defined in Lazy
 
 local function map(mode, lhs, rhs, opts)
   local options = {noremap = true, silent = true}
@@ -112,6 +110,7 @@ if status_ok then
 
       [","] = { ":bfirst<CR>"              , "go to first buffer" }         ,
       ["."] = { ":blast<CR>"               , "go to last buffer" }          ,
+      ["a"] = { ":Alpha<CR>"               , "alpha start menu" }         ,
       ["c"] = { ":Bdelete<CR>"             , "close buffer" }               ,
       -- ["e"] = { ":Neotree toggle<CR>"      , "toggle tree" }                ,
       ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
