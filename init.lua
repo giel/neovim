@@ -12,7 +12,3 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 
--- Plugins specific inits
--- require('init.project')      -- project detection
--- require('lsp')               -- global lsp install
-

@@ -1,20 +1,16 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-  return
-end
-
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-  return
-end
-
-require("luasnip/loaders/from_vscode").lazy_load()
-
-
-local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-end
+local M = {
+ "hrsh7th/nvim-cmp",
+ enabled = true,
+ event = "InsertEnter",
+ dependencies = {
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-nvim-lua",
+  "hrsh7th/cmp-path",
+  "L3MON4D3/LuaSnip",
+  "onsails/lspkind-nvim",
+ },
+}
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
@@ -46,12 +42,28 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
-cmp.setup {
+local check_backspace = function()
+  local col = vim.fn.col "." - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+end
+
+function M.config()
+ local cmp = require("cmp")
+ local lspkind = require("lspkind")
+ local luasnip = require("luasnip")
+
+ cmp.setup({
+
+  completion = {
+    completeopt = "menu,menuone,noinsert",
+  },
+
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body) -- For `luasnip` users.
+    luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -95,6 +107,7 @@ cmp.setup {
       "s",
     }),
   },
+
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
@@ -116,6 +129,7 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
   },
+
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
@@ -128,8 +142,18 @@ cmp.setup {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
-  experimental = {
-    ghost_text = false,
-    native_menu = false,
-  },
-}
+
+ })
+end
+
+return M
+
+
+-- cmp plugins
+-- { "hrsh7th/cmp-buffer"        , commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }, -- buffer completions
+--  { "hrsh7th/cmp-cmdline"       , commit = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063" }, -- cmdline completions
+-- { "hrsh7th/cmp-nvim-lsp"      , commit = "59224771f91b86d1de12570b4070fe4ad7cd1eeb" }, -- neovim's built-in language server client.
+-- { "hrsh7th/cmp-nvim-lua"      , commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }, -- neovim Lua API.
+-- { "hrsh7th/cmp-path"          , commit = "91ff86cd9c29299a64f968ebb45846c485725f23" }, -- path completions
+--   { "hrsh7th/nvim-cmp"          , commit = "d09b0c396aaa078cdfe78316ec06940971136e85" }, -- The completion plugin
+--   { "saadparwaiz1/cmp_luasnip"  , commit = "18095520391186d634a0045dacaa346291096566" }, -- snippet completions
