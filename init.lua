@@ -2,8 +2,15 @@
 require('settings')
 require('lazyinit')
 require('colorscheme')
-require "autocommands"
-require('keymappings')       -- Keymappings for last to allow for mapping of plugins ?
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    require "autocommands"
+    require "keymappings"
+  end,
+})
+
 
 -- Plugins specific inits
 -- require('init.project')      -- project detection

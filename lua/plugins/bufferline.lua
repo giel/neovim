@@ -4,6 +4,7 @@
 local Plugin = {"akinsho/bufferline.nvim"}
 
 Plugin.commit = "3677aceb9a72630b0613e56516c8f7151b86f95c"
+-- Plugin.event = "VeryLazy"
 
 function Plugin.config()
 
@@ -15,6 +16,7 @@ bufferline.setup {
     close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
     offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+    diagnostics = "nvim_lsp",
     indicator = { style = "icon", icon = "▎" },
     buffer_close_icon = "",
     modified_icon = "",
