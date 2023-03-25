@@ -1,11 +1,11 @@
-vim.cmd [[
+vim.cmd([[
 try
   colorscheme onedarker-giel
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
 endtry
-]]
+]])
 
 -- colorscheme blue
 -- colorscheme codedark
@@ -19,4 +19,3 @@ endtry
 -- colorscheme papercolor
 -- colorscheme solarized
 -- colorscheme vim-one
-
