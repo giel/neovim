@@ -7,7 +7,7 @@ local Plugin = {"nvim-tree/nvim-tree.lua"}
 
 Plugin.version = "*"
 
-Plugin.enabled = true
+Plugin.enabled = false
 Plugin.dependencies = { "nvim-tree/nvim-web-devicons"   }
 
 function Plugin.config()
