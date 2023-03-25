@@ -1,3 +1,4 @@
+-- Global icons for use everywhere
 return {
   kind = {
     Array = "",

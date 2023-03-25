@@ -1,7 +1,7 @@
 local M = {}
 
-local lsp_utils = require "plugins.lsp.utils"
-local icons = require "plugins.lsp.icons"
+local lsp_utils = require("plugins.lsp.utils")
+local icons = require("plugins.config.icons")
 
 local function lsp_init()
   local signs = {
@@ -67,8 +67,8 @@ function M.setup(_, opts)
   lsp_init() -- diagnostics, handlers
 
   local servers = opts.servers
-  require("mason-lspconfig").setup { ensure_installed = vim.tbl_keys(servers) }
-  require("mason-lspconfig").setup_handlers {
+  require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
+  require("mason-lspconfig").setup_handlers({
     function(server)
       local server_opts = servers[server] or {}
       server_opts.capabilities = lsp_utils.capabilities()
@@ -83,7 +83,7 @@ function M.setup(_, opts)
       end
       require("lspconfig")[server].setup(server_opts)
     end,
-  }
+  })
 end
 
 return M
