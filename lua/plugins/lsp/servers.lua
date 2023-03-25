@@ -1,7 +1,7 @@
 local M = {}
 
 local lsp_utils = require "plugins.lsp.utils"
-local icons = require "config.icons"
+local icons = require "plugins.lsp.icons"
 
 local function lsp_init()
   local signs = {
