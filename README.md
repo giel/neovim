@@ -121,6 +121,19 @@ At this moment master uses the package manager `Packer`. But a new package manag
      git checkout master                     # switch to Packer
      git checkout lazyvim                    # switch to lazyvim distro
 
+## file locations
+
+windows 
+
+    C:\Users\g.scharff\AppData\Local\nvim      
+    C:\Users\g.scharff\AppData\Local\nvim-data
+
+linux and macOS
+
+    ~/.config/nvim/
+    ~/.local/share/nvim/
+
+
 ## links
 
 - [neovim GitHub](https://github.com/neovim/neovim)
