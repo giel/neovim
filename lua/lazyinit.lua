@@ -21,8 +21,8 @@ vim.g.maplocalleader = " "
 -- set options for lazy
 local lazyoptions = {
   -- defaults = { lazy = true },
-  install = { missing = true },
-  checker = { enabled = true },
+  install = { missing = false },
+  checker = { enabled = false },
   ui = {
     -- a number <1 is a percentage., >1 is a fixed size
     size = { width = 0.8, height = 0.8 },
