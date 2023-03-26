@@ -51,4 +51,3 @@ Thumbs.db
 # my ignore files
 plugin
 neovim_src
-lazy-lock.json

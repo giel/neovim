@@ -113,6 +113,14 @@ At this moment master uses the package manager `Packer`. But a new package manag
      git checkout master                     # switch to Packer
      git checkout lazyvim                    # switch to lazyvim distro
 
+## package managers and distro's
+
+At this moment master uses the package manager `Packer`. But a new package manager `lazy` is getting a lot of attention and seems to be better than packer. I create a new branch ` lazy-nvim-plugin-manager` where I am updating the packages to the new package manager.
+
+     git checkout lazy-nvim-plugin-manager   # switch to lazy
+     git checkout master                     # switch to Packer
+     git checkout lazyvim                    # switch to lazyvim distro
+
 ## links
 
 - [neovim GitHub](https://github.com/neovim/neovim)
