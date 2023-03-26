@@ -140,6 +140,15 @@ if status_ok then
   wk.register(visualmappings, { mode = "v" })
 end
 
+-- URL handling, source https://sbulav.github.io/vim/neovim-opening-urls/
+if vim.fn.has("mac") == 1 then
+  map("", "gx", '<Cmd>call jobstart(["open", expand("<cfile>")], {"detach": v:true})<CR>')
+elseif vim.fn.has("unix") == 1 then
+  map("", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>')
+else
+  map("", "gx", '<Cmd>lua print("Error: gx is not supported on this OS!")<CR>')
+end
+
 -- does not work
 -- vmappings = {
 --       ["<"] = { "<gv", "shift text left" },

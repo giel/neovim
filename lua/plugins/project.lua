@@ -1,6 +1,9 @@
+-- https://github.com/ahmedkhalf/project.nvim
+-- detect projects and show in telescope
+
 return {
   "ahmedkhalf/project.nvim",
-  commit = "1c2e9c93c7c85126c2197f5e770054f53b1926fb",
+  -- commit = "1c2e9c93c7c85126c2197f5e770054f53b1926fb",
   dependencies = "nvim-telescope/telescope.nvim",
 
   config = function()
