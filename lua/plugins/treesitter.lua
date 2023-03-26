@@ -23,6 +23,7 @@ Plugin.config = function()
       "json",
       "lua",
       "markdown",
+      "markdown_inline",
       "python",
       "query",
       "toml",
