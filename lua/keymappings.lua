@@ -7,7 +7,8 @@ local function map(mode, lhs, rhs, opts)
   if opts then
     options = vim.tbl_extend("force", options, opts)
   end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  -- vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- quit and quit all
@@ -31,33 +32,37 @@ map("i", "<Up>", "<NOP>")
 map("i", "<Down>", "<NOP>")
 
 -- better window movement
-map("n", "<C-h>", "<C-w>h") -- goto window left
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
-map("n", "<C-Left>", "<C-w>h")
-map("n", "<C-Down>", "<C-w>j")
-map("n", "<C-Up>", "<C-w>k")
-map("n", "<C-Right>", "<C-w>l")
-map("n", "<F4>", "<C-w>q") -- close window
+map("n", "<C-h>", "<C-w>h", { desc = "Goto window left" })
+map("n", "<C-j>", "<C-w>j", { desc = "Goto window right" })
+map("n", "<C-k>", "<C-w>k", { desc = "Goto window up" })
+map("n", "<C-l>", "<C-w>l", { desc = "Goto window down" })
 
 -- resize windows with arrows
-map("n", "<C-S-Up>", ":resize -2<CR>")
-map("n", "<C-S-Down>", ":resize +2<CR>")
-map("n", "<C-S-Left>", ":vertical resize -2<CR>")
-map("n", "<C-S-Right>", ":vertical resize +2<CR>")
+map("n", "<C-Up>", ":resize -2<CR>")
+map("n", "<C-Down>", ":resize +2<CR>")
+map("n", "<C-Left>", ":vertical resize -2<CR>")
+map("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- In insert mode jk or kj is escape !
 map("i", "jk", "<ESC>")
 map("i", "kj", "<ESC>")
 
--- Move selected line / block of text in visual mode
-map("x", "K", ":move '<-2<CR>gv-gv")
-map("x", "J", ":move '>+1<CR>gv-gv")
+-- Move Lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- file buffer commands
+map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+map({ "i", "v", "n", "s" }, "<C-w>", "<cmd>bdelete<cr><esc>", { desc = "Close file" })
+map("n", "<C-n>", "<cmd>enew<cr>", { desc = "New File" })
 
 -- Illuminate plugin (higlights same words as cursor is on)
 -- map('n', '<a-n>', '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>')
@@ -110,7 +115,6 @@ if status_ok then
       [","] = { ":bfirst<CR>", "go to first buffer" },
       ["."] = { ":blast<CR>", "go to last buffer" },
       ["a"] = { ":Alpha<CR>", "alpha start menu" },
-      ["c"] = { ":Bdelete<CR>", "close buffer" },
       ["e"] = { ":Neotree toggle<CR>", "toggle tree" },
       -- ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
       ["h"] = { ":set hlsearch!<CR>", "toggle search highlight" },
@@ -148,10 +152,3 @@ elseif vim.fn.has("unix") == 1 then
 else
   map("", "gx", '<Cmd>lua print("Error: gx is not supported on this OS!")<CR>')
 end
-
--- does not work
--- vmappings = {
---       ["<"] = { "<gv", "shift text left" },
---       [">"] = { ">gv", "shift right" },
---     }
--- wk.register(vmappings, {mode = 'v'} )
