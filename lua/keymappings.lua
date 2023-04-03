@@ -21,8 +21,8 @@ map("n", "<S-t>", [[<Cmd>tabnew<CR>]], opt) -- new tab
 map("n", "<S-x>", [[<Cmd>bdelete<CR>]], opt) -- close tab
 
 -- move between tabs
-map("n", "<TAB>", [[<Cmd>BufferLineCycleNext<CR>]])
-map("n", "<S-TAB>", [[<Cmd>BufferLineCyclePrev<CR>]])
+map("n", "<TAB>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next Bufferline" })
+map("n", "<S-TAB>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous Bufferline" })
 map("n", "bp", ":BufferLinePick<CR>") -- choose tab letter to activate
 map("n", "bcl", ":BufferLineCloseLeft<CR>") -- close all buffers to the left
 map("n", "bcr", ":BufferLineCloseRight<CR>") -- close all buffers to the right
@@ -32,16 +32,16 @@ map("i", "<Up>", "<NOP>")
 map("i", "<Down>", "<NOP>")
 
 -- better window movement
-map("n", "<C-h>", "<C-w>h", { desc = "Goto window left" })
-map("n", "<C-j>", "<C-w>j", { desc = "Goto window right" })
-map("n", "<C-k>", "<C-w>k", { desc = "Goto window up" })
-map("n", "<C-l>", "<C-w>l", { desc = "Goto window down" })
+map("n", "<C-Left>", "<C-w>h", { desc = "Goto window left" })
+map("n", "<C-Right>", "<C-w>l", { desc = "Goto window right" })
+map("n", "<C-Up>", "<C-w>k", { desc = "Goto window up" })
+map("n", "<C-Down>", "<C-w>j", { desc = "Goto window down" })
 
 -- resize windows with arrows
-map("n", "<C-Up>", ":resize -2<CR>")
-map("n", "<C-Down>", ":resize +2<CR>")
-map("n", "<C-Left>", ":vertical resize -2<CR>")
-map("n", "<C-Right>", ":vertical resize +2<CR>")
+map("n", "<C-j>", ":resize -2<CR>")
+map("n", "<C-k>", ":resize +2<CR>")
+map("n", "<C-h>", ":vertical resize -2<CR>")
+map("n", "<C-l>", ":vertical resize +2<CR>")
 
 -- In insert mode jk or kj is escape !
 map("i", "jk", "<ESC>")
@@ -61,7 +61,8 @@ map("v", ">", ">gv")
 
 -- file buffer commands
 map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-map({ "i", "v", "n", "s" }, "<C-w>", "<cmd>bdelete<cr><esc>", { desc = "Close file" })
+-- next clashes with built in window commands.
+-- map({ "i", "v", "n", "s" }, "<C-w>", "<cmd>bdelete<cr><esc>", { desc = "Close file" })
 map("n", "<C-n>", "<cmd>enew<cr>", { desc = "New File" })
 
 -- Illuminate plugin (higlights same words as cursor is on)

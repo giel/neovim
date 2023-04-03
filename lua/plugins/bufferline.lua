@@ -22,7 +22,7 @@ function Plugin.config()
       close_icon = "",
       left_trunc_marker = "",
       right_trunc_marker = "",
-      max_name_length = 14,
+      max_name_length = 18,
       max_prefix_length = 13,
       tab_size = 20,
       show_buffer_icons = true,
@@ -33,6 +33,22 @@ function Plugin.config()
       enforce_regular_tabs = false,
       view = "multiwindow",
       always_show_bufferline = true,
+    },
+    highlights = {
+      background = {
+        fg = "#999999",
+        bg = "#000000",
+      },
+      buffer_visible = {
+        fg = "#999999",
+        bg = "#000000",
+      },
+      buffer_selected = {
+        fg = "#ffffff",
+        bg = "#000000",
+        bold = true,
+        italic = true,
+      },
     },
   })
 end
