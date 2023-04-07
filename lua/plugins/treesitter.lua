@@ -18,7 +18,7 @@ Plugin.config = function()
       "go",
       "gomod",
       "hcl",
-      "help",
+      "vimdoc",
       "html",
       "json",
       "lua",

@@ -7,8 +7,8 @@ catch /^Vim\%((\a\+)\)\=:E185/
 endtry
 ]])
 
--- TODO use a background of the colorscheme, or even change colorscheme
-vim.api.nvim_set_hl(0, "WinSeparator", { bg = "#282c34" })
+local C = require("onedarker-giel.palette")
+vim.api.nvim_set_hl(0, "WinSeparator", { bg = C.bg })
 
 -- colorscheme blue
 -- colorscheme codedark

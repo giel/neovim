@@ -56,10 +56,14 @@ return {
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     opts = {
       ensure_installed = {
+        "lua-language-server",
+        "marksman",
+        "ruff", -- python linter
+        "shfmt",
         "stylua",
-        "ruff",
-        "debugpy",
-        "codelldb",
+        "yaml-language-server",
+        -- "codelldb", --debugger
+        -- "debugpy",
       },
     },
     config = function(_, opts)
