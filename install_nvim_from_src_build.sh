@@ -1,18 +1,16 @@
 #!/bin/bash
 
 # fill out version branch below
-branch="release-0.8"
-# commit dd086292c727e5ae1640e114a5d08feef4816e4e
-# branch="master"
+branch="release-0.9"
 
 srcdir="neovim_src"
 
 pushd ~/.config/nvim/
 
-if [[ ! -d $srcdir ]] ; then
-  # clone version 
-  echo === clone repo
-  git clone https://github.com/neovim/neovim.git $srcdir
+if [[ ! -d $srcdir ]]; then
+	# clone version
+	echo === clone repo
+	git clone https://github.com/neovim/neovim.git $srcdir
 fi
 cd $srcdir
 echo === checkout and pull
