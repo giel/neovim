@@ -86,6 +86,16 @@ local status_ok, wk = pcall(require, "which-key")
 if status_ok then
   wk.register({
     ["<leader>"] = {
+      b = {
+        name = "+browse Telescope",
+        g = { ":Telescope git_files<CR>", "Browse git files" },
+        h = { ":Telescope help_tags<CR>", "Help tags" },
+        m = { ":Telescope man_pages<CR>", "man pages" },
+      },
+      -- see also in keymaps.lua in LSP
+      c = {
+        name = "+code related",
+      },
       f = {
         name = "+file Telescope",
         b = { ":Telescope buffers<CR>", "Buffers" },
@@ -94,12 +104,8 @@ if status_ok then
         p = { ":Telescope projects<CR>", "Projects" },
         n = { ":enew<CR>", "New File" },
       },
-
-      b = {
-        name = "+browse Telescope",
-        g = { ":Telescope git_files<CR>", "Browse git files" },
-        h = { ":Telescope help_tags<CR>", "Help tags" },
-        m = { ":Telescope man_pages<CR>", "man pages" },
+      g = {
+        name = "+goto related",
       },
       l = {
         -- LSP mapping see also lsp.handlers

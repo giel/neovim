@@ -1,5 +1,19 @@
 # installing neovim
 
+<!--toc:start-->
+- [installing neovim](#installing-neovim)
+  - [Prerequisites](#prerequisites)
+    - [Packages for build](#packages-for-build)
+    - [Packages usefull for neovim](#packages-usefull-for-neovim)
+    - [Packages to install for LSP](#packages-to-install-for-lsp)
+  - [install](#install)
+  - [LSP modules](#lsp-modules)
+  - [Checks](#checks)
+  - [package managers and distro's](#package-managers-and-distros)
+  - [file locations](#file-locations)
+  - [links](#links)
+<!--toc:end-->
+
 How to install my neovim configuration.
 
 ## Prerequisites
