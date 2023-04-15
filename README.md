@@ -103,23 +103,21 @@ To check how all is installed and ho healthy your neovim installation is:
 
     :checkhealth
 
-The `space-h` starting commands will bring up Packer options. Choose `space-ps` to sync Packer packages.
+The `space-a` will bring up start menu. Choose `l` to bring up the package manager.
 
 ## package managers and distro's
 
-At this moment master uses the package manager `Packer`. But a new package manager `lazy` is getting a lot of attention and seems to be better than packer. I create a new branch ` lazy-nvim-plugin-manager` where I am updating the packages to the new package manager.
+The new package manager `lazy` is getting a lot of attention and for me has replaced `Packer`. 
+I created a new branch ` lazy-nvim-plugin-manager` where I am updating the packages to the new package manager.
 
      git checkout lazy-nvim-plugin-manager   # switch to lazy
-     git checkout master                     # switch to Packer
+     git checkout packer-nvim-plugin-manager # switch to packer
+     git checkout master                     # switch to lazy
      git checkout lazyvim                    # switch to lazyvim distro
 
-## package managers and distro's
-
-At this moment master uses the package manager `Packer`. But a new package manager `lazy` is getting a lot of attention and seems to be better than packer. I create a new branch ` lazy-nvim-plugin-manager` where I am updating the packages to the new package manager.
-
-     git checkout lazy-nvim-plugin-manager   # switch to lazy
-     git checkout master                     # switch to Packer
-     git checkout lazyvim                    # switch to lazyvim distro
+From neovim 0.9 on it is possible to have several 'distros' in separate directories. 
+By switching one environment variable you can choose which one to use.
+This setup will replace the separate branches.
 
 ## file locations
 
@@ -142,4 +140,6 @@ linux and macOS
 - [Packer package manager](https://github.com/wbthomason/packer.nvim)
 - [lazy package manager](https://github.com/folke/lazy.nvim)
 - [LazyVim distro](https://www.lazyvim.org)
+- Neovim config switcher [video](https://www.youtube.com/watch?v=LkHjJlSgKZY), 
+   and [source](https://gist.github.com/elijahmanor/b279553c0132bfad7eae23e34ceb593b)
 
