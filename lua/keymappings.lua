@@ -32,16 +32,24 @@ map("i", "<Up>", "<NOP>")
 map("i", "<Down>", "<NOP>")
 
 -- better window movement
-map("n", "<C-Left>", "<C-w>h", { desc = "Goto window left" })
-map("n", "<C-Right>", "<C-w>l", { desc = "Goto window right" })
-map("n", "<C-Up>", "<C-w>k", { desc = "Goto window up" })
-map("n", "<C-Down>", "<C-w>j", { desc = "Goto window down" })
+-- map("n", "<C-Left>", "<C-w>h", { desc = "Goto window left" })
+-- map("n", "<C-Right>", "<C-w>l", { desc = "Goto window right" })
+-- map("n", "<C-Up>", "<C-w>k", { desc = "Goto window up" })
+-- map("n", "<C-Down>", "<C-w>j", { desc = "Goto window down" })
+map("n", "<C-h>", "<C-w>h", { desc = "Goto window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "Goto window right" })
+map("n", "<C-k>", "<C-w>k", { desc = "Goto window up" })
+map("n", "<C-j>", "<C-w>j", { desc = "Goto window down" })
 
--- resize windows with arrows
-map("n", "<C-j>", ":resize -2<CR>")
-map("n", "<C-k>", ":resize +2<CR>")
-map("n", "<C-h>", ":vertical resize -2<CR>")
-map("n", "<C-l>", ":vertical resize +2<CR>")
+-- resize windows
+-- map("n", "<C-j>", ":resize -2<CR>")
+-- map("n", "<C-k>", ":resize +2<CR>")
+-- map("n", "<C-h>", ":vertical resize -2<CR>")
+-- map("n", "<C-l>", ":vertical resize +2<CR>")
+map("n", "<C-Up>", ":resize +2<CR>")
+map("n", "<C-Down>", ":resize -2<CR>")
+map("n", "<C-Left>", ":vertical resize -2<CR>")
+map("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- In insert mode jk or kj is escape !
 map("i", "jk", "<ESC>")
@@ -104,15 +112,13 @@ if status_ok then
         S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
         e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
       },
-      -- lunarvim routines
-      --        f = { require("lvim.lsp.utils").format, "Format" },
-      --        p = {
-      --          name = "Peek",
-      --          d = { "<cmd>lua require('lvim.lsp.peek').Peek('definition')<cr>", "Definition" },
-      --          t = { "<cmd>lua require('lvim.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
-      --          i = { "<cmd>lua require('lvim.lsp.peek').Peek('implementation')<cr>", "Implementation" },
-      --        },
-
+      t = {
+        name = "Text/view options",
+        ["s"] = { ":set spell!<CR>", "toggle spell check" },
+        ["w"] = { ":set wrap!<CR>", "toggle word wrap" },
+        ["0"] = { ":set relativenumber!<CR>", "toggle rel. line #" },
+        ["9"] = { ":set number!<CR>", "toggle line #" },
+      },
       [","] = { ":bfirst<CR>", "go to first buffer" },
       ["."] = { ":blast<CR>", "go to last buffer" },
       ["a"] = { ":Alpha<CR>", "alpha start menu" },
@@ -121,9 +127,6 @@ if status_ok then
       ["h"] = { ":set hlsearch!<CR>", "toggle search highlight" },
       ["S"] = { ":w<CR>:source %<CR>", "save&source current buffer" },
       ["s"] = { ":w<CR>:luafile %<CR>", "save&luafile current buffer" },
-      ["w"] = { ":set wrap!<CR>", "toggle word wrap" },
-      ["0"] = { ":set relativenumber!<CR>", "toggle rel. line #" },
-      ["9"] = { ":set number!<CR>", "toggle line #" },
       ["/"] = { ":CommentToggle<CR>", "toggle comment" },
       ["?"] = { ":Cheatsheet<CR>", "cheat Sheet" },
     },

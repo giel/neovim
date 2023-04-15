@@ -31,6 +31,7 @@ vim.opt.showcmd = false
 vim.opt.ruler = false
 vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
+vim.o.spell = false                             -- start with spell check off
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.linebreak = true                        -- do nice line breaks
 vim.opt.scrolloff = 8                           -- is one of my fav
