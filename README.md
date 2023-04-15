@@ -1,7 +1,11 @@
 # installing neovim
+How to install my neovim configuration.
+
+## content
 
 <!--toc:start-->
 - [installing neovim](#installing-neovim)
+  - [content](#content)
   - [Prerequisites](#prerequisites)
     - [Packages for build](#packages-for-build)
     - [Packages usefull for neovim](#packages-usefull-for-neovim)
@@ -10,11 +14,10 @@
   - [LSP modules](#lsp-modules)
   - [Checks](#checks)
   - [package managers and distro's](#package-managers-and-distros)
+    - [use AstroNvim, LazyVim or NvChad](#use-astronvim-lazyvim-or-nvchad)
   - [file locations](#file-locations)
   - [links](#links)
 <!--toc:end-->
-
-How to install my neovim configuration.
 
 ## Prerequisites
 
@@ -130,8 +133,26 @@ I created a new branch ` lazy-nvim-plugin-manager` where I am updating the packa
      git checkout lazyvim                    # switch to lazyvim distro
 
 From neovim 0.9 on it is possible to have several 'distros' in separate directories. 
-By switching one environment variable you can choose which one to use.
-This setup will replace the separate branches.
+By switching one environment variable `NVIM_APPNAME` you can choose which one to use.
+This setup will replace the separate branches for distro's.
+
+### use AstroNvim, LazyVim or NvChad
+
+     export NVIM_APPNAME=nvim-AstroVim
+     nvim 
+
+     export NVIM_APPNAME=nvim-LazyVim
+     nvim
+
+     export NVIM_APPNAME=nvim-NvChad
+     nvim
+
+go back to normal nvim, exit session or:
+
+     unset NVIM_APPNAME
+
+Note that the distro's need to be installed in`~/.config/` in the subdirectory used in the `NVIM_APPNAME` variable for this to work.
+
 
 ## file locations
 
