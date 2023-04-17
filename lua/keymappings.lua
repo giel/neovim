@@ -127,6 +127,7 @@ if status_ok then
       },
       [","] = { ":bfirst<CR>", "go to first buffer" },
       ["."] = { ":blast<CR>", "go to last buffer" },
+      ["x"] = { ":bdelete<CR>", "delete (close) buffer" },
       ["a"] = { ":Alpha<CR>", "alpha start menu" },
       ["e"] = { ":Neotree toggle<CR>", "toggle tree" },
       -- ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
