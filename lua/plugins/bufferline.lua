@@ -3,20 +3,22 @@
 
 local Plugin = { "akinsho/bufferline.nvim" }
 
--- Plugin.commit = "3677aceb9a72630b0613e56516c8f7151b86f95c"
 -- Plugin.event = "VeryLazy"
-
+-- Plugin.version = "*"
+Plugin.dependencies = "nvim-tree/nvim-web-devicons"
 function Plugin.config()
   local bufferline = require("bufferline")
 
   bufferline.setup({
     options = {
-      numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+      mode = "buffers", -- not just vim tabs "tabs",
+      numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
       close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
       left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
       offsets = { { filetype = "neo-tree", text = "", padding = 1 } },
       diagnostics = "nvim_lsp",
-      indicator = { style = "icon", icon = "▎" },
+      -- indicator = { style = "icon", icon = "▎" },
+      indicator = { style = "underline" },
       buffer_close_icon = "",
       modified_icon = "",
       close_icon = "",
@@ -30,6 +32,7 @@ function Plugin.config()
       show_close_icon = true,
       show_tab_indicators = true,
       separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
+      -- separator_style = { "[", "]" }, -- | "thick" | "thin" | { 'any', 'any' },
       enforce_regular_tabs = false,
       view = "multiwindow",
       always_show_bufferline = true,
