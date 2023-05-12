@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # fill out version branch below
-branch="release-0.9"
+version="release-0.9"
+# version="v0.9.0"
 
 srcdir="neovim_src"
 
@@ -13,8 +14,8 @@ if [[ ! -d $srcdir ]]; then
 	git clone https://github.com/neovim/neovim.git $srcdir
 fi
 cd $srcdir
-echo === checkout and pull
-git checkout $branch
+echo === checkout and pull $version
+git checkout $version
 git pull
 
 echo === start build
@@ -24,5 +25,8 @@ echo === build done
 echo === build version
 ./build/bin/nvim --version
 cd ..
+
+echo --- old version
+nvim --version
 
 popd
