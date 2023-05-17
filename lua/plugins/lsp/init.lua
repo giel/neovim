@@ -32,6 +32,13 @@ return {
           },
         },
         dockerls = {},
+        yamlls = {
+          settings = {
+            yaml = {
+              keyOrdering = false,
+            },
+          },
+        },
       },
       setup = {
         lua_ls = function(_, _)
