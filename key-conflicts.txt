@@ -1,0 +1,28 @@
+:verbose map <leader>s
+
+x  <Space>     * <Cmd>lua require("which-key").show(" ", {mode = "v", auto = true})<CR>
+        Last set from Lua
+n  <Space>s    * :w<CR>:luafile %<CR>
+                 save&luafile current buffer
+        Last set from Lua
+n  <Space>sÞ   * <Nop>
+        Last set from Lua
+n  <Space>     * <Cmd>lua require("which-key").show(" ", {mode = "n", auto = true})<CR>
+        Last set from Lua
+n  <Space>sr   * <Lua 11: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:67>
+                 Replace in files (Spectre)
+        Last set from lua
+
+
+:verbose map ys
+
+n  y           * <Cmd>lua require("which-key").show("y", {mode = "n", auto = true})<CR>
+        Last set from Lua
+n  yss         * <Plug>(nvim-surround-normal-cur)
+                 Add a surrounding pair around the current line (normal mode)
+        Last set from Lua
+n  ys          * <Plug>(nvim-surround-normal)
+                 Add a surrounding pair around a motion (normal mode)
+        Last set from Lua
+
+
