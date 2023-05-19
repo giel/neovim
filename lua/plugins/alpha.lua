@@ -36,10 +36,10 @@ return {
       dashboard.button("l", " " .. " Lazy package manager", ":Lazy<CR>"),
       dashboard.button("q", " " .. " Quit", ":qa<CR>"),
     }
-    local function footer()
-      return ":Alpha - https://bitbucket.org/giel/neovim"
-    end
 
+    local function footer()
+      return ":Alpha - https://github.com/giel/neovim.git"
+    end
     dashboard.section.footer.val = footer()
 
     dashboard.section.footer.opts.hl = "Type"
