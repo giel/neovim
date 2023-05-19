@@ -9,6 +9,9 @@ return {
     })
   end,
 }
+
+--  :h nvim-surround.usage.
+
 -- Usage:
 --     Old text                    Command         New text
 -- --------------------------------------------------------------------------------

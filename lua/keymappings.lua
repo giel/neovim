@@ -16,16 +16,9 @@ end
 -- map('n', '<Leader>qa'  , ':qall<CR>')
 -- map('n', '<Leader>qaz' , ':qall!<CR>')
 
--- buffers (and bufferline) actions
-map("n", "<S-t>", [[<Cmd>tabnew<CR>]], opt) -- new tab
-map("n", "<S-x>", [[<Cmd>bdelete<CR>]], opt) -- close tab
-
 -- move between tabs
 map("n", "<TAB>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next Bufferline" })
 map("n", "<S-TAB>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous Bufferline" })
-map("n", "bp", ":BufferLinePick<CR>") -- choose tab letter to activate
-map("n", "bcl", ":BufferLineCloseLeft<CR>") -- close all buffers to the left
-map("n", "bcr", ":BufferLineCloseRight<CR>") -- close all buffers to the right
 
 -- disable Up & Down arrows in insert mode to promote to go to Normal mode ;)
 map("i", "<Up>", "<NOP>")
@@ -64,14 +57,13 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Better indenting
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+map("v", "<", "<gv", { desc = "Move to left" })
+map("v", ">", ">gv", { desc = "Move to right" })
 
 -- file buffer commands
 map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- next clashes with built in window commands.
 -- map({ "i", "v", "n", "s" }, "<C-w>", "<cmd>bdelete<cr><esc>", { desc = "Close file" })
-map("n", "<C-n>", "<cmd>enew<cr>", { desc = "New File" })
 
 -- Illuminate plugin (higlights same words as cursor is on)
 -- map('n', '<a-n>', '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>')
@@ -95,6 +87,8 @@ if status_ok then
       -- see also in keymaps.lua in LSP
       c = {
         name = "+code related",
+        ["S"] = { ":w<CR>:source %<CR>", "save&source current buffer" },
+        ["s"] = { ":w<CR>:luafile %<CR>", "save&luafile current buffer" },
       },
       f = {
         name = "+file Telescope",
@@ -102,6 +96,7 @@ if status_ok then
         f = { ":Telescope find_files<CR>", "Find File" },
         g = { ":Telescope live_grep<CR>", "Grep File" },
         p = { ":Telescope projects<CR>", "Projects" },
+        r = { ":Telescope oldfiles <CR>", "Recent files " },
         n = { ":enew<CR>", "New File" },
       },
       g = {
@@ -118,7 +113,22 @@ if status_ok then
         S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
         e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
       },
+      -- { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
+      s = {
+        name = "Search options",
+        ["r"] = { ":lua require('spectre').open()<CR>", "Replace in files (spectre)" },
+        ["w"] = { ":lua require('spectre').open_visual({select_word=true})<CR>", "Search current word (spectre)" },
+        ["p"] = { ":lua require('spectre').open_file_search({select_word=true})<CR>", "Search current word (spectre)" },
+      },
       t = {
+        name = "tabs/buffers actions",
+        ["n"] = { ":tabnew<CR>", "new tab" },
+        ["x"] = { ":bdelete<CR>", "close tab" },
+        ["p"] = { ":BufferLinePick<CR>", "choose tab letter to activate" },
+        ["l"] = { ":BufferLineCloseLeft<CR>", "close all buffers to the left" },
+        ["r"] = { ":BufferLineCloseRight<CR>", "close all buffers to the right" },
+      },
+      v = {
         name = "Text/view options",
         ["s"] = { ":set spell!<CR>", "toggle spell check" },
         ["w"] = { ":set wrap!<CR>", "toggle word wrap" },
@@ -132,14 +142,16 @@ if status_ok then
       ["e"] = { ":Neotree toggle<CR>", "toggle tree" },
       -- ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
       ["h"] = { ":set hlsearch!<CR>", "toggle search highlight" },
-      ["S"] = { ":w<CR>:source %<CR>", "save&source current buffer" },
-      ["s"] = { ":w<CR>:luafile %<CR>", "save&luafile current buffer" },
       ["/"] = { ":CommentToggle<CR>", "toggle comment" },
       ["?"] = { ":Cheatsheet<CR>", "cheat Sheet" },
     },
   })
   local visualmappings = {
     ["<leader>"] = {
+      s = {
+        name = "Search options",
+        ["w"] = { ":lua require('spectre').open_visual()<CR>", "Search current word (spectre)" },
+      },
       t = {
         name = "+tabularize",
         ["|"] = { "<cmd>Tabularize/|/<CR>", " | " },
