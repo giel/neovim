@@ -9,10 +9,8 @@ return {
   opts = {
     options = {
       icons_enabled = true,
-      --theme = 'material',
-      --theme = 'oceanicnext',
-      --theme = 'tomorrow',
-      -- theme = 'dracula',
+      -- theme = "material",
+      -- theme = "dracula",
       theme = "auto",
       component_separators = { left = "", right = "" }, -- {'', ''},
       section_separators = { left = "", right = "" }, -- {left = '', right = ''},
