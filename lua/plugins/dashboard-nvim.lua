@@ -1,3 +1,6 @@
+-- https://github.com/nvimdev/dashboard-nvim
+-- another blazing fast dashboard
+
 return {
   "glepnir/dashboard-nvim",
   enabled = false,

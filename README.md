@@ -136,7 +136,10 @@ From neovim 0.9 on it is possible to have several 'distros' in separate director
 By switching one environment variable `NVIM_APPNAME` you can choose which one to use.
 This setup will replace the separate branches for distro's.
 
+
 ### use AstroNvim, LazyVim or NvChad
+
+Aliases starting with `nvim-set-` can set a distrobution as a default. `nvim-unset` resets the nvim command to the default nvim. The actual commands behind it are shown below.
 
      export NVIM_APPNAME=nvim-AstroVim
      nvim 
