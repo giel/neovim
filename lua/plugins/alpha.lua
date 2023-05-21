@@ -6,6 +6,7 @@ return {
   "goolord/alpha-nvim",
   -- commit = "3847d6baf74da61e57a13e071d8ca185f104dc96",
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  enabled = true,
   lazy = false,
   config = function()
     local dashboard = require("alpha.themes.dashboard")
