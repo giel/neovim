@@ -12,6 +12,19 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    require("neo-tree").setup()
+    require("neo-tree").setup({
+      sources = {
+        "filesystem",
+        "buffers",
+        "git_status",
+        -- "document_symbols",
+      },
+      filesystem = {
+        follow_current_file = true, -- This will find and focus the file in the active buffer every
+      },
+      buffers = {
+        follow_current_file = true, -- This will find and focus the file in the active buffer every
+      },
+    })
   end,
 }

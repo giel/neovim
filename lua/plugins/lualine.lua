@@ -9,9 +9,17 @@ return {
   opts = {
     options = {
       icons_enabled = true,
+      -- Dark themes
       -- theme = "material",
       -- theme = "dracula",
-      theme = "auto",
+
+      -- Auto generated theme based on colorscheme
+      -- theme = "auto",
+
+      -- Light themes
+      theme = "Tomorrow",
+      -- theme = "onelight",
+      -- theme = "iceberg_light",
       component_separators = { left = "", right = "" }, -- {'', ''},
       section_separators = { left = "", right = "" }, -- {left = '', right = ''},
       disabled_filetypes = {},
