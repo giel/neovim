@@ -115,10 +115,10 @@ if status_ok then
       },
       -- { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
       s = {
-        name = "Search options",
-        ["r"] = { ":lua require('spectre').open()<CR>", "Replace in files (spectre)" },
-        ["w"] = { ":lua require('spectre').open_visual({select_word=true})<CR>", "Search current word (spectre)" },
-        ["p"] = { ":lua require('spectre').open_file_search({select_word=true})<CR>", "Search current word (spectre)" },
+        name = "Search options (spectre)",
+        ["s"] = { ":lua require('spectre').open()<CR>", "Search/Replace in files" },
+        ["w"] = { ":lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
+        ["p"] = { ":lua require('spectre').open_file_search({select_word=true})<CR>", "Search word in current file" },
       },
       t = {
         name = "tabs/buffers actions",
