@@ -123,7 +123,7 @@ if status_ok then
       t = {
         name = "tabs/buffers actions",
         ["n"] = { ":tabnew<CR>", "new tab" },
-        ["x"] = { ":bdelete<CR>", "close tab" },
+        ["x"] = { ":Bdelete<CR>", "close tab" },
         ["p"] = { ":BufferLinePick<CR>", "choose tab letter to activate" },
         ["l"] = { ":BufferLineCloseLeft<CR>", "close all buffers to the left" },
         ["r"] = { ":BufferLineCloseRight<CR>", "close all buffers to the right" },
@@ -137,7 +137,7 @@ if status_ok then
       },
       [","] = { ":bfirst<CR>", "go to first buffer" },
       ["."] = { ":blast<CR>", "go to last buffer" },
-      ["x"] = { ":bdelete<CR>", "delete (close) buffer" },
+      ["x"] = { ":Bdelete<CR>", "delete (close) buffer" },
       ["a"] = { ":Alpha<CR>", "alpha start menu" },
       ["e"] = { ":Neotree toggle<CR>", "toggle tree" },
       -- ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
