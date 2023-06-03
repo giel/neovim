@@ -70,7 +70,7 @@ Manual install
 Start in directory `~/.config/nvim`. If not present, create this directory from the repo and `cd` into it:
 
     cd ~/.config
-    git clone git@bitbucket.org:giel/neovim.git nvim
+    git clone git@github.com:giel/neovim.git nvim
     cd nvim
 
 If previous installation existed, clean caches:
