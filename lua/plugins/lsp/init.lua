@@ -63,9 +63,9 @@ return {
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     opts = {
       ensure_installed = {
+        "gopls",
         "lua-language-server",
         "marksman",
-        "gopls",
         "ruff", -- python linter
         "shfmt",
         "stylua",

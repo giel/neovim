@@ -38,9 +38,9 @@ If above does not suffice check [prerequisites at neovim website](https://github
 
 ### Packages to install for LSP
 
-Via `mgpak` (package installer`):`
+Via `mgpak` (package installer):
 
-- `node` or `npm`
+- `node` or `npm`; preferably via a npm manager like `volta`
 - `prettier` or `npm install --save-dev --save-exact prettier`
 - `stylua`
 - `black` or `pip install black`
