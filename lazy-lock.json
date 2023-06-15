@@ -10,7 +10,7 @@
   "cmp-nvim-lua": { "branch": "main", "commit": "f12408bdb54c39c23e67cab726264c10db33ada8" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "darkplus.nvim": { "branch": "master", "commit": "7c236649f0617809db05cd30fb10fed7fb01b83b" },
-  "fidget.nvim": { "branch": "main", "commit": "f1c375ba68839eaa4a65efdf2aa078c0da0548fe" },
+  "fidget.nvim": { "branch": "main", "commit": "0ba1e16d07627532b6cae915cc992ecac249fb97" },
   "gitsigns.nvim": { "branch": "main", "commit": "4f8f66da9816ec4c4847653c9ab9bcb9c609508c" },
   "inc-rename.nvim": { "branch": "main", "commit": "ed0f6f2b917cac4eb3259f907da0a481b27a3b7e" },
   "indent-blankline.nvim": { "branch": "master", "commit": "7075d7861f7a6bbf0de0298c83f8a13195e6ec01" },

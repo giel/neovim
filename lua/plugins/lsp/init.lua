@@ -7,7 +7,9 @@ return {
       { "folke/neodev.nvim", opts = {
         library = { plugins = { "neotest", "nvim-dap-ui" }, types = true },
       } },
-      { "j-hui/fidget.nvim", config = true },
+      -- fidget: Standalone UI for nvim-lsp progress. Eye candy for the impatient.
+      -- tagged to legacy branch untill refactored
+      { "j-hui/fidget.nvim", config = true, tag = "legacy" },
       { "smjonas/inc-rename.nvim", config = true },
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
