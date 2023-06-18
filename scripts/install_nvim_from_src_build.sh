@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # fill out version branch below
-version="release-0.9"
-# version="v0.9.0"
+# version="release-0.9"
+version="v0.9.1"
 
 srcdir="neovim_src"
 
