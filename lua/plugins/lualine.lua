@@ -1,12 +1,20 @@
 -- https://github.com/hoob3rt/lualine.nvim
 -- Status Line
 
-return {
-  "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  enabled = true,
+local Plugin = { "nvim-lualine/lualine.nvim" }
+Plugin.dependencies = "nvim-tree/nvim-web-devicons"
+Plugin.enabled = true
 
-  opts = {
+-- get the path from lspsaga to show it in the winbar (on top)
+local function pathInCode()
+  hi = require("lspsaga.symbolwinbar"):get_winbar()
+  return hi
+end
+
+function Plugin.config()
+  local lualine = require("lualine")
+
+  lualine.setup({
     options = {
       icons_enabled = true,
       -- Dark themes
@@ -29,8 +37,8 @@ return {
     sections = {
       lualine_a = { { "mode", upper = false } },
       lualine_b = { { "branch", icon = "" } },
-      lualine_c = { { "filename", file_status = true, path = 3 }, "diagnostics", "diff" },
-      lualine_x = { "encoding", "fileformat", "filetype" },
+      lualine_c = { { "filename", file_status = true, path = 0 }, "diff" },
+      lualine_x = { "filesize", "encoding", "fileformat", "filetype" },
       lualine_y = { "progress" },
       lualine_z = { "location" },
     },
@@ -42,7 +50,26 @@ return {
       lualine_y = {},
       lualine_z = { "location" },
     },
+    winbar = {
+      lualine_a = { "diagnostics" },
+      lualine_b = {},
+      lualine_c = { { "filename", file_status = true, path = 3 }, "diff", pathInCode },
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {},
+    },
+
+    inactive_winbar = {
+      lualine_a = { "diagnostics" },
+      lualine_b = {},
+      lualine_c = { { "filename", file_status = true, path = 0 } },
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {},
+    },
     tabline = {},
     extensions = { "neo-tree" },
-  },
-}
+  })
+end
+
+return Plugin

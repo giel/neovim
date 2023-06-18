@@ -1,3 +1,5 @@
+-- lsp functionality starts here!
+--
 return {
   {
     "neovim/nvim-lspconfig",
@@ -124,6 +126,8 @@ return {
       { "<leader>cD", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
     },
   },
+  -- Neovim lsp enhance plugin
+  -- https://github.com/nvimdev/lspsaga.nvim
   {
     "nvimdev/lspsaga.nvim",
     event = "VeryLazy",
@@ -150,12 +154,13 @@ return {
           hover = " ",
           kind = {},
         },
+        -- symbol_in_winbar now shows in lualine
         symbol_in_winbar = {
-          enable = true, -- 'path in code'-line on top
+          enable = false, -- 'path in code'-line on top
           separator = " ",
           ignore_patterns = {},
           hide_keyword = true,
-          show_file = true,
+          show_file = false,
           folder_level = 0,
           respect_root = false,
           color_mode = true,

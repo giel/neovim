@@ -23,6 +23,11 @@ map("n", "<S-TAB>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous Bufferlin
 -- disable Up & Down arrows in insert mode to promote to go to Normal mode ;)
 map("i", "<Up>", "<NOP>")
 map("i", "<Down>", "<NOP>")
+-- even disable ALL arrow keys in normal mode
+-- map("n", "<Up>", "<NOP>")
+-- map("n", "<Down>", "<NOP>")
+-- map("n", "<Left>", "<NOP>")
+-- map("n", "<Right>", "<NOP>")
 
 -- better window movement
 -- map("n", "<C-Left>", "<C-w>h", { desc = "Goto window left" })

@@ -6,6 +6,7 @@ local Plugin = { "akinsho/bufferline.nvim" }
 -- Plugin.event = "VeryLazy"
 -- Plugin.version = "*"
 Plugin.dependencies = "nvim-tree/nvim-web-devicons"
+Plugin.enabled = true
 function Plugin.config()
   local bufferline = require("bufferline")
 
