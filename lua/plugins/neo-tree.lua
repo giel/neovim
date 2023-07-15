@@ -25,6 +25,26 @@ return {
       buffers = {
         follow_current_file = true, -- This will find and focus the file in the active buffer every
       },
+      -- icons needed for nerd font v3 users, which probably is configured
+      default_component_configs = {
+        icon = {
+          folder_empty = "",
+          folder_empty_open = "",
+        },
+        git_status = {
+          symbols = {
+            renamed = "󰁕",
+            unstaged = "󰄱",
+          },
+        },
+      },
+      -- Add this section only if you've configured source selector.
+      source_selector = {
+        sources = {
+          { source = "filesystem", display_name = " 󰉓 Files " },
+          { source = "git_status", display_name = " 󰊢 Git " },
+        },
+      },
     })
   end,
 }
