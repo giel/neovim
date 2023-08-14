@@ -33,7 +33,7 @@ return {
       dashboard.button("e", " " .. " Explore files", ":Neotree toggle<CR>"),
       dashboard.button("c", " " .. " Config", ":e " .. vim.fn.stdpath("config") .. "/init.lua <CR>"),
       dashboard.button("v", " " .. " Neovim version", ":version<CR>"),
-      dashboard.button("h", " " .. " Check health", ":checkhealth<CR>"),
+      dashboard.button("h", "󰋠 " .. " Check health", ":checkhealth<CR>"),
       dashboard.button("l", " " .. " Lazy package manager", ":Lazy<CR>"),
       dashboard.button("q", " " .. " Quit", ":qa<CR>"),
     }

@@ -13,6 +13,7 @@ Plugin.config = function()
   treesitter.setup({
     ensure_installed = {
       "bash",
+      "c",
       "c_sharp",
       "css",
       "go",
