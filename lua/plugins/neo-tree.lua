@@ -19,12 +19,9 @@ return {
         "git_status",
         -- "document_symbols",
       },
-      filesystem = {
-        follow_current_file = true, -- This will find and focus the file in the active buffer every
-      },
-      buffers = {
-        follow_current_file = true, -- This will find and focus the file in the active buffer every
-      },
+      filesystem = { follow_current_file = { enabled = true } }, -- This will find and focus the file in the active buffer every
+      buffers = { follow_current_file = { enabled = true} } , -- This will find and focus the file in the active buffer every
+
       -- icons needed for nerd font v3 users, which probably is configured
       default_component_configs = {
         icon = {
