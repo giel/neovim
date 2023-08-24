@@ -1,3 +1,4 @@
+local icons = require("plugins.config.icons")
 -- Neovim lsp enhance plugin
 -- https://github.com/nvimdev/lspsaga.nvim
 return {
@@ -18,12 +19,12 @@ return {
         -- Border type can be single, double, rounded, solid, shadow.
         border = "single",
         winblend = 0,
-        expand = "",
-        collapse = "",
-        code_action = "💡",
-        incoming = " ",
-        outgoing = " ",
-        hover = " ",
+        expand = icons.ui.ChevronRight,
+        collapse = icons.ui.ChevronShortDown,
+        code_action = icons.ui.Lightbulb, -- "💡"
+        incoming = icons.lpsaga.incoming,
+        outgoing = icons.lpsaga.outgoing,
+        hover = icons.lpsaga.hover,
         kind = {},
       },
       -- symbol_in_winbar now shows in lualine
