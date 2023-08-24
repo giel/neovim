@@ -1,6 +1,7 @@
 -- https://github.com/hrsh7th/nvim-cmp
 -- code completion
 
+local icons = require("plugins.config.icons")
 local M = {
   "hrsh7th/nvim-cmp",
   enabled = true,
@@ -17,33 +18,33 @@ local M = {
 
 -- TODO change to use config.icons
 --   פּ ﯟ   some other good icons
-local kind_icons = {
-  Class = "",
-  Color = "",
-  Constant = "",
-  Constructor = "",
-  Enum = "",
-  EnumMember = "",
-  Event = "",
-  Field = "",
-  File = "",
-  Folder = "",
-  Function = "",
-  Interface = "",
-  Keyword = "",
-  Method = "m",
-  Module = "",
-  Operator = "",
-  Property = "",
-  Reference = "",
-  Snippet = "",
-  Struct = "",
-  Text = "",
-  TypeParameter = "",
-  Unit = "",
-  Value = "",
-  Variable = "",
-}
+-- local kind_icons = {
+--   Class = icons.kind.Class,
+--   Color = icons.kind.Color,
+--   Constant = icons.kind.Constant,
+--   Constructor = "",
+--   Enum = "",
+--   EnumMember = "",
+--   Event = "",
+--   Field = "",
+--   File = icons.kind.File,
+--   Folder = icons.kind.Folder,
+--   Function = icons.kind.Function,
+--   Interface = "",
+--   Keyword = "",
+--   Method = "m",
+--   Module = "",
+--   Operator = "icons.kind.Operator",
+--   Property = "",
+--   Reference = "",
+--   Snippet = "",
+--   Struct = "",
+--   Text = icons.kind.Text,
+--   TypeParameter = icons.kind.TypeParameter,
+--   Unit = "",
+--   Value = icons.kind.Value,
+--   Variable = icons.kind.Variable,
+-- }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 local check_backspace = function()
@@ -120,8 +121,8 @@ function M.config()
       fields = { "kind", "abbr", "menu" },
       format = function(entry, vim_item)
         -- Kind icons
-        vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-        -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+        -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+        vim_item.kind = string.format("%s", icons.kind[vim_item.kind])
         vim_item.menu = ({
           nvim_lsp = "[LSP]",
           luasnip = "[Snippet]",
