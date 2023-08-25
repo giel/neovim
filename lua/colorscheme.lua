@@ -1,3 +1,4 @@
+-- for now colorscheme is choosen in plugins/colorschemes
 vim.cmd([[
 try
   colorscheme onedarker-giel

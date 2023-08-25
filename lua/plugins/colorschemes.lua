@@ -4,7 +4,15 @@ return {
     -- make sure to load this befora all the other start plugins (50 = default)
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme onedarker-giel]])
+      -- vim.cmd([[colorscheme onedarker-giel]])
+      vim.cmd([[
+      try
+        colorscheme onedarker-giel
+      catch /^Vim\%((\a\+)\)\=:E185/
+        colorscheme default
+        set background=dark
+      endtry
+      ]])
     end,
   },
   -- some other nice schemes

@@ -5,8 +5,9 @@ local Plugin = { "akinsho/bufferline.nvim" }
 
 -- Plugin.event = "VeryLazy"
 -- Plugin.version = "*"
-Plugin.dependencies = "nvim-tree/nvim-web-devicons"
+Plugin.dependencies = { "nvim-tree/nvim-web-devicons", }
 Plugin.enabled = true
+
 function Plugin.config()
   local bufferline = require("bufferline")
 
@@ -18,8 +19,6 @@ function Plugin.config()
       left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
       offsets = { { filetype = "neo-tree", text = "", padding = 1 } },
       diagnostics = "nvim_lsp",
-      -- indicator = { style = "icon", icon = "▎" },
-      indicator = { style = "underline" },
       buffer_close_icon = "󰅙",
       modified_icon = "",
       close_icon = "󰅙",
@@ -39,19 +38,27 @@ function Plugin.config()
       always_show_bufferline = true,
     },
     highlights = {
-      background = {
-        fg = "#999999",
-        bg = "#000000",
-      },
-      buffer_visible = {
-        fg = "#999999",
-        bg = "#000000",
-      },
       buffer_selected = {
-        fg = "#ffffff",
-        bg = "#000000",
+        fg = {
+            attribute = "fg",
+            highlight = "CursorLine",
+        },
+        bg = {
+            attribute = "bg",
+            highlight = "CursorLine",
+        },
         bold = true,
         italic = true,
+      },
+      close_button_selected = {
+        fg = {
+            attribute = "fg",
+            highlight = "CursorLine"
+        },
+        bg = {
+            attribute = "bg",
+            highlight = "CursorLine"
+        },
       },
     },
   })
