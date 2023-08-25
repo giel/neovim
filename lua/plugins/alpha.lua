@@ -4,8 +4,8 @@
 return {
 
   "goolord/alpha-nvim",
-  -- commit = "3847d6baf74da61e57a13e071d8ca185f104dc96",
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  event = "VimEnter",
   enabled = true,
   lazy = false,
   config = function()
@@ -35,6 +35,7 @@ return {
       dashboard.button("v", " " .. " Neovim version", ":version<CR>"),
       dashboard.button("h", "󰋠 " .. " Check health", ":checkhealth<CR>"),
       dashboard.button("l", " " .. " Lazy package manager", ":Lazy<CR>"),
+      dashboard.button("m", " " .. " Mason package manager", ":Mason<CR>"),
       dashboard.button("q", " " .. " Quit", ":qa<CR>"),
     }
 

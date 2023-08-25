@@ -13,6 +13,8 @@ end
 
 function Plugin.config()
   local lualine = require("lualine")
+  -- to configure lazy pending updates count
+  local lazy_status = require("lazy.status")
 
   lualine.setup({
     options = {
@@ -38,7 +40,17 @@ function Plugin.config()
       lualine_a = { { "mode", upper = false } },
       lualine_b = { { "branch", icon = "" } },
       lualine_c = { { "filename", file_status = true, path = 0 }, "diff" },
-      lualine_x = { "filesize", "encoding", "fileformat", "filetype" },
+      lualine_x = {
+        {
+          lazy_status.updates,
+          cond = lazy_status.has_updates,
+          color = { fg = "#ff9e64" },
+        },
+        "filesize",
+        "encoding",
+        "fileformat",
+        "filetype",
+      },
       lualine_y = { "progress" },
       lualine_z = { "location" },
     },

@@ -1,4 +1,5 @@
 -- Global icons for use everywhere
+-- find more here: https://www.nerdfonts.com/cheat-sheet
 return {
   kind = {
     Array = "",
