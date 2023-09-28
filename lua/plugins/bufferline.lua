@@ -5,7 +5,7 @@ local Plugin = { "akinsho/bufferline.nvim" }
 
 -- Plugin.event = "VeryLazy"
 -- Plugin.version = "*"
-Plugin.dependencies = { "nvim-tree/nvim-web-devicons", }
+Plugin.dependencies = { "nvim-tree/nvim-web-devicons" }
 Plugin.enabled = true
 
 function Plugin.config()
@@ -40,24 +40,24 @@ function Plugin.config()
     highlights = {
       buffer_selected = {
         fg = {
-            attribute = "fg",
-            highlight = "CursorLine",
+          attribute = "fg",
+          highlight = "CursorLine",
         },
         bg = {
-            attribute = "bg",
-            highlight = "CursorLine",
+          attribute = "bg",
+          highlight = "CursorLine",
         },
         bold = true,
         italic = true,
       },
       close_button_selected = {
         fg = {
-            attribute = "fg",
-            highlight = "CursorLine"
+          attribute = "fg",
+          highlight = "CursorLine",
         },
         bg = {
-            attribute = "bg",
-            highlight = "CursorLine"
+          attribute = "bg",
+          highlight = "CursorLine",
         },
       },
     },
