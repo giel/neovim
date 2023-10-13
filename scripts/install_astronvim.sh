@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 srcdir="nvim-AstroNvim"
 giturl=https://github.com/AstroNvim/AstroNvim

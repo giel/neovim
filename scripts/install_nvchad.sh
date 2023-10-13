@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 srcdir="nvim-NvChad"
 giturl="https://github.com/NvChad/NvChad"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 srcdir="nvim-LazyVim"
 giturl=https://github.com/LazyVim/starter
