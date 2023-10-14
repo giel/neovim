@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # clean_nvim_caches
 
 # rm ~/.config/nvim/plugin/packer_compiled.lua

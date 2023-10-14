@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # todo check if it works for linux
 
@@ -14,4 +14,3 @@ sudo rm -f /usr/local/share/locale/*/LC_MESSAGES/nvim.mo
 sudo rm -rd /usr/local/share/nvim/*
 
 echo === uninstall done
-
