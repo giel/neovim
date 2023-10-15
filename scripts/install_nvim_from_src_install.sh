@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # probably only works for linux
 
 pushd ~/.config/nvim/
 
-# clone version and build it 
+# clone version and build it
 cd neovim_src
 
 echo === start install
