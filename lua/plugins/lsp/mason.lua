@@ -7,26 +7,13 @@ return {
   event = "BufReadPre",
   keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
   opts = {
-    ensure_installed = {
-      "gopls",
-      "lua-language-server",
-      "marksman",
-      "ruff", -- python linter
-      "shfmt",
-      "stylua",
-      "yaml-language-server",
-      -- "codelldb", --debugger
-      -- "debugpy",
-    },
-  },
-  config = function(_, opts)
-    require("mason").setup()
-    local mr = require("mason-registry")
-    for _, tool in ipairs(opts.ensure_installed) do
-      local p = mr.get_package(tool)
-      if not p:is_installed() then
-        p:install()
-      end
-    end
-  end,
+		ui = {
+			icons = {
+				package_installed = "✓",
+				package_pending = "➜",
+				package_uninstalled = "✗",
+			},
+		},
+	},
+  
 }
