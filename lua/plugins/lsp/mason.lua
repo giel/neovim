@@ -4,6 +4,7 @@
 return {
   "williamboman/mason.nvim",
   cmd = "Mason",
+  event = "BufReadPre",
   keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
   opts = {
     ensure_installed = {
