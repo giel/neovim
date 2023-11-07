@@ -4,6 +4,7 @@ local opts = {
     "gopls",
     "lua-language-server",
     "marksman",
+    "nil", -- Nix
     "ruff", -- python linter
     "shfmt",
     "stylua",
