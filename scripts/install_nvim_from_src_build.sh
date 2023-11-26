@@ -2,7 +2,7 @@
 
 # fill out version branch below
 # version="release-0.9"
-version="v0.9.1"
+version="v0.9.4"
 
 srcdir="neovim_src"
 
