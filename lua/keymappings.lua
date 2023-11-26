@@ -183,6 +183,11 @@ if vim.fn.has("mac") == 1 then
   map("", "gx", '<Cmd>call jobstart(["open", expand("<cfile>")], {"detach": v:true})<CR>')
 elseif vim.fn.has("unix") == 1 then
   map("", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>')
+elseif vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+  -- nnoremap <silent> <2-LeftMouse> :let url = expand('<cfile>')<CR>:if !empty(url)<CR>:silent! !start <c-r>=url<CR><CR>:endif<CR>
+  map("", "gx", ":let url = expand('<cfile>')<CR>:if !empty(url)<CR>:silent! !start <c-r>=url<CR><CR>:endif<CR>")
+  -- this works from commandline:
+  -- !start http://google.com
 else
   map("", "gx", '<Cmd>lua print("Error: gx is not supported on this OS!")<CR>')
 end
