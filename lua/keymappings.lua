@@ -40,10 +40,10 @@ map("n", "<C-S-Left>", ":vertical resize -2<CR>")
 map("n", "<C-S-Right>", ":vertical resize +2<CR>")
 
 -- window movement and resize with vim keys
--- map("n", "<C-h>", "<C-w>h", { desc = "Goto window left" })
--- map("n", "<C-l>", "<C-w>l", { desc = "Goto window right" })
--- map("n", "<C-k>", "<C-w>k", { desc = "Goto window up" })
--- map("n", "<C-j>", "<C-w>j", { desc = "Goto window down" })
+map("n", "<C-h>", "<C-w>h", { desc = "Goto window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "Goto window right" })
+map("n", "<C-k>", "<C-w>k", { desc = "Goto window up" })
+map("n", "<C-j>", "<C-w>j", { desc = "Goto window down" })
 -- -- with shift interferes with wezterm
 -- -- map("n", "<C-S-j>", ":resize -2<CR>")
 -- -- map("n", "<C-S-k>", ":resize +2<CR>")
