@@ -9,3 +9,8 @@ if [[ ! -d $srcdir ]]; then
 fi
 
 popd
+
+echo
+echo "Maybe use one of the aliases to activate this nvim version you can find with:"
+echo "alias | grep nvim"
+echo
