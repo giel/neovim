@@ -2,15 +2,15 @@
 
 # probably only works for linux
 
-pushd ~/.config/nvim/
+pushd ~/.config/nvim/ || exit
 
 # clone version and build it
-cd neovim_src
+cd neovim_src || exit
 
-echo === start install
+echo "=== start install"
 make CMAKE_BUILD_TYPE=Release
 sudo make install
 cd ..
-echo === build install
+echo "=== build install"
 
-popd
+popd || exit

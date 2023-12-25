@@ -2,10 +2,10 @@
 
 # probably only works for linux
 
-pushd ~/.config/nvim/
+pushd ~/.config/nvim/ || exit
 
-echo === removing build directory
+echo "=== removing build directory"
 rm -rf neovim_src/*
 rm -rf neovim_src/.*
 rmdir neovim_src
-popd
+popd || exit
