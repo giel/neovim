@@ -1,5 +1,3 @@
-local opt = { noremap = true, silent = true }
-
 --Leader key already defined in Lazy
 
 local function map(mode, lhs, rhs, opts)
