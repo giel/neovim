@@ -7,13 +7,13 @@ return {
   event = "BufReadPre",
   keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
   opts = {
-		ui = {
-			icons = {
-				package_installed = "✓",
-				package_pending = "➜",
-				package_uninstalled = "✗",
-			},
-		},
-	},
-
+    ui = {
+      border = "single", -- ex: none, double, shadow. See help nvim_open_win "border"
+      icons = {
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗",
+      },
+    },
+  },
 }
