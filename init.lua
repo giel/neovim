@@ -1,6 +1,8 @@
 -- General mappings
 require("settings")
 require("lazyinit")
+-- plugins are defined in lua/plugins
+
 -- for now colorscheme is choosen in plugins/colorschemes
 -- require("colorscheme")
 
