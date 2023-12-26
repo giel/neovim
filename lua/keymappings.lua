@@ -127,7 +127,10 @@ if status_ok then
         name = "Search options (spectre)",
         ["s"] = { ":lua require('spectre').open()<CR>", "Search/Replace in files" },
         ["w"] = { ":lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
-        ["p"] = { ":lua require('spectre').open_file_search({select_word=true})<CR>", "Search word in current file" },
+        ["p"] = {
+          ":lua require('spectre').open_file_search({select_word=true})<CR>",
+          "Search word in current file",
+        },
       },
       t = {
         name = "tabs/buffers actions",
@@ -184,8 +187,8 @@ elseif vim.fn.has("unix") == 1 then
 elseif vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
   -- nnoremap <silent> <2-LeftMouse> :let url = expand('<cfile>')<CR>:if !empty(url)<CR>:silent! !start <c-r>=url<CR><CR>:endif<CR>
   map("", "gx", ":let url = expand('<cfile>')<CR>:if !empty(url)<CR>:silent! !start <c-r>=url<CR><CR>:endif<CR>")
-  -- this works from commandline:
-  -- !start http://google.com
+-- this works from commandline:
+-- !start http://google.com
 else
   map("", "gx", '<Cmd>lua print("Error: gx is not supported on this OS!")<CR>')
 end

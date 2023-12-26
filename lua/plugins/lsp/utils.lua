@@ -7,7 +7,7 @@ local CODE_ACTION = require("null-ls").methods.CODE_ACTION
 local HOVER = require("null-ls").methods.HOVER
 
 local function list_registered_providers_names(ft)
-  local s = require "null-ls.sources"
+  local s = require("null-ls.sources")
   local available_sources = s.get_available(ft)
   local registered = {}
   for _, source in ipairs(available_sources) do

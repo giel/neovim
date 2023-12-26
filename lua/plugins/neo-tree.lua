@@ -4,12 +4,12 @@
 -- or all of them at once!
 return {
   "nvim-neo-tree/neo-tree.nvim",
-   branch = "v3.x",
-   enabled = true,
-   dependencies = {
-     "nvim-lua/plenary.nvim",
-     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-     "MunifTanjim/nui.nvim",
+  branch = "v3.x",
+  enabled = true,
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "MunifTanjim/nui.nvim",
   },
   config = function()
     require("neo-tree").setup({
@@ -20,7 +20,7 @@ return {
         -- "document_symbols",
       },
       filesystem = { follow_current_file = { enabled = true } }, -- This will find and focus the file in the active buffer every
-      buffers = { follow_current_file = { enabled = true} } , -- This will find and focus the file in the active buffer every
+      buffers = { follow_current_file = { enabled = true } }, -- This will find and focus the file in the active buffer every
 
       -- icons needed for nerd font v3 users, which probably is configured
       default_component_configs = {
