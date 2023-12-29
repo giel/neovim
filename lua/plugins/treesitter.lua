@@ -19,7 +19,6 @@ Plugin.config = function()
       "go",
       "gomod",
       "hcl",
-      "vimdoc",
       "html",
       "json",
       "lua",
@@ -29,10 +28,13 @@ Plugin.config = function()
       "query",
       "toml",
       "vim",
+      "vimdoc",
       "yaml",
     },
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
     ignore_install = { "" }, -- List of parsers to ignore installing for "all"
+    -- check this together with mason
+    auto_install = true,
     autopairs = {
       enable = true,
     },
@@ -45,6 +47,17 @@ Plugin.config = function()
     context_commentstring = {
       enable = true,
       enable_autocmd = false,
+    },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        -- todo add to keymaps
+        -- set to `false` to disable one of the mappings
+        init_selection = "<Leader>is",
+        node_incremental = "<Leader>ii",
+        scope_incremental = "<Leader>iS",
+        node_decremental = "<Leader>id",
+      },
     },
   })
 

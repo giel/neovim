@@ -111,6 +111,9 @@ if status_ok then
       g = {
         name = "+goto related",
       },
+      i = {
+        name = "increment selection related",
+      },
       l = {
         -- LSP mapping see also lsp.handlers
         name = "LSP",
