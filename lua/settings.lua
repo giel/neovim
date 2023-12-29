@@ -41,6 +41,7 @@ vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("c")                   -- don't show redundant messages from ins-completion-menu
 vim.opt.whichwrap:append("<,>,[,],h,l")         -- move to next line with theses keys
 vim.opt.iskeyword:append("-")                   -- Treat dash separated words as a word text object"
+vim.opt.virtualedit = "block"                   -- allow cursor placement where there is no character (only block mode) 
 vim.opt.encoding = "UTF-8"
 -- stylua: ignore end
 -------------------------------------------------------------------------------
