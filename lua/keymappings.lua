@@ -154,8 +154,6 @@ if status_ok then
       ["."] = { ":blast<CR>", "go to last buffer" },
       ["x"] = { ":Bdelete<CR>", "delete (close) buffer" },
       ["a"] = { ":Alpha<CR>", "alpha start menu" },
-      ["e"] = { ":Neotree toggle<CR>", "toggle tree" },
-      -- ["e"] = { ":NvimTreeToggle<CR>"      , "toggle tree" }                ,
       ["h"] = { ":set hlsearch!<CR>", "toggle search highlight" },
       ["/"] = { ":CommentToggle<CR>", "toggle comment" },
       ["?"] = { ":Cheatsheet<CR>", "cheat Sheet" },

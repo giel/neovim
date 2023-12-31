@@ -3,7 +3,7 @@
 
 return {
   "terrortylor/nvim-comment",
-  -- commit = "e9ac16ab056695cad6461173693069ec070d2b23" ,
+  cmd = "CommentToggle",
 
   config = function()
     require("nvim_comment").setup({
@@ -16,11 +16,11 @@ return {
       -- Should key mappings be created
       create_mappings = false,
       -- Normal mode mapping left hand side
-      line_mapping = "gcc",
+      -- line_mapping = "<leader>/",
       -- Visual/Operator mapping left hand side
-      operator_mapping = "gc",
+      -- operator_mapping = "<leader>/",
       -- text object mapping, comment chunk,,
-      comment_chunk_text_object = "ic",
+      -- comment_chunk_text_object = "ic",
       -- Hook function to call before commenting takes place
       hook = nil,
     })

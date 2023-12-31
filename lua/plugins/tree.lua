@@ -3,12 +3,15 @@
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 
-local Plugin = { "nvim-tree/nvim-tree.lua" }
+local Plugin = {
+  "nvim-tree/nvim-tree.lua",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  enabled = false,
+  cmd = "NvimTreeToggle",
+  keys = { { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NeoTree" } },
+}
 
 -- Plugin.version = "*"
-
-Plugin.enabled = false
-Plugin.dependencies = { "nvim-tree/nvim-web-devicons" }
 
 function Plugin.config()
   local function on_attach(bufnr)

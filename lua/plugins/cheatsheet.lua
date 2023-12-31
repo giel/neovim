@@ -1,7 +1,14 @@
 -- https://github.com/sudormrfbin/cheatsheet.nvim
 -- cheesheet for cheetsheet.txt
 
-local Plugin = { "sudormrfbin/cheatsheet.nvim" }
+local Plugin = {
+  "sudormrfbin/cheatsheet.nvim",
+
+  cmd = "Cheatsheet",
+  keys = {
+    { "?", "<cmd>Cheatsheet<CR>", desc = "cheat Sheet" },
+  },
+}
 
 -- Plugin.commit = "9716f9aaa94dd1fd6ce59b5aae0e5f25e2a463ef"
 
