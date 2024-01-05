@@ -1,13 +1,16 @@
 return {
   {
     "giel/onedarker-giel.nvim",
+    -- "rebelot/kanagawa.nvim",
+
     -- make sure to load this befora all the other start plugins (50 = default)
     priority = 1000,
     config = function()
       -- vim.cmd([[colorscheme onedarker-giel]])
       vim.cmd([[
       try
-        colorscheme onedarker-giel
+      colorscheme onedarker-giel
+      " colorscheme kanagawa
       catch /^Vim\%((\a\+)\)\=:E185/
         colorscheme default
         set background=dark
@@ -24,4 +27,5 @@ return {
   -- { "tomasiser/vim-code-dark" },
   -- { "tomasr/molokai" },
   -- { "lunarvim/darkplus.nvim" },
+  -- { "rebelot/kanagawa.nvim" }
 }
