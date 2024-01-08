@@ -14,10 +14,6 @@ end
 -- map('n', '<Leader>qa'  , ':qall<CR>')
 -- map('n', '<Leader>qaz' , ':qall!<CR>')
 
--- move between tabs
-map("n", "<TAB>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next Bufferline" })
-map("n", "<S-TAB>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous Bufferline" })
-
 -- disable Up & Down arrows in insert mode to promote to go to Normal mode ;)
 map("i", "<Up>", "<NOP>")
 map("i", "<Down>", "<NOP>")
@@ -57,7 +53,7 @@ map("n", "<C-j>", "<C-w>j", { desc = "Goto window down" })
 map("i", "jk", "<ESC>")
 map("i", "kj", "<ESC>")
 
--- Move Lines
+-- Move Lines (does not seem to work om MacOS in Alacritty)
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
 map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
@@ -150,9 +146,14 @@ if status_ok then
         ["0"] = { ":set relativenumber!<CR>", "toggle rel. line #" },
         ["9"] = { ":set number!<CR>", "toggle line #" },
       },
-      [","] = { ":bfirst<CR>", "go to first buffer" },
-      ["."] = { ":blast<CR>", "go to last buffer" },
-      ["x"] = { ":Bdelete<CR>", "delete (close) buffer" },
+      -- ["."] = { ":BufferLineCycleNext<CR>", "next Bufferline" },
+      -- [","] = { ":BufferLineCyclePrev<CR>", "previous Bufferline" },
+      -- ["x"] = { ":Bdelete<CR>", "delete (close) buffer" },
+      [","] = { ":bprevious<CR>", "previous buffer" },
+      ["."] = { ":bnext<CR>", "next buffer" },
+      ["<"] = { ":bfirst<CR>", "go to first buffer" },
+      [">"] = { ":blast<CR>", "go to last buffer" },
+      ["x"] = { ":bdelete<CR>", "delete (close) buffer" },
       ["a"] = { ":Alpha<CR>", "alpha start menu" },
       ["h"] = { ":set hlsearch!<CR>", "toggle search highlight" },
       ["/"] = { ":CommentToggle<CR>", "toggle comment" },
