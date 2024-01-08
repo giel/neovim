@@ -11,8 +11,7 @@ return {
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
   },
-  cmd = "Neotree",
-  keys = { { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree" } },
+  -- no lazy loading to allow opening directories from shell commandline
   config = function()
     require("neo-tree").setup({
       sources = {
@@ -21,7 +20,10 @@ return {
         "git_status",
         -- "document_symbols",
       },
-      filesystem = { follow_current_file = { enabled = true } }, -- This will find and focus the file in the active buffer every
+      filesystem = {
+        follow_current_file = { enabled = true }, -- This will find and focus the file in the active buffer every
+        hijack_netrw_behaviour = "open_default",
+      },
       buffers = { follow_current_file = { enabled = true } }, -- This will find and focus the file in the active buffer every
 
       -- icons needed for nerd font v3 users, which probably is configured

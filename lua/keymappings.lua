@@ -148,16 +148,17 @@ if status_ok then
       },
       -- ["."] = { ":BufferLineCycleNext<CR>", "next Bufferline" },
       -- [","] = { ":BufferLineCyclePrev<CR>", "previous Bufferline" },
-      -- ["x"] = { ":Bdelete<CR>", "delete (close) buffer" },
       [","] = { ":bprevious<CR>", "previous buffer" },
       ["."] = { ":bnext<CR>", "next buffer" },
       ["<"] = { ":bfirst<CR>", "go to first buffer" },
       [">"] = { ":blast<CR>", "go to last buffer" },
-      ["x"] = { ":bdelete<CR>", "delete (close) buffer" },
+      -- Bdelete allows closing buffers without closing window (unlike bdelete)
+      ["x"] = { ":Bdelete<CR>", "delete (close) buffer" },
       ["a"] = { ":Alpha<CR>", "alpha start menu" },
       ["h"] = { ":set hlsearch!<CR>", "toggle search highlight" },
       ["/"] = { ":CommentToggle<CR>", "toggle comment" },
       ["?"] = { ":Cheatsheet<CR>", "cheat Sheet" },
+      ["e"] = { ":Neotree toggle<cr>", "NeoTree" },
     },
   })
   local visualmappings = {
