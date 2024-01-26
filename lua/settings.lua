@@ -1,15 +1,13 @@
 -- stylua: ignore start
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
-vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
+vim.opt.cmdheight = 1                           -- normal space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone","noinsert", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
 vim.opt.hlsearch = true                         -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true                       -- ignore case in search patterns
-vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
-vim.opt.pumheight = 10                          -- pop up menu height
-vim.opt.showmode = false                        -- we don't need to see things like                                                                                                        -- INSERT -- anymore
+vim.opt.showmode = false                        -- mode already shown in lualine
 vim.opt.showtabline = 2                         -- always show tabs
 vim.opt.smartcase = true                        -- smart case
 vim.opt.smartindent = true                      -- make indenting smarter again
@@ -18,6 +16,7 @@ vim.opt.splitright = true                       -- force all vertical splits to 
 vim.opt.swapfile = false                        -- creates a swapfile
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 vim.opt.timeoutlen = 200                        -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.ttimeoutlen = 0                         -- fix slight delay after pressing ESC then O ?
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program) it is not allowed to be edited
@@ -34,7 +33,7 @@ vim.opt.signcolumn = "yes"                      -- always show the sign column, 
 vim.o.spell = false                             -- start with spell check off
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.linebreak = true                        -- do nice line breaks
-vim.opt.scrolloff = 8                           -- is one of my fav
+vim.opt.scrolloff = 8                           -- start scrolling 8 lines from bottom or top
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.fillchars.eob = " "
@@ -42,6 +41,7 @@ vim.opt.shortmess:append("c")                   -- don't show redundant messages
 vim.opt.whichwrap:append("<,>,[,],h,l")         -- move to next line with theses keys
 vim.opt.iskeyword:append("-")                   -- Treat dash separated words as a word text object"
 vim.opt.virtualedit = "block"                   -- allow cursor placement where there is no character (only block mode) 
+vim.opt.lazyredraw = true                       -- don't bother updating screen during macro playback
 vim.opt.encoding = "UTF-8"
 -- stylua: ignore end
 -------------------------------------------------------------------------------
