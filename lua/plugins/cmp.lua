@@ -30,6 +30,13 @@ function M.config()
 
     completion = {
       completeopt = "menu,menuone,noinsert",
+      -- keyword_length = 2, -- Minimum length of a word to trigger completion
+    },
+
+    performance = {
+      debounce = 1000, -- This is the interval used to group up completions from different sources  for filtering and displaying.
+      throttle = 300, -- This is used to delay filtering and displaying completions.
+      -- fetching_timeout = 200, -- Sets the timeout of candidate fetching process. The nvim-cmp will wait to display the most prioritized source.
     },
 
     snippet = {
