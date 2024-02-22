@@ -14,6 +14,7 @@ return {
   -- no lazy loading to allow opening directories from shell commandline
   config = function()
     require("neo-tree").setup({
+      sort_case_insensitive = true, -- used when sorting files and directories in the tree
       sources = {
         "filesystem",
         "buffers",
