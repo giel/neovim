@@ -4,8 +4,6 @@
 
 local Plugin = { "nvim-telescope/telescope.nvim" }
 
--- Plugin.commit = "a486ac3e8fb2198f3636da1927ed57a28836fbd8"
-
 Plugin.cmd = "Telescope"
 
 function Plugin.config()
