@@ -174,6 +174,7 @@ if status_ok then
         ["d"] = { "<cmd>Tabularize/--/<CR>", " -- " },
         ["="] = { "<cmd>Tabularize/=/<CR>", " = " },
         [","] = { "<cmd>Tabularize/,/<CR>", " , " },
+        [":"] = { "<cmd>Tabularize/:/<CR>", " : " },
       },
 
       ["/"] = { ":CommentToggle<CR>", "toggle comments" },

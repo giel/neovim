@@ -25,8 +25,7 @@ vim.opt.shiftwidth = 2                          -- the number of spaces inserted
 vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
 vim.opt.cursorline = true                       -- highlight the current line
 
--- Set cursor shape in normal mode to vertical bar
--- Set cursor shape in insert mode to horizontal line
+-- Set cursor shape in normal mode to vertical bar,and in insert mode to horizontal line
 vim.opt.guicursor= 'n-v-c:ver5,i-ci:hor20-Cursor/lCursor'
 
 vim.opt.number = true                           -- set numbered lines
