@@ -14,6 +14,9 @@ end
 -- map('n', '<Leader>qa'  , ':qall<CR>')
 -- map('n', '<Leader>qaz' , ':qall!<CR>')
 
+-- ESC to turn off highlighted text
+map("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
 -- disable Up & Down arrows in insert mode to promote to go to Normal mode ;)
 map("i", "<Up>", "<NOP>")
 map("i", "<Down>", "<NOP>")
@@ -91,7 +94,7 @@ if status_ok then
       },
       -- see also in keymaps.lua in LSP
       c = {
-        name = "+code related",
+        { name = "+code related", _ = "which_key_ignore" },
         ["S"] = { ":w<CR>:source %<CR>", "save&source current buffer" },
         ["s"] = { ":w<CR>:luafile %<CR>", "save&luafile current buffer" },
       },
