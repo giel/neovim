@@ -97,6 +97,8 @@ if status_ok then
         { name = "+code related", _ = "which_key_ignore" },
         ["S"] = { ":w<CR>:source %<CR>", "save&source current buffer" },
         ["s"] = { ":w<CR>:luafile %<CR>", "save&luafile current buffer" },
+        ["t"] = { ":Trim<CR>", "remove trailing space" },
+        ["T"] = { ":TrimToggle<CR>", "Toggle trim on save" },
       },
       f = {
         name = "+file Telescope",
