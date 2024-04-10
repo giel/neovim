@@ -4,6 +4,7 @@
 return {
   "kdheepak/lazygit.nvim",
   enabled = true,
+  lazy = true,
   keys = {
     { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
   },
