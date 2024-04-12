@@ -126,7 +126,12 @@ if status_ok then
         S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
         e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
       },
-      -- { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
+      o = {
+        name = "Obsidian options",
+        ["o"] = { ":ObsidianOpen<CR>", "Open buffer in Obsidian" },
+        ["n"] = { ":ObsidianNew<CR>", "New Obsidion document" },
+        ["w"] = { ":ObsidianWorkspace<CR>", "Obsidion workspace" },
+      },
       s = {
         name = "Search options (spectre)",
         ["s"] = { ":lua require('spectre').open()<CR>", "Search/Replace in files" },

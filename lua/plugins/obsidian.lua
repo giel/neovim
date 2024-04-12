@@ -16,17 +16,32 @@ return {
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
-
-    -- see below for full list of optional dependencies 👇
   },
   opts = {
     workspaces = {
       {
         name = "vulpennen",
-        path = "~/doc/git/vulpennen",
+        path = function()
+          local git = os.getenv("GITPATH") .. "/"
+          return assert(git .. "vulpennen")
+        end,
       },
     },
-
-    -- see below for full list of options 👇
+    {
+      name = "no-vault",
+      path = function()
+        -- alternatively use the CWD:
+        -- return assert(vim.fn.getcwd())
+        return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+      end,
+      overrides = {
+        notes_subdir = vim.NIL, -- have to use 'vim.NIL' instead of 'nil'
+        new_notes_location = "current_dir",
+        templates = {
+          subdir = vim.NIL,
+        },
+        disable_frontmatter = true,
+      },
+    },
   },
 }
