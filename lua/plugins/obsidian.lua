@@ -26,6 +26,13 @@ return {
           return assert(git .. "vulpennen")
         end,
       },
+      {
+        name = "bloghg",
+        path = function()
+          local git = os.getenv("GITPATH") .. "/"
+          return assert(git .. "bloghg")
+        end,
+      },
     },
     {
       name = "no-vault",

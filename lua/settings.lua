@@ -47,6 +47,8 @@ vim.opt.iskeyword:append("-")                   -- Treat dash separated words as
 vim.opt.virtualedit = "block"                   -- allow cursor placement where there is no character (only block mode) 
 vim.opt.lazyredraw = true                       -- don't bother updating screen during macro playback
 vim.opt.encoding = "UTF-8"
+
+vim.opt.conceallevel = 1                        -- needed to surpress warning in obsidian.lua (see https://github.com/epwalsh/obsidian.nvim?tab=readme-ov-file#concealing-characters)
 -- stylua: ignore end
 -------------------------------------------------------------------------------
 -- https://github.com/nanotee/nvim-lua-guide#using-meta-accessors
