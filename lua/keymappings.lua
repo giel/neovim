@@ -52,10 +52,6 @@ map("n", "<C-j>", "<C-w>j", { desc = "Goto window down" })
 -- map("n", "<C-Left>", ":vertical resize -2<CR>")
 -- map("n", "<C-Right>", ":vertical resize +2<CR>")
 
--- In insert mode jk or kj is escape !
-map("i", "jk", "<ESC>")
-map("i", "kj", "<ESC>")
-
 -- Move Lines (does not seem to work om MacOS in Alacritty)
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
