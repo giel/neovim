@@ -101,6 +101,10 @@ if status_ok then
         b = { ":Telescope buffers<CR>", "Buffers" },
         f = { ":Telescope find_files<CR>", "Find File" },
         g = { ":Telescope live_grep<CR>", "Grep File" },
+        w = {
+          ":lua require('telescope.builtin').grep_string({search = vim.fn.expand('<cword>')})<CR>",
+          "Grep fileword under cursor",
+        },
         p = { ":Telescope projects<CR>", "Projects" },
         r = { ":Telescope oldfiles <CR>", "Recent files " },
         n = { ":enew<CR>", "New File" },
