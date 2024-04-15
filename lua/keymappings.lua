@@ -139,11 +139,12 @@ if status_ok then
       },
       t = {
         name = "tabs/buffers actions",
-        ["n"] = { ":tabnew<CR>", "new tab" },
-        ["x"] = { ":Bdelete<CR>", "close tab" },
-        ["p"] = { ":BufferLinePick<CR>", "choose tab letter to activate" },
         ["l"] = { ":BufferLineCloseLeft<CR>", "close all buffers to the left" },
+        ["n"] = { ":tabnew<CR>", "new tab" },
+        ["o"] = { ":BufferLineCloseOthers<CR>", "close other buffers" },
+        ["p"] = { ":BufferLinePick<CR>", "choose tab letter to activate" },
         ["r"] = { ":BufferLineCloseRight<CR>", "close all buffers to the right" },
+        ["x"] = { ":Bdelete<CR>", "close tab" },
       },
       v = {
         name = "Text/view options",
