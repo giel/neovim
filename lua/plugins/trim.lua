@@ -5,14 +5,14 @@ return {
   enabled = true,
   config = function()
     require("trim").setup({
-      ft_blocklist = { "lazy" },
+      ft_blocklist = { "lazy", "markdown" },
       patterns = {},
-      trim_on_write = false,
+      trim_on_write = true,
       trim_trailing = true,
       trim_last_line = false,
       trim_first_line = true,
       highlight = true,
-      highlight_bg = "red",
+      highlight_bg = "#ff9040",
       -- highlight_bg = "DiffDelete", -- does not work
     })
 
