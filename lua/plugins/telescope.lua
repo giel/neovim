@@ -15,8 +15,22 @@ function Plugin.config()
   telescope.setup({
     defaults = {
 
-      prompt_prefix = " ",
-      selection_caret = " ",
+      prompt_prefix = ": ",
+      selection_caret = "> ",
+
+      -- layout_strategy = "horizontal",
+      -- layout_strategy = "flex",
+      -- layout_strategy = "bottom_pane",
+      layout_strategy = "vertical",
+      layout_config = {
+        vertical = {
+          mirror = true,
+          prompt_position = "top",
+        },
+        width = 0.95,
+        height = 0.95,
+        -- preview_cutoff = 40,
+      },
 
       sorting_strategy = "ascending",
       -- file_sorter = require("telescope.sorters").get_fzy_sorter,
