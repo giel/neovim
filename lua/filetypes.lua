@@ -18,8 +18,8 @@ vim.filetype.add({
   },
 })
 
--- In chezemoi .tmpl is added to a file which confuses filetype discovery. 
--- Use the extension befor .tmpl for the filetype 
+-- In chezemoi .tmpl is added to a file which confuses filetype discovery.
+-- Use the extension befor .tmpl for the filetype
 local function set_dynamic_filetype()
   local filename = vim.fn.expand("%:t") -- Get the current file name
   local ext = filename:match("^(.*)%.tmpl$") -- Extract 'ext' from '*.ext.tmpl'
