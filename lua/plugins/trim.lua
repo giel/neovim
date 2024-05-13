@@ -5,7 +5,7 @@ return {
   enabled = true,
   config = function()
     require("trim").setup({
-      ft_blocklist = { "lazy", "markdown" },
+      ft_blocklist = { "lazy", "markdown", "which-key" },
       patterns = {},
       trim_on_write = true,
       trim_trailing = true,
