@@ -44,6 +44,10 @@ Plugin.opts = {
       path = path_to_return("vulpennen", "~/doc/obsidian/vulpennen"),
     },
     {
+      name = "work",
+      path = path_to_return("work", "~/doc/obsidian/work"),
+    },
+    {
       name = "bloghg",
       path = path_to_return("bloghg", "~/doc/obsidian/bloghg"),
       overrides = {
