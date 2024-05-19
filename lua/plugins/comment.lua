@@ -4,6 +4,7 @@
 return {
   "terrortylor/nvim-comment",
   cmd = "CommentToggle",
+  enabled = true,
 
   config = function()
     require("nvim_comment").setup({
