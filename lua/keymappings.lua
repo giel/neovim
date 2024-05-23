@@ -64,6 +64,17 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 map("v", "<", "<gv", { desc = "Move to left" })
 map("v", ">", ">gv", { desc = "Move to right" })
 
+-- copilot keybindings
+map("i", "<C-S-Y>", "<Plug>(copilot-accept-word)", { desc = "Accepts word of copilot suggestion" })
+map("i", "<C-]>", "<Plug>(copilot-next)", { desc = "Next copilot suggestion" })
+map("i", "<C-[>", "<Plug>(copilot-previous)", { desc = "Previous copilot suggestion" })
+map("i", "<C-Y>", 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false,
+  desc = "Accepts whole copilot suggestion",
+})
+vim.g.copilot_no_tab_map = true
+
 -- file buffer commands
 map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- next clashes with built in window commands.
@@ -95,6 +106,7 @@ if status_ok then
         ["s"] = { ":w<CR>:luafile %<CR>", "save&luafile current buffer" },
         ["t"] = { ":Trim<CR>", "remove trailing space" },
         ["T"] = { ":TrimToggle<CR>", "Toggle trim on save" },
+        ["p"] = { ":Copilot panel<CR>", "Copilot panel" },
       },
       f = {
         name = "+file Telescope",
