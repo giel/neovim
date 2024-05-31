@@ -1,0 +1,22 @@
+name = "John Doe"
+age = 30
+email = "johndoe@example.com"
+
+[address]
+street = "123 Elm Street"
+city = "Springfield"
+state = "IL"
+zip = 62704
+
+[[interests]]
+interest = "reading"
+
+[[interests]]
+interest = "traveling"
+
+[[interests]]
+interest = "coding"
+
+interests2 = ["reading", "traveling", "coding"]
+restaurant = "John's Place"
+ratio = "1:3"

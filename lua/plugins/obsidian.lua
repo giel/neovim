@@ -38,6 +38,10 @@ Plugin.ft = "markdown"
 -- },
 Plugin.dependencies = "nvim-lua/plenary.nvim"
 Plugin.opts = {
+  ui = {
+    -- disable UI features, as they require conceallevel 1, which can be annoying for json files.
+    enable = false,
+  },
   workspaces = {
     {
       name = "vulpennen",
