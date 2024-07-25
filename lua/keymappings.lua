@@ -91,117 +91,100 @@ map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- Only if succefully loaded, probably the second start after clean install.
 local status_ok, wk = pcall(require, "which-key")
 if status_ok then
-  wk.register({
-    ["<leader>"] = {
-      b = {
-        name = "+browse Telescope",
-        g = { ":Telescope git_files<CR>", "Browse git files" },
-        h = { ":Telescope help_tags<CR>", "Help tags" },
-        m = { ":Telescope man_pages<CR>", "man pages" },
-      },
-      -- see also in keymaps.lua in LSP
-      c = {
-        { name = "+code related", _ = "which_key_ignore" },
-        ["S"] = { ":w<CR>:source %<CR>", "save&source current buffer" },
-        ["s"] = { ":w<CR>:luafile %<CR>", "save&luafile current buffer" },
-        ["t"] = { ":Trim<CR>", "remove trailing space" },
-        ["T"] = { ":TrimToggle<CR>", "Toggle trim on save" },
-        ["p"] = { ":Copilot panel<CR>", "Copilot panel" },
-      },
-      f = {
-        name = "+file Telescope",
-        b = { ":Telescope buffers<CR>", "Buffers" },
-        f = { ":Telescope find_files<CR>", "Find File" },
-        g = { ":Telescope live_grep<CR>", "Grep File" },
-        w = {
-          ":lua require('telescope.builtin').grep_string({search = vim.fn.expand('<cword>')})<CR>",
-          "Grep fileword under cursor",
-        },
-        p = { ":Telescope projects<CR>", "Projects" },
-        r = { ":Telescope oldfiles <CR>", "Recent files " },
-        n = { ":enew<CR>", "New File" },
-      },
-      g = {
-        name = "+goto related",
-      },
-      i = {
-        name = "increment selection related",
-      },
-      l = {
-        -- LSP mapping see also lsp.handlers
-        name = "LSP",
-        d = { ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
-        w = { ":Telescope diagnostics<cr>", "Diagnostics" },
-        q = { vim.diagnostic.setloclist, "Quickfix" },
-        r = { vim.lsp.buf.rename, "Rename" },
-        s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-        e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
-      },
-      o = {
-        name = "Obsidian options",
-        ["o"] = { ":ObsidianOpen<CR>", "Open buffer in Obsidian" },
-        ["n"] = { ":ObsidianNew<CR>", "New Obsidion document" },
-        ["w"] = { ":ObsidianWorkspace<CR>", "Obsidion workspace" },
-      },
-      s = {
-        name = "Search options (spectre)",
-        ["s"] = { ":lua require('spectre').open()<CR>", "Search/Replace in files" },
-        ["w"] = { ":lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
-        ["p"] = {
-          ":lua require('spectre').open_file_search({select_word=true})<CR>",
-          "Search word in current file",
-        },
-      },
-      t = {
-        name = "tabs/buffers actions",
-        ["l"] = { ":BufferLineCloseLeft<CR>", "close all buffers to the left" },
-        ["n"] = { ":tabnew<CR>", "new tab" },
-        ["o"] = { ":BufferLineCloseOthers<CR>", "close other buffers" },
-        ["p"] = { ":BufferLinePick<CR>", "choose tab letter to activate" },
-        ["r"] = { ":BufferLineCloseRight<CR>", "close all buffers to the right" },
-        ["x"] = { ":Bdelete<CR>", "close tab" },
-      },
-      v = {
-        name = "Text/view options",
-        ["s"] = { ":set spell!<CR>", "toggle spell check" },
-        ["w"] = { ":set wrap!<CR>", "toggle word wrap" },
-        ["0"] = { ":set relativenumber!<CR>", "toggle rel. line #" },
-        ["9"] = { ":set number!<CR>", "toggle line #" },
-      },
-      -- ["."] = { ":BufferLineCycleNext<CR>", "next Bufferline" },
-      -- [","] = { ":BufferLineCyclePrev<CR>", "previous Bufferline" },
-      [","] = { ":bprevious<CR>", "previous buffer" },
-      ["."] = { ":bnext<CR>", "next buffer" },
-      ["<"] = { ":bfirst<CR>", "go to first buffer" },
-      [">"] = { ":blast<CR>", "go to last buffer" },
-      -- Bdelete allows closing buffers without closing window (unlike bdelete)
-      ["x"] = { ":Bdelete<CR>", "delete (close) buffer" },
-      ["a"] = { ":Alpha<CR>", "alpha start menu" },
-      ["h"] = { ":set hlsearch!<CR>", "toggle search highlight" },
-      ["/"] = { ":CommentToggle<CR>", "toggle comment" },
-      ["?"] = { ":Cheatsheet<CR>", "cheat Sheet" },
-      ["e"] = { ":Neotree toggle<cr>", "NeoTree" },
+  wk.add({
+    { "<leader>,", ":bprevious<CR>", desc = "previous buffer" },
+    { "<leader>.", ":bnext<CR>", desc = "next buffer" },
+    { "<leader>/", ":CommentToggle<CR>", desc = "toggle comment" },
+    { "<leader><", ":bfirst<CR>", desc = "go to first buffer" },
+    { "<leader>>", ":blast<CR>", desc = "go to last buffer" },
+    { "<leader>?", ":Cheatsheet<CR>", desc = "cheat Sheet" },
+    { "<leader>a", ":Alpha<CR>", desc = "alpha start menu" },
+
+    { "<leader>b", group = "browse Telescope" },
+    { "<leader>bg", ":Telescope git_files<CR>", desc = "Browse git files" },
+    { "<leader>bh", ":Telescope help_tags<CR>", desc = "Help tags" },
+    { "<leader>bm", ":Telescope man_pages<CR>", desc = "man pages" },
+
+    { "<leader>c", group = "code related" },
+    { "<leader>cS", ":w<CR>:source %<CR>", desc = "save&source current buffer" },
+    { "<leader>cT", ":TrimToggle<CR>", desc = "Toggle trim on save" },
+    { "<leader>c_", hidden = true },
+    { "<leader>cp", ":Copilot panel<CR>", desc = "Copilot panel" },
+    { "<leader>cs", ":w<CR>:luafile %<CR>", desc = "save&luafile current buffer" },
+    { "<leader>ct", ":Trim<CR>", desc = "remove trailing space" },
+    { "<leader>e", ":Neotree toggle<cr>", desc = "NeoTree" },
+
+    { "<leader>f", group = "file Telescope" },
+    { "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers" },
+    { "<leader>ff", ":Telescope find_files<CR>", desc = "Find File" },
+    { "<leader>fg", ":Telescope live_grep<CR>", desc = "Grep File" },
+    { "<leader>fn", ":enew<CR>", desc = "New File" },
+    { "<leader>fp", ":Telescope projects<CR>", desc = "Projects" },
+    { "<leader>fr", ":Telescope oldfiles <CR>", desc = "Recent files " },
+    {
+      "<leader>fw",
+      ":lua require('telescope.builtin').grep_string({search = vim.fn.expand('<cword>')})<CR>",
+      desc = "Grep fileword under cursor",
+    },
+
+    { "<leader>g", group = "goto related" },
+    { "<leader>h", ":set hlsearch!<CR>", desc = "toggle search highlight" },
+    { "<leader>i", group = "increment selection related" },
+
+    { "<leader>l", group = "LSP" },
+    { "<leader>lS", ":Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
+    { "<leader>ld", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", desc = "Buffer Diagnostics" },
+    { "<leader>le", ":Telescope quickfix<cr>", desc = "Telescope Quickfix" },
+    --       q = { vim.diagnostic.setloclist, "Quickfix" },
+    --       r = { vim.lsp.buf.rename, "Rename" },
+    -- { "<leader>lq", <function 1>, desc = "Quickfix" },
+    -- { "<leader>lr", <function 1>, desc = "Rename" },
+    { "<leader>ls", ":Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
+    { "<leader>lw", ":Telescope diagnostics<cr>", desc = "Diagnostics" },
+
+    { "<leader>o", group = "Obsidian options" },
+    { "<leader>on", ":ObsidianNew<CR>", desc = "New Obsidion document" },
+    { "<leader>oo", ":ObsidianOpen<CR>", desc = "Open buffer in Obsidian" },
+    { "<leader>ow", ":ObsidianWorkspace<CR>", desc = "Obsidion workspace" },
+
+    { "<leader>s", group = "Search options (spectre)" },
+    {
+      "<leader>sp",
+      ":lua require('spectre').open_file_search({select_word=true})<CR>",
+      desc = "Search word in current file",
+    },
+    { "<leader>ss", ":lua require('spectre').open()<CR>", desc = "Search/Replace in files" },
+    { "<leader>sw", ":lua require('spectre').open_visual({select_word=true})<CR>", desc = "Search current word" },
+
+    { "<leader>t", group = "tabs/buffers actions" },
+    { "<leader>tl", ":BufferLineCloseLeft<CR>", desc = "close all buffers to the left" },
+    { "<leader>tn", ":tabnew<CR>", desc = "new tab" },
+    { "<leader>to", ":BufferLineCloseOthers<CR>", desc = "close other buffers" },
+    { "<leader>tp", ":BufferLinePick<CR>", desc = "choose tab letter to activate" },
+    { "<leader>tr", ":BufferLineCloseRight<CR>", desc = "close all buffers to the right" },
+    { "<leader>tx", ":Bdelete<CR>", desc = "close tab" },
+
+    { "<leader>v", group = "Text/view options" },
+    { "<leader>v0", ":set relativenumber!<CR>", desc = "toggle rel. line #" },
+    { "<leader>v9", ":set number!<CR>", desc = "toggle line #" },
+    { "<leader>vs", ":set spell!<CR>", desc = "toggle spell check" },
+    { "<leader>vw", ":set wrap!<CR>", desc = "toggle word wrap" },
+    { "<leader>x", ":Bdelete<CR>", desc = "delete (close) buffer" },
+
+    {
+      mode = { "v" },
+      { "<leader>/", ":CommentToggle<CR>", desc = "toggle comments" },
+
+      { "<leader>s", group = "Search options" },
+      { "<leader>sw", ":lua require('spectre').open_visual()<CR>", desc = "Search current word (spectre)" },
+
+      { "<leader>t", group = "tabularize" },
+      { "<leader>t,", "<cmd>Tabularize/,/<CR>", desc = " , " },
+      { "<leader>t:", "<cmd>Tabularize/:/<CR>", desc = " : " },
+      { "<leader>t=", "<cmd>Tabularize/=/<CR>", desc = " = " },
+      { "<leader>t\\", "<cmd>Tabularize/|/<CR>", desc = " | " },
+      { "<leader>td", "<cmd>Tabularize/--/<CR>", desc = " -- " },
+      { "<leader>t|", "<cmd>Tabularize/|/<CR>", desc = " | " },
     },
   })
-  local visualmappings = {
-    ["<leader>"] = {
-      s = {
-        name = "Search options",
-        ["w"] = { ":lua require('spectre').open_visual()<CR>", "Search current word (spectre)" },
-      },
-      t = {
-        name = "+tabularize",
-        ["|"] = { "<cmd>Tabularize/|/<CR>", " | " },
-        ["\\"] = { "<cmd>Tabularize/|/<CR>", " | " },
-        ["d"] = { "<cmd>Tabularize/--/<CR>", " -- " },
-        ["="] = { "<cmd>Tabularize/=/<CR>", " = " },
-        [","] = { "<cmd>Tabularize/,/<CR>", " , " },
-        [":"] = { "<cmd>Tabularize/:/<CR>", " : " },
-      },
-
-      ["/"] = { ":CommentToggle<CR>", "toggle comments" },
-    },
-  }
-  wk.register(visualmappings, { mode = "v" })
 end

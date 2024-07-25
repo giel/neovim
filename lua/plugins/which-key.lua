@@ -13,7 +13,7 @@ return {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
 
-      window = {
+      win = {
         border = "double", -- none, single, double, shadow
         position = "bottom", -- bottom, top
         margin = { 0, 0, 0, 0 }, -- extra window margin [top, right, bottom, left]
