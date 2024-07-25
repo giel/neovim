@@ -28,6 +28,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.spell = false
   end,
 })
+-- Set commentstring for hcl files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "hcl",
+  callback = function()
+    vim.bo.commentstring = "# %s"
+    -- vim.api.nvim_buf_set_option("commentstring", "# %s")
+  end,
+})
 
 -- TODO: need this as well for NeoTree instead of NvimTree ?
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")

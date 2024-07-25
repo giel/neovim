@@ -3,6 +3,7 @@
 
 return {
   "folke/which-key.nvim",
+  -- dependencies = "nvim-web-devicons",
   event = "VeryLazy",
   config = function()
     vim.o.timeout = true
