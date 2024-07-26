@@ -26,6 +26,7 @@ map("i", "<Down>", "<NOP>")
 -- map("n", "<Left>", "<NOP>")
 -- map("n", "<Right>", "<NOP>")
 
+-- better window movement/resizing (also check compatibility with terminal emulator)
 -- window movement and resize with arrow keys
 map("n", "<C-Left>", "<C-w>h", { desc = "Goto window left" })
 map("n", "<C-Right>", "<C-w>l", { desc = "Goto window right" })
@@ -35,22 +36,11 @@ map("n", "<C-S-Up>", ":resize +2<CR>")
 map("n", "<C-S-Down>", ":resize -2<CR>")
 map("n", "<C-S-Left>", ":vertical resize -2<CR>")
 map("n", "<C-S-Right>", ":vertical resize +2<CR>")
-
 -- window movement and resize with vim keys
 map("n", "<C-h>", "<C-w>h", { desc = "Goto window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "Goto window right" })
 map("n", "<C-k>", "<C-w>k", { desc = "Goto window up" })
 map("n", "<C-j>", "<C-w>j", { desc = "Goto window down" })
--- -- with shift interferes with wezterm
--- -- map("n", "<C-S-j>", ":resize -2<CR>")
--- -- map("n", "<C-S-k>", ":resize +2<CR>")
--- -- map("n", "<C-S-h>", ":vertical resize -2<CR>")
--- -- map("n", "<C-S-l>", ":vertical resize +2<CR>")
--- -- so use ctrl-arrows for resize
--- map("n", "<C-Up>", ":resize +2<CR>")
--- map("n", "<C-Down>", ":resize -2<CR>")
--- map("n", "<C-Left>", ":vertical resize -2<CR>")
--- map("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- Move Lines (does not seem to work om MacOS in Alacritty)
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -137,8 +127,8 @@ if status_ok then
     { "<leader>le", ":Telescope quickfix<cr>", desc = "Telescope Quickfix" },
     --       q = { vim.diagnostic.setloclist, "Quickfix" },
     --       r = { vim.lsp.buf.rename, "Rename" },
-    -- { "<leader>lq", <function 1>, desc = "Quickfix" },
-    -- { "<leader>lr", <function 1>, desc = "Rename" },
+    { "<leader>lq", vim.diagnostic.setloclist, desc = "Quickfix" },
+    { "<leader>lr", vim.lsp.buf.rename, desc = "Rename" },
     { "<leader>ls", ":Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
     { "<leader>lw", ":Telescope diagnostics<cr>", desc = "Diagnostics" },
 
