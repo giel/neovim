@@ -3,7 +3,6 @@
 
 return {
   "ahmedkhalf/project.nvim",
-  -- commit = "1c2e9c93c7c85126c2197f5e770054f53b1926fb",
   dependencies = "nvim-telescope/telescope.nvim",
 
   config = function()
@@ -22,6 +21,12 @@ return {
       return
     end
 
+    -- call the api like this:
+    -- local project_nvim = require("project_nvim")
+    -- local recent_projects = project_nvim.get_recent_projects()
+    -- print(vim.inspect(recent_projects))
+
+    -- now telescope is needed
     telescope.load_extension("projects")
   end,
 }

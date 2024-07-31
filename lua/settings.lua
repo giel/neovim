@@ -55,3 +55,6 @@ vim.opt.encoding = "UTF-8"
 -- vim.go: behaves like :setglobal
 -- vim.bo: behaves like :setlocal for buffer-local options
 -- vim.wo: behaves like :setlocal for window-local options
+
+-- UseTelescope = false
+UseTelescope = true

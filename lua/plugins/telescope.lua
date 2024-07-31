@@ -42,21 +42,8 @@ function Plugin.config()
   })
   -- key mappings
   require("utils")
-  map("n", "<leader>bg", ":Telescope git_files<CR>", { desc = "Browse git files" })
-  map("n", "<leader>bh", ":Telescope help_tags<CR>", { desc = "Help tags" })
-  map("n", "<leader>bm", ":Telescope man_pages<CR>", { desc = "man pages" })
-
-  map("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Buffers" })
-  map("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find File" })
-  map("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Grep File" })
+  map("n", "<leader>fs", ":lua print(UseTelescope)<CR>", { desc = "Show if telescope is used" })
   map("n", "<leader>fp", ":Telescope projects<CR>", { desc = "Projects" })
-  map("n", "<leader>fr", ":Telescope oldfiles <CR>", { desc = "Recent files " })
-  map(
-    "n",
-    "<leader>fw",
-    ":lua require('telescope.builtin').grep_string({search = vim.fn.expand('<cword>')})<CR>",
-    { desc = "Grep fileword under cursor" }
-  )
 
   map("n", "<leader>lS", ":Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Workspace Symbols" })
   map("n", "<leader>ld", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", { desc = "Buffer Diagnostics" })
@@ -64,6 +51,24 @@ function Plugin.config()
 
   map("n", "<leader>ls", ":Telescope lsp_document_symbols<cr>", { desc = "Document Symbols" })
   map("n", "<leader>lw", ":Telescope diagnostics<cr>", { desc = "Diagnostics" })
+
+  -- switchable mappings between telescope and fzf-lua
+  if UseTelescope then
+    map("n", "<leader>bg", ":Telescope git_files<CR>", { desc = "Browse git files" })
+    map("n", "<leader>bh", ":Telescope help_tags<CR>", { desc = "Help tags" })
+    map("n", "<leader>bm", ":Telescope man_pages<CR>", { desc = "man pages" })
+
+    map("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Buffers" })
+    map("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find File" })
+    map("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Grep File" })
+    map("n", "<leader>fr", ":Telescope oldfiles <CR>", { desc = "Recent files " })
+    map(
+      "n",
+      "<leader>fw",
+      ":lua require('telescope.builtin').grep_string({search = vim.fn.expand('<cword>')})<CR>",
+      { desc = "Grep fileword under cursor" }
+    )
+  end
 end
 
 return Plugin
