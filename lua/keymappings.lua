@@ -1,13 +1,7 @@
 --Leader key already defined in Lazy
 
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  -- vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-  vim.keymap.set(mode, lhs, rhs, options)
-end
+-- for map command:
+require("utils")
 
 -- quit and quit all
 -- map('n', '<Leader>q'   , ':q<CR>')
@@ -91,46 +85,24 @@ if status_ok then
     { "<leader>a", ":Alpha<CR>", desc = "alpha start menu" },
 
     { "<leader>b", group = "browse Telescope" },
-    { "<leader>bg", ":Telescope git_files<CR>", desc = "Browse git files" },
-    { "<leader>bh", ":Telescope help_tags<CR>", desc = "Help tags" },
-    { "<leader>bm", ":Telescope man_pages<CR>", desc = "man pages" },
 
     { "<leader>c", group = "code related" },
     { "<leader>cS", ":w<CR>:source %<CR>", desc = "save&source current buffer" },
-    { "<leader>cT", ":TrimToggle<CR>", desc = "Toggle trim on save" },
     { "<leader>c_", hidden = true },
     { "<leader>cp", ":Copilot panel<CR>", desc = "Copilot panel" },
     { "<leader>cs", ":w<CR>:luafile %<CR>", desc = "save&luafile current buffer" },
-    { "<leader>ct", ":Trim<CR>", desc = "remove trailing space" },
     { "<leader>e", ":Neotree toggle<cr>", desc = "NeoTree" },
 
-    { "<leader>f", group = "file Telescope" },
-    { "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers" },
-    { "<leader>ff", ":Telescope find_files<CR>", desc = "Find File" },
-    { "<leader>fg", ":Telescope live_grep<CR>", desc = "Grep File" },
+    { "<leader>f", group = "file search/find" },
     { "<leader>fn", ":enew<CR>", desc = "New File" },
-    { "<leader>fp", ":Telescope projects<CR>", desc = "Projects" },
-    { "<leader>fr", ":Telescope oldfiles <CR>", desc = "Recent files " },
-    {
-      "<leader>fw",
-      ":lua require('telescope.builtin').grep_string({search = vim.fn.expand('<cword>')})<CR>",
-      desc = "Grep fileword under cursor",
-    },
 
     { "<leader>g", group = "goto related" },
     { "<leader>h", ":set hlsearch!<CR>", desc = "toggle search highlight" },
     { "<leader>i", group = "increment selection related" },
 
     { "<leader>l", group = "LSP" },
-    { "<leader>lS", ":Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
-    { "<leader>ld", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", desc = "Buffer Diagnostics" },
-    { "<leader>le", ":Telescope quickfix<cr>", desc = "Telescope Quickfix" },
-    --       q = { vim.diagnostic.setloclist, "Quickfix" },
-    --       r = { vim.lsp.buf.rename, "Rename" },
     { "<leader>lq", vim.diagnostic.setloclist, desc = "Quickfix" },
     { "<leader>lr", vim.lsp.buf.rename, desc = "Rename" },
-    { "<leader>ls", ":Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
-    { "<leader>lw", ":Telescope diagnostics<cr>", desc = "Diagnostics" },
 
     { "<leader>o", group = "Obsidian options" },
     { "<leader>on", ":ObsidianNew<CR>", desc = "New Obsidion document" },
