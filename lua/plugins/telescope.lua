@@ -8,10 +8,10 @@ Plugin.cmd = "Telescope"
 Plugin.enabled = true
 
 function Plugin.config()
-  local command = vim.api.nvim_create_user_command
+  -- local command = vim.api.nvim_create_user_command
 
   local telescope = require("telescope")
-  local actions = require("telescope.actions")
+  -- local actions = require("telescope.actions")
 
   telescope.setup({
     defaults = {
@@ -49,9 +49,6 @@ function Plugin.config()
   map("n", "<leader>ld", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", { desc = "Buffer Diagnostics" })
   map("n", "<leader>le", ":Telescope quickfix<cr>", { desc = "Telescope Quickfix" })
 
-  map("n", "<leader>ls", ":Telescope lsp_document_symbols<cr>", { desc = "Document Symbols" })
-  map("n", "<leader>lw", ":Telescope diagnostics<cr>", { desc = "Diagnostics" })
-
   -- switchable mappings between telescope and fzf-lua
   if UseTelescope then
     map("n", "<leader>bg", ":Telescope git_files<CR>", { desc = "Browse git files" })
@@ -68,6 +65,9 @@ function Plugin.config()
       ":lua require('telescope.builtin').grep_string({search = vim.fn.expand('<cword>')})<CR>",
       { desc = "Grep fileword under cursor" }
     )
+
+    map("n", "<leader>lw", ":Telescope diagnostics<cr>", { desc = "Diagnostics" })
+    map("n", "<leader>ls", ":Telescope lsp_document_symbols<cr>", { desc = "Document Symbols" })
   end
 end
 
