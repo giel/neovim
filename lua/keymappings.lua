@@ -124,7 +124,7 @@ if status_ok then
     { "<leader>to", ":BufferLineCloseOthers<CR>", desc = "close other buffers" },
     { "<leader>tp", ":BufferLinePick<CR>", desc = "choose tab letter to activate" },
     { "<leader>tr", ":BufferLineCloseRight<CR>", desc = "close all buffers to the right" },
-    { "<leader>tx", ":Bdelete<CR>", desc = "close tab" },
+    { "<leader>tw", ":Bdelete<CR>", desc = "close tab" },
 
     { "<leader>v", group = "Text/view options" },
     { "<leader>v0", ":set relativenumber!<CR>", desc = "toggle rel. line #" },
