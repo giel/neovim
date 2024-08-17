@@ -27,6 +27,10 @@ return {
               checkThirdParty = false,
             },
             completion = { callSnippet = "Replace" },
+            diagnostics = {
+              -- ignore hammerspoon globals
+              globals = { "hs", "spoon" },
+            },
             telemetry = { enable = false },
             hint = {
               enable = false,
