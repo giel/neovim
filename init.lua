@@ -14,3 +14,5 @@ vim.api.nvim_create_autocmd("User", {
     require("filetypes")
   end,
 })
+
+vim.api.nvim_create_user_command("Hsplit", "split", {})
