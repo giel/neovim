@@ -37,7 +37,19 @@ function Plugin.config()
       globalstatus = true,
     },
     sections = {
-      lualine_a = { { "mode", upper = false } },
+      lualine_a = {
+        {
+          function()
+            local recording = vim.fn.reg_recording()
+            return recording ~= "" and "󰑋 " .. recording or "   "
+          end,
+          cond = function()
+            return vim.fn.reg_recording() ~= "   "
+          end,
+          color = { fg = "#ff9e64", gui = "bold" }, -- Optional: Customize color
+        },
+        { "mode", upper = false },
+      },
       lualine_b = { { "branch", icon = "" } },
       lualine_c = { { "filename", file_status = true, path = 0 }, "diff" },
       lualine_x = {
@@ -55,7 +67,9 @@ function Plugin.config()
       lualine_z = { "location" },
     },
     inactive_sections = {
-      lualine_a = { { "mode", upper = false } },
+      lualine_a = {
+        { "mode", upper = false },
+      },
       lualine_b = {},
       lualine_c = { "filename" },
       lualine_x = {},
