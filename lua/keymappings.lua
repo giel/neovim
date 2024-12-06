@@ -51,6 +51,7 @@ map("v", ">", ">gv", { desc = "Move to right" })
 -- copilot keybindings
 -- map("i", "<C-S-Y>", "<Plug>(copilot-accept-word)", { desc = "Accepts word of copilot suggestion" })
 map("i", "<C-Y>", "<Plug>(copilot-accept-word)", { desc = "Accepts word of copilot suggestion" })
+map("i", "<C-S-Y>", "<Plug>(copilot-accept-line)", { desc = "Accepts line of copilot suggestion" })
 map("i", "<C-]>", "<Plug>(copilot-next)", { desc = "Next copilot suggestion" })
 map("i", "<C-[>", "<Plug>(copilot-previous)", { desc = "Previous copilot suggestion" })
 -- map("i", "<C-Y>", 'copilot#Accept("\\<CR>")', {
