@@ -2,7 +2,14 @@
 
 -- for map command:
 require("utils")
-
+vim.keymap.set("n", "<leader>R", function()
+  local is_vertical = vim.fn.winwidth(0) < vim.fn.winheight(0)
+  if is_vertical then
+    vim.cmd("wincmd K") -- Convert to horizontal
+  else
+    vim.cmd("wincmd H") -- Convert to vertical
+  end
+end, { desc = "Toggle vertical/horizontal split" })
 -- quit and quit all
 -- map('n', '<Leader>q'   , ':q<CR>')
 -- map('n', '<Leader>qa'  , ':qall<CR>')
@@ -111,13 +118,15 @@ if status_ok then
     { "<leader>ow", ":ObsidianWorkspace<CR>", desc = "Obsidion workspace" },
 
     { "<leader>s", group = "Search options (spectre)" },
-    {
-      "<leader>sp",
-      ":lua require('spectre').open_file_search({select_word=true})<CR>",
-      desc = "Search word in current file",
-    },
-    { "<leader>ss", ":lua require('spectre').open()<CR>", desc = "Search/Replace in files" },
-    { "<leader>sw", ":lua require('spectre').open_visual({select_word=true})<CR>", desc = "Search current word" },
+    -- {
+    --   "<leader>sp",
+    --   ":lua require('spectre').open_file_search({select_word=true})<CR>",
+    --   desc = "Search word in current file",
+    -- },
+    -- { "<leader>ss", ":lua require('spectre').open()<CR>", desc = "Search/Replace in files" },
+    -- { "<leader>sw", ":lua require('spectre').open_visual({select_word=true})<CR>", desc = "Search current word" },
+
+    { "<leader>ss", ":GrugFar<CR>", desc = "Search/Replace in files" },
 
     { "<leader>t", group = "tabs/buffers actions" },
     { "<leader>tl", ":BufferLineCloseLeft<CR>", desc = "close all buffers to the left" },
