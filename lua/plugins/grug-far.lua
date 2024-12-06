@@ -8,6 +8,7 @@ return {
       -- options, see Configuration section below
       -- there are no required options atm
       -- engine = 'ripgrep' is default, but 'astgrep' can be specified
+      windowCreationCommand = "split",
     })
   end,
 }
