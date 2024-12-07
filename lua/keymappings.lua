@@ -34,7 +34,17 @@ map("n", "<C-h>", "<C-w>h", { desc = "Goto window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "Goto window right" })
 map("n", "<C-k>", "<C-w>k", { desc = "Goto window up" })
 map("n", "<C-j>", "<C-w>j", { desc = "Goto window down" })
-
+-- splits functions
+map("n", "<F5>", ":split<CR>", { desc = "Split window horizontally" })
+map("n", "<F6>", ":vsplit<CR>", { desc = "Split window vertically" })
+-- map("n", "<Esc>[15;2~", function() -- Shift-F5
+map("n", "<F7>", function()
+  vim.cmd("wincmd K")
+end, { desc = "Move split to horizontal layout" })
+-- map("n", "<Esc>[1;2Q", function() -- Shift-F6
+map("n", "<F8>", function()
+  vim.cmd("wincmd H")
+end, { desc = "Move split to vertical layout" })
 -- Move Lines (does not seem to work om MacOS in Alacritty)
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
