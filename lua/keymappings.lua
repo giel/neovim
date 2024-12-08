@@ -94,6 +94,8 @@ if status_ok then
     { "<leader>>", ":blast<CR>", desc = "go to last buffer" },
     { "<leader>?", ":Cheatsheet<CR>", desc = "cheat Sheet" },
     { "<leader>a", ":Alpha<CR>", desc = "alpha start menu" },
+    { "<leader>e", ":Neotree toggle<cr>", desc = "NeoTree" },
+    { "<leader>x", ":Bdelete<CR>", desc = "delete (close) buffer" },
 
     { "<leader>b", group = "browse Telescope" },
 
@@ -102,13 +104,11 @@ if status_ok then
     { "<leader>c_", hidden = true },
     { "<leader>cp", ":Copilot panel<CR>", desc = "Copilot panel" },
     { "<leader>cs", ":w<CR>:luafile %<CR>", desc = "save&luafile current buffer" },
-    { "<leader>e", ":Neotree toggle<cr>", desc = "NeoTree" },
 
     { "<leader>f", group = "file search/find" },
     { "<leader>fn", ":enew<CR>", desc = "New File" },
 
-    { "<leader>g", group = "goto related" },
-    { "<leader>h", ":set hlsearch!<CR>", desc = "toggle search highlight" },
+    { "<leader>g", group = "git related" },
     { "<leader>i", group = "increment selection related" },
 
     { "<leader>l", group = "LSP" },
@@ -158,7 +158,6 @@ if status_ok then
     { "<leader>v9", ":set number!<CR>", desc = "toggle line #" },
     { "<leader>vs", ":set spell!<CR>", desc = "toggle spell check" },
     { "<leader>vw", ":set wrap!<CR>", desc = "toggle word wrap" },
-    { "<leader>x", ":Bdelete<CR>", desc = "delete (close) buffer" },
 
     {
       mode = { "v" },

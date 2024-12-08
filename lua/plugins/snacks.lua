@@ -9,7 +9,7 @@ return {
   opts = {
     gitbrowse = { enabled = true },
     lazygit = { enabled = true },
-    bufdelete = { enabled = true },
+    bufdelete = { enabled = false },
   },
 -- stylua: ignore start
   keys = {

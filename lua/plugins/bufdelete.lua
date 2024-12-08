@@ -3,5 +3,5 @@
 -- Replacement of vim-bbye
 return {
   "famiu/bufdelete.nvim", -- provide Bdelete function (instead of vim's bdelete)
-  enabled = false,
+  enabled = true,
 }
