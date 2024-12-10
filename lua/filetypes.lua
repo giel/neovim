@@ -3,6 +3,7 @@
 vim.filetype.add({
   extension = {
     arch = "arch-wiki",
+    ocl = "hcl", -- Treat .ocl files as HCL
   },
   filename = {
     ["starship.toml.tmpl"] = "toml",
