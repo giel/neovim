@@ -47,7 +47,7 @@ vim.opt.iskeyword:append("-")                   -- Treat dash separated words as
 vim.opt.virtualedit = "block"                   -- allow cursor placement where there is no character (only block mode)
 vim.opt.lazyredraw = true                       -- don't bother updating screen during macro playback
 vim.opt.encoding = "UTF-8"
-
+vim.opt.listchars = { tab = ">-", trail = ".", eol = "$" }
 -- stylua: ignore end
 -------------------------------------------------------------------------------
 -- https://github.com/nanotee/nvim-lua-guide#using-meta-accessors

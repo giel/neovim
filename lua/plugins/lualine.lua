@@ -11,6 +11,14 @@ local function pathInCode()
   return hi
 end
 
+local function toggle_eye()
+  if vim.opt.list:get() then
+    return "󰈈" -- Eye open when invisible characters are visible
+  else
+    return "󰈉" -- Closed eye when invisible characters are hidden
+  end
+end
+
 function Plugin.config()
   local lualine = require("lualine")
   -- to configure lazy pending updates count
@@ -49,6 +57,7 @@ function Plugin.config()
           color = { fg = "#ff9e64", gui = "bold" }, -- Optional: Customize color
         },
         { "mode", upper = false },
+        toggle_eye,
       },
       lualine_b = { { "branch", icon = "" } },
       lualine_c = { { "filename", file_status = true, path = 0 }, "diff" },

@@ -157,6 +157,7 @@ if status_ok then
     { "<leader>v0", ":set relativenumber!<CR>", desc = "toggle rel. line #" },
     { "<leader>v9", ":set number!<CR>", desc = "toggle line #" },
     { "<leader>vs", ":set spell!<CR>", desc = "toggle spell check" },
+    { "<leader>vv", ":set list!<CR>", desc = "toggle invisible chars" },
     { "<leader>vw", ":set wrap!<CR>", desc = "toggle word wrap" },
 
     {
