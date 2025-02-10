@@ -59,3 +59,7 @@ vim.opt.listchars = { tab = ">-", trail = ".", eol = "$" }
 -- Use telescope or fzf (if possible)
 UseTelescope = false
 -- UseTelescope = true
+
+-- Disable provider (and warning):
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
