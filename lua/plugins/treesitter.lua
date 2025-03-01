@@ -53,10 +53,10 @@ Plugin.config = function()
       keymaps = {
         -- todo add to keymaps
         -- set to `false` to disable one of the mappings
-        init_selection = "<Leader>is",
-        node_incremental = "<Leader>ii",
-        scope_incremental = "<Leader>iS",
-        node_decremental = "<Leader>id",
+        init_selection = "<CR>",
+        node_incremental = "<CR>",
+        scope_incremental = "<TAB>",
+        node_decremental = "<S-TAB>",
       },
     },
   })
