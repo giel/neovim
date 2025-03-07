@@ -65,10 +65,10 @@ map("v", ">", ">gv", { desc = "Move to right" })
 
 -- copilot keybindings
 -- map("i", "<C-S-Y>", "<Plug>(copilot-accept-word)", { desc = "Accepts word of copilot suggestion" })
-map("i", "<C-Y>", "<Plug>(copilot-accept-word)", { desc = "Accepts word of copilot suggestion" })
-map("i", "<C-S-Y>", "<Plug>(copilot-accept-line)", { desc = "Accepts line of copilot suggestion" })
-map("i", "<C-]>", "<Plug>(copilot-next)", { desc = "Next copilot suggestion" })
-map("i", "<C-[>", "<Plug>(copilot-previous)", { desc = "Previous copilot suggestion" })
+map("i", "<C-Y>", "<Plug>(copilot-accept-word)", { desc = "Copilot: Accepts word suggestion" })
+map("i", "<C-S-Y>", "<Plug>(copilot-accept-line)", { desc = "Copilot: Accepts line suggestion" })
+map("i", "<C-]>", "<Plug>(copilot-next)", { desc = "Copilot: Next suggestion" })
+map("i", "<C-[>", "<Plug>(copilot-previous)", { desc = "Copilot: Previous suggestion" })
 -- map("i", "<C-Y>", 'copilot#Accept("\\<CR>")', {
 --   expr = true,
 --   replace_keycodes = false,
@@ -98,8 +98,8 @@ if status_ok then
     { "<leader>/", ":CommentToggle<CR>", desc = "toggle comment" },
     { "<leader><", ":bfirst<CR>", desc = "go to first buffer" },
     { "<leader>>", ":blast<CR>", desc = "go to last buffer" },
-    { "<leader>?", ":Cheatsheet<CR>", desc = "cheat Sheet" },
-    { "<leader>a", ":Alpha<CR>", desc = "alpha start menu" },
+    { "<leader>?", ":Cheatsheet<CR>", desc = "Cheat Sheet" },
+    { "<leader>a", ":Alpha<CR>", desc = "Alpha start menu" },
     { "<leader>e", ":Neotree toggle<cr>", desc = "NeoTree" },
     { "<leader>x", ":Bdelete<CR>", desc = "delete (close) buffer" },
 
@@ -122,9 +122,9 @@ if status_ok then
     { "<leader>lr", vim.lsp.buf.rename, desc = "Rename" },
 
     { "<leader>o", group = "Obsidian options" },
-    { "<leader>on", ":ObsidianNew<CR>", desc = "New Obsidion document" },
-    { "<leader>oo", ":ObsidianOpen<CR>", desc = "Open buffer in Obsidian" },
-    { "<leader>ow", ":ObsidianWorkspace<CR>", desc = "Obsidion workspace" },
+    { "<leader>on", ":ObsidianNew<CR>", desc = "Obsidion: New document" },
+    { "<leader>oo", ":ObsidianOpen<CR>", desc = "Obsidion: Open buffer" },
+    { "<leader>ow", ":ObsidianWorkspace<CR>", desc = "Obsidion: workspace" },
 
     { "<leader>s", group = "Search options" },
     -- {

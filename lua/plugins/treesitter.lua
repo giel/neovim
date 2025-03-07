@@ -56,7 +56,7 @@ Plugin.config = function()
         init_selection = "<CR>",
         node_incremental = "<CR>",
         scope_incremental = "<TAB>",
-        node_decremental = "<S-TAB>",
+        node_decremental = "<BS>",
       },
     },
   })

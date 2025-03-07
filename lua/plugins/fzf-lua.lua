@@ -38,7 +38,10 @@ return {
       map("n", "<leader>fg", ":FzfLua live_grep<CR>", { desc = "Grep File" })
       map("n", "<leader>fw", ":FzfLua grep_cWORD<CR>", { desc = "Grep word under cursor" })
       map("n", "<leader>fr", ":FzfLua oldfiles <CR>", { desc = "Recent files " })
-
+      map("n", "<leader>fi", ":FzfLua builtin <CR>", { desc = "Find fzf builtins" })
+      -- map("n", "<leader>fp", function()
+      --   require("fzf-lua").get_recent_projects()
+      -- end, { desc = "Recent projects " })
       map("n", "<leader>lw", ":FzfLua diagnostics_document<cr>", { desc = "Diagnostics" })
       map("n", "<leader>ls", ":FzfLua lsp_document_symbols<cr>", { desc = "Document Symbols" })
       -- no replacement yet (see telescope plugin)
