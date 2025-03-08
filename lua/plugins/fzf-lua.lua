@@ -3,7 +3,7 @@
 
 return {
   "ibhagwan/fzf-lua",
-  enabled = true,
+  enabled = not UseTelescope,
   -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
 

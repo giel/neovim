@@ -26,7 +26,6 @@ return {
 
     dashboard.section.buttons.val = {
       dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
       dashboard.button("e", " " .. " Explore files", ":Neotree toggle<CR>"),
       dashboard.button("c", " " .. " Config", ":e " .. vim.fn.stdpath("config") .. "/init.lua <CR>"),
       dashboard.button("v", " " .. " Neovim version", ":version<CR>"),
@@ -41,10 +40,14 @@ return {
     end
 
     if UseTelescope then
+      insertButton(
+        dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>")
+      )
       insertButton(dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"))
       insertButton(dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"))
       insertButton(dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"))
     else
+      insertButton(dashboard.button("p", " " .. " Find project", ":FzfProjects<CR>"))
       insertButton(dashboard.button("f", " " .. " Find file", ":FzfLua files <CR>"))
       insertButton(dashboard.button("r", " " .. " Recent files", ":FzfLua oldfiles <CR>"))
       insertButton(dashboard.button("t", " " .. " Find text", ":FzfLua live_grep <CR>"))

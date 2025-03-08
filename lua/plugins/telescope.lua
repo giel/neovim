@@ -5,7 +5,7 @@
 local Plugin = { "nvim-telescope/telescope.nvim" }
 
 Plugin.cmd = "Telescope"
-Plugin.enabled = true
+Plugin.enabled = UseTelescope
 
 function Plugin.config()
   -- local command = vim.api.nvim_create_user_command
@@ -40,10 +40,11 @@ function Plugin.config()
       set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
     },
   })
+  telescope.load_extension("projects")
+
   -- key mappings
   require("utils")
   map("n", "<leader>fs", ":lua print(UseTelescope)<CR>", { desc = "Show if telescope is used" })
-  map("n", "<leader>fp", ":Telescope projects<CR>", { desc = "Projects" })
 
   map("n", "<leader>lS", ":Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Workspace Symbols" })
   map("n", "<leader>ld", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", { desc = "Buffer Diagnostics" })
@@ -51,6 +52,9 @@ function Plugin.config()
 
   -- switchable mappings between telescope and fzf-lua
   if UseTelescope then
+    -- map("n", "<leader>fP", ":Telescope projects<CR>", { desc = "Projects" })
+
+    map("n", "<leader>fp", ":Telescope projects<CR>", { desc = "Projects" })
     map("n", "<leader>bg", ":Telescope git_files<CR>", { desc = "Browse git files" })
     map("n", "<leader>bh", ":Telescope help_tags<CR>", { desc = "Help tags" })
     map("n", "<leader>bm", ":Telescope man_pages<CR>", { desc = "man pages" })

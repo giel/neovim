@@ -3,11 +3,18 @@ local M = {}
 function M.on_attach(client, buffer)
   local self = M.new(client, buffer)
 
-  self:map("gd", "Telescope lsp_definitions", { desc = "Goto Definition" })
-  self:map("gr", "Telescope lsp_references", { desc = "References" })
+  if UseTelescope then
+    self:map("gd", "Telescope lsp_definitions", { desc = "Goto Definition" })
+    self:map("gr", "Telescope lsp_references", { desc = "References" })
+    self:map("gI", "Telescope lsp_implementations", { desc = "Goto Implementation" })
+    self:map("gb", "Telescope lsp_type_definitions", { desc = "Goto Type Definition" })
+    self:map("<leader>cs", require("telescope.builtin").lsp_document_symbols, { desc = "Document Symbols" })
+    self:map("<leader>cS", require("telescope.builtin").lsp_dynamic_workspace_symbols, { desc = "Workspace Symbols" })
+  else
+    -- fzf equivalent
+  end
+
   self:map("gD", "Lspsaga peek_definition", { desc = "Peek Definition" })
-  self:map("gI", "Telescope lsp_implementations", { desc = "Goto Implementation" })
-  self:map("gb", "Telescope lsp_type_definitions", { desc = "Goto Type Definition" })
   self:map("K", "Lspsaga hover_doc", { desc = "Hover" })
   self:map("gK", vim.lsp.buf.signature_help, { desc = "Signature Help", has = "signatureHelp" })
   self:map("[d", M.diagnostic_goto(true), { desc = "Next Diagnostic" })
@@ -22,9 +29,6 @@ function M.on_attach(client, buffer)
   self:map("<leader>cf", format, { desc = "Format Document", has = "documentFormatting" })
   self:map("<leader>cf", format, { desc = "Format Range", mode = "v", has = "documentRangeFormatting" })
   self:map("<leader>cr", M.rename, { expr = true, desc = "Rename", has = "rename" })
-
-  self:map("<leader>cs", require("telescope.builtin").lsp_document_symbols, { desc = "Document Symbols" })
-  self:map("<leader>cS", require("telescope.builtin").lsp_dynamic_workspace_symbols, { desc = "Workspace Symbols" })
 end
 
 function M.new(client, buffer)

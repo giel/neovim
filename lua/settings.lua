@@ -56,7 +56,7 @@ vim.opt.listchars = { tab = ">-", trail = ".", eol = "$" }
 -- vim.bo: behaves like :setlocal for buffer-local options
 -- vim.wo: behaves like :setlocal for window-local options
 
--- Use telescope or fzf (if possible)
+-- Use telescope or fzf. One of the two is activated.
 UseTelescope = false
 -- UseTelescope = true
 
