@@ -10,6 +10,11 @@ require("utils")
 -- ESC to turn off highlighted text
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- for mini.surround turn of pressing 's' to delete character under cursor
+--- Note: if 'timeoutlen' is low enough to cause occasional usage of |s| key
+--- (that deletes character under cursor), disable it with the following:
+map({ "n", "x" }, "s", "<Nop>")
+
 -- disable Up & Down arrows in insert mode to promote to go to Normal mode ;)
 map("i", "<Up>", "<NOP>")
 map("i", "<Down>", "<NOP>")

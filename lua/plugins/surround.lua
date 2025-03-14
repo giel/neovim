@@ -4,7 +4,7 @@ return {
   version = "*",
   opts = {
     -- Duration (in ms) of highlight when calling `MiniSurround.highlight()`
-    highlight_duration = 1000,
+    highlight_duration = 2000,
     -- Module mappings. Use `''` (empty string) to disable one.
     mappings = {
       add = "sa", -- Add surrounding in Normal and Visual modes
@@ -20,7 +20,12 @@ return {
     },
   },
 }
+--- Note: if 'timeoutlen' is low enough to cause occasional usage of |s| key
+--- (that deletes character under cursor), disable it with the following call: >lua
+---   vim.keymap.set({ 'n', 'x' }, 's', '<Nop>')
+---
 
+-- -----------------------------------------------------------------------------------
 -- https://github.com/kylechui/nvim-surround
 -- return {
 --   "kylechui/nvim-surround",
