@@ -26,11 +26,10 @@ return {
 
     dashboard.section.buttons.val = {
       dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-      -- dashboard.button("e", " " .. " Explore files", ":Neotree toggle<CR>"),
-      dashboard.button("e", " " .. " Explore files", function()
-        Snacks.explorer()
-      end),
-      -- { "<leader>e",  function() Snacks.explorer() end, desc = "Explorer (snacks)" },
+      dashboard.button("e", " " .. " Explore files", ":Neotree toggle<CR>"),
+      -- dashboard.button("e", " " .. " Explore files", function()
+      --   Snacks.explorer()
+      -- end),
       dashboard.button("c", " " .. " Config", ":e " .. vim.fn.stdpath("config") .. "/init.lua <CR>"),
       dashboard.button("v", " " .. " Neovim version", ":version<CR>"),
       dashboard.button("h", "󰋠 " .. " Check health", ":checkhealth<CR>"),

@@ -31,7 +31,7 @@ return {
     bigfile = { enabled = true },
     bufdelete = { enabled = true },
     dashboard = { enabled = false },
-    explorer = { enabled = true },
+    explorer = { enabled = false },
     git = { enabled = true },
     gitbrowse = { enabled = true },
     image = { enabled = true },
@@ -56,7 +56,7 @@ return {
     { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
     { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
     { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
-    { "<leader>e",  function() Snacks.explorer() end, desc = "Explorer (snacks)" },
+    -- { "<leader>e",  function() Snacks.explorer() end, desc = "Explorer (snacks)" },
     { "<leader>x", function() Snacks.bufdelete() end, desc = "delete (close) buffer",
     },
   }
