@@ -1,5 +1,6 @@
 -- https://github.com/kdheepak/lazygit.nvim
 -- lazigit call from neovim
+-- now in snacks
 
 return {
   "kdheepak/lazygit.nvim",

@@ -1,4 +1,4 @@
---Leader key already defined in Lazy
+-- Leader key already defined in Lazy
 
 -- for map command:
 require("utils")
@@ -104,9 +104,9 @@ if status_ok then
     { "<leader><", ":bfirst<CR>", desc = "go to first buffer" },
     { "<leader>>", ":blast<CR>", desc = "go to last buffer" },
     { "<leader>?", ":Cheatsheet<CR>", desc = "Cheat Sheet" },
-    { "<leader>a", ":Alpha<CR>", desc = "Alpha start menu" },
-    { "<leader>e", ":Neotree toggle<cr>", desc = "NeoTree" },
-    { "<leader>x", ":Bdelete<CR>", desc = "delete (close) buffer" },
+    -- { "<leader>a", ":Alpha<CR>", desc = "Alpha start menu" },
+    -- { "<leader>E", ":Neotree toggle<cr>", desc = "NeoTree" },
+    -- { "<leader>x", ":Bdelete<CR>", desc = "delete (close) buffer" },
 
     { "<leader>b", group = "browse Telescope" },
 

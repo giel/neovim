@@ -1,10 +1,11 @@
 -- https://github.com/echasnovski/mini.animate
 -- Animate common Neovim action
+-- Now in snacks.scroll
 return {
   "echasnovski/mini.animate",
   event = "VeryLazy",
   version = false,
-  enabled = true,
+  enabled = false,
   opts = function()
     -- don't use animate when scrolling with the mouse
     local mouse_scrolled = false
