@@ -62,6 +62,7 @@ function M.config()
         c = cmp.mapping.close(),
       }),
       ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+      ["<CR>"] = cmp.mapping.confirm({ select = true }),
     },
 
     formatting = {
