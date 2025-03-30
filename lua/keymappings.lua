@@ -82,7 +82,9 @@ map("i", "<C-[>", "<Plug>(copilot-previous)", { desc = "Copilot: Previous sugges
 -- vim.g.copilot_no_tab_map = true
 
 -- file buffer commands
+-- save file with ctrl-s or cmd-s
 map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+map({ "i", "v", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- next clashes with built in window commands.
 -- map({ "i", "v", "n", "s" }, "<C-w>", "<cmd>bdelete<cr><esc>", { desc = "Close file" })
 

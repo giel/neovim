@@ -4,14 +4,18 @@ function M.on_attach(client, buffer)
   local self = M.new(client, buffer)
 
   if UseTelescope then
-    self:map("gd", "Telescope lsp_definitions", { desc = "Goto Definition" })
-    self:map("gr", "Telescope lsp_references", { desc = "References" })
+    self:map("gd", "Telescope lsp_definitions", { desc = "LSP Definition" })
+    self:map("gr", "Telescope lsp_references", { desc = "LSP References" })
     self:map("gI", "Telescope lsp_implementations", { desc = "Goto Implementation" })
     self:map("gb", "Telescope lsp_type_definitions", { desc = "Goto Type Definition" })
     self:map("<leader>cs", require("telescope.builtin").lsp_document_symbols, { desc = "Document Symbols" })
     self:map("<leader>cS", require("telescope.builtin").lsp_dynamic_workspace_symbols, { desc = "Workspace Symbols" })
   else
     -- fzf equivalent
+    self:map("gd", ":FzfLua lsp_definitions<CR>", { desc = "LSP definitions" })
+    self:map("gr", ":FzfLua lsp_references<CR>", { desc = "LSP references" })
+    self:map("gI", "FzfLua lsp_implementations", { desc = "LSP Goto Implementation" })
+    self:map("gb", "FzfLua lsp_typedefs", { desc = "LSP Goto Type Definition" })
   end
 
   self:map("gD", "Lspsaga peek_definition", { desc = "Peek Definition" })
