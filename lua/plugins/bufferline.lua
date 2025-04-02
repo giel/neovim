@@ -39,26 +39,12 @@ function Plugin.config()
     },
     highlights = {
       buffer_selected = {
-        fg = {
-          attribute = "fg",
-          highlight = "CursorLine",
-        },
         bg = {
           attribute = "bg",
           highlight = "CursorLine",
         },
         bold = true,
         italic = true,
-      },
-      close_button_selected = {
-        fg = {
-          attribute = "fg",
-          highlight = "CursorLine",
-        },
-        bg = {
-          attribute = "bg",
-          highlight = "CursorLine",
-        },
       },
     },
   })

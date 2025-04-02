@@ -108,7 +108,6 @@ if status_ok then
     { "<leader>?", ":Cheatsheet<CR>", desc = "Cheat Sheet" },
     { "<leader>a", ":Alpha<CR>", desc = "Alpha start menu" },
     { "<leader>e", ":Neotree toggle<cr>", desc = "NeoTree" },
-    -- { "<leader>x", ":Bdelete<CR>", desc = "delete (close) buffer" },
 
     { "<leader>b", group = "browse Telescope" },
 
@@ -164,7 +163,14 @@ if status_ok then
     { "<leader>to", ":BufferLineCloseOthers<CR>", desc = "close other buffers" },
     { "<leader>tp", ":BufferLinePick<CR>", desc = "choose tab letter to activate" },
     { "<leader>tr", ":BufferLineCloseRight<CR>", desc = "close all buffers to the right" },
-    { "<leader>tw", ":Bdelete<CR>", desc = "close tab" },
+    {
+      "<leader>tw",
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = "close tab",
+    },
+    -- { "<leader>x", function() Snacks.bufdelete() end, desc = "delete (close) buffer",
 
     { "<leader>v", group = "Text/view options" },
     { "<leader>v0", ":set relativenumber!<CR>", desc = "toggle rel. line #" },
