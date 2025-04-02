@@ -15,8 +15,8 @@ function Plugin.config()
     options = {
       mode = "buffers", -- not just vim tabs "tabs",
       numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
-      close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-      left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
+      -- close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+      -- left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
       offsets = { { filetype = "neo-tree", text = "", padding = 1 } },
       diagnostics = "nvim_lsp",
       buffer_close_icon = "󰅙",
