@@ -19,6 +19,15 @@ local function toggle_eye()
   end
 end
 
+local function lsp_active()
+  local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+  if #clients > 0 then
+    return "" -- LSP active icon
+  else
+    return " " -- LSP inactive icon
+  end
+end
+
 function Plugin.config()
   local lualine = require("lualine")
   -- to configure lazy pending updates count
@@ -71,6 +80,7 @@ function Plugin.config()
         "encoding",
         "fileformat",
         "filetype",
+        lsp_active,
       },
       lualine_y = { "progress" },
       lualine_z = { "location" },
