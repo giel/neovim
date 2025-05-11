@@ -11,7 +11,7 @@ pushd ~/.config/nvim/ || exit
 if [[ ! -d $srcdir ]]; then
 	# clone version
 	echo "=== clone repo"
-	git clone https://github.com/neovim/neovim.git $srcdir
+	git clone https://github.com/neovim/neovim $srcdir
 fi
 cd $srcdir || exit
 echo "=== checkout and pull $version"
