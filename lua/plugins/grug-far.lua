@@ -2,6 +2,7 @@
 -- Find And Replace plugin for neovim
 return {
   "MagicDuck/grug-far.nvim",
+  version = "1.6.3", -- Use for stability; omit to use `main` branch for the latest features
   enabled = true,
   config = function()
     require("grug-far").setup({
