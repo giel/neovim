@@ -14,7 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.getchar()
     os.exit(1)
   end
-end  
+end
 vim.opt.rtp:prepend(lazypath)
 
 -- Remap space as leader key
@@ -23,6 +23,10 @@ vim.g.maplocalleader = " "
 
 -- set options for lazy
 local lazyoptions = {
+  spec = {
+    { import = "plugins" },
+    { import = "plugins.lsp" },
+  },
   -- defaults = { lazy = true },
   install = { missing = true },
   checker = { enabled = false },
@@ -51,4 +55,4 @@ local lazyoptions = {
 }
 
 -- setup lazy
-require("lazy").setup("plugins", lazyoptions)
+require("lazy").setup(lazyoptions)

@@ -31,6 +31,8 @@ return {
     bigfile = { enabled = true },
     bufdelete = { enabled = true },
     dashboard = { enabled = false },
+    debug = { enabled = false },
+    dim = { enabled = true },
     explorer = { enabled = false },
     git = { enabled = true },
     gitbrowse = { enabled = true },
@@ -45,9 +47,13 @@ return {
     quickfile = { enabled = true },
     rename = { enabled = true },
     scope = { enabled = true },
+    scratch = { enabled = false },
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
+    terminal = { enabled = false },
+    toggle = { enabled = true },
     words = { enabled = true },
+    zen = { enabled = false },
   },
 -- stylua: ignore start
   keys = {
