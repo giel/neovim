@@ -19,6 +19,7 @@
 -- - scope: Scope detection, text objects and jumping based on treesitter or indent
 -- - scroll: Smooth scrolling for Neovim. Properly handles scrolloff and mouse scrolling.
 -- - statuscolumn: Pretty status column
+-- - toggle: Toggle keymaps integrated with which-key icons / colors
 -- - words: Auto-show LSP references and quickly navigate between them
 return {
   "folke/snacks.nvim",
@@ -36,7 +37,7 @@ return {
     explorer = { enabled = false },
     git = { enabled = true },
     gitbrowse = { enabled = true },
-    image = { enabled = true },
+    image = { enabled = false },
     indent = { enabled = false },
     input = { enabled = true },
     layouts = { enabled = false },
@@ -52,6 +53,7 @@ return {
     statuscolumn = { enabled = true },
     terminal = { enabled = false },
     toggle = { enabled = true },
+    util = { enabled = true },
     words = { enabled = true },
     zen = { enabled = false },
   },

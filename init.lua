@@ -3,6 +3,9 @@ require("settings")
 require("lazyinit")
 -- plugins are defined in lua/plugins
 
+require("lsp_setings")
+
+
 -- for now colorscheme is choosen in plugins/colorschemes
 -- require("colorscheme")
 
