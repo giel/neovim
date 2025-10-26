@@ -1,3 +1,5 @@
+-- https://github.com/hrsh7th/cmp-nvim-lsp
+-- nvim-cmp source for neovim built-in LSP client.
 return {
   "hrsh7th/cmp-nvim-lsp",
   event = { "BufReadPre", "BufNewFile" },

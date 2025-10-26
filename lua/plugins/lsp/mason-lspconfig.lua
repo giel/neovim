@@ -1,6 +1,10 @@
--- https://github.com/williamboman/mason.nvim
--- mason.nvim is a Neovim plugin that allows you to easily manage external editor tooling
--- such as LSP servers, DAP servers, linters, and formatters through a single interface.
+-- https://github.com/williamboman/mason-lspconfig.nvim
+-- mason-lspconfig bridges mason.nvim with the lspconfig plugin - making it easier to use both plugins together.
+
+-- and
+
+-- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
+-- Install or upgrade all of your third-party tools.
 
 
 -- todo:
@@ -8,18 +12,44 @@
 --   "bashls",
 
 return {
-    "williamboman/mason.nvim",
+  {
+    "williamboman/mason-lspconfig.nvim",
     opts = {
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "-",
-          -- package_uninstalled = "✗",
-        },
+      -- list of servers for mason to install
+      ensure_installed = {
+        "cssls",
+        "gopls",
+        "graphql",
+        "html",
+        "lua_ls",
+        "marksman",
+        "pyright",
+        "tailwindcss",
+        "ts_ls",
       },
     },
-  }
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        "neovim/nvim-lspconfig",
+      },
+    },
+  },
+
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = {
+      ensure_installed = {
+        "black", -- python formatter
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+      },
+    },
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+  },
+}
 
 -- https://neovim.io/doc/user/lsp.html#lsp-defaults
 -- LSP SETTINGS DEFAULTS
