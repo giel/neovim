@@ -46,6 +46,7 @@ Via `mgpak` (package installer):
 - `black` or `pip install black`
 - `ripgrep`
 - `fd` (or download from [shardp/fd](https://github.com/sharkdp/fd))
+- `go` (install from [go.dev](https://go.dev/dl/)), needed for `gopls`
 
 `pip` can be installed with `python3-pip`
 
@@ -113,7 +114,7 @@ Now startup `nvim`, it should download all needed packages. Maybe exit it once a
 
 ## LSP modules
 
-LSP modules are installed with `Mason`. Add the desired module to the servers list in the file `lsp\mason.lua`. Keep the list sorted.
+LSP modules are installed with `Mason`. Add the desired module to the servers list in the file `lua/plugins/lsp/mason-lspconfig.lua`. Keep the list sorted.
 
 ## Checks
 To check how all is installed and ho healthy your neovim installation is:
@@ -125,12 +126,11 @@ The `space-a` will bring up start menu. Choose `l` to bring up the package manag
 ## package managers and distro's
 
 The new package manager `lazy` is getting a lot of attention and for me has replaced `Packer`. 
-I created a new branch ` lazy-nvim-plugin-manager` where I am updating the packages to the new package manager.
+
+I still have some old branches of the older `Packer` package manager, but master is now using `lazy`:
 
      git checkout lazy-nvim-plugin-manager   # switch to lazy
      git checkout packer-nvim-plugin-manager # switch to packer
-     git checkout master                     # switch to lazy
-     git checkout lazyvim                    # switch to lazyvim distro
 
 From neovim 0.9 on it is possible to have several 'distros' in separate directories. 
 By switching one environment variable `NVIM_APPNAME` you can choose which one to use.
