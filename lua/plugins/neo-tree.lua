@@ -24,6 +24,11 @@ return {
       filesystem = {
         follow_current_file = { enabled = true }, -- This will find and focus the file in the active buffer every
         hijack_netrw_behaviour = "open_default",
+        window = {
+           mappings = {
+             ["."] = "toggle_hidden",
+           }
+        },
         filtered_items = {
           visible = false, -- when true, they will just be displayed differently than normal items
           hide_dotfiles = true,
