@@ -28,6 +28,52 @@ local function lsp_active()
   end
 end
 
+local function visual_selection_count()
+  local mode = vim.fn.mode()
+
+  -- Visual character mode
+  if mode == "v" then
+    local start = vim.fn.getpos("v")
+    local finish = vim.fn.getpos(".")
+    -- line, col
+    local sline, scol = start[2], start[3]
+    local fline, fcol = finish[2], finish[3]
+
+    if sline == fline then
+      -- same line → pure character count
+      local count = math.abs(fcol - scol) + 1
+      return string.format("%d C", count)
+    else
+      -- multi-line visual char selection
+      -- total characters is ambiguous; show lines instead
+      local count = math.abs(fline - sline) + 1
+      return string.format("%d L", count)
+    end
+  end
+
+  -- Visual line mode
+  if mode == "V" then
+    local start_line = vim.fn.line("v")
+    local current_line = vim.fn.line(".")
+    local count = math.abs(current_line - start_line) + 1
+    return string.format("%d L", count)
+  end
+
+  -- Visual block mode (optional)
+  if mode == "\22" then  -- CTRL-V
+    local start = vim.fn.getpos("v")
+    local finish = vim.fn.getpos(".")
+    local sline, scol = start[2], start[3]
+    local fline, fcol = finish[2], finish[3]
+    local height = math.abs(fline - sline) + 1
+    local width  = math.abs(fcol - scol) + 1
+    return string.format("%dx%d B", height, width)
+  end
+
+  return ""
+
+end
+
 function Plugin.config()
   local lualine = require("lualine")
   -- to configure lazy pending updates count
@@ -82,7 +128,7 @@ function Plugin.config()
         "filetype",
         lsp_active,
       },
-      lualine_y = { "progress" },
+      lualine_y = { visual_selection_count, "progress" },
       lualine_z = { "location" },
     },
     inactive_sections = {
