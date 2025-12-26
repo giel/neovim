@@ -12,7 +12,13 @@ local function create_directory(path)
 end
 
 local function path_to_return(workspace, default)
-  local git = os.getenv("GITPATH") .. "/"
+  local gitpath = os.getenv("GITPATH")
+  local git
+  if gitpath == nil then
+    git = "~/git"
+  else
+    git = gitpath .. "/"
+  end
   local dirToCheck = git .. workspace
   if directory_exists(dirToCheck) then
     return dirToCheck
