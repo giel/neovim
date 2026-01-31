@@ -106,11 +106,11 @@ map({ "i", "v", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 local status_ok, wk = pcall(require, "which-key")
 if status_ok then
   wk.add({
-    { "<leader>,", ":bprevious<CR>", desc = "previous buffer" },
-    { "<leader>.", ":bnext<CR>", desc = "next buffer" },
+    -- { "<leader>,", ":bprevious<CR>", desc = "previous buffer" },
+    -- { "<leader>.", ":bnext<CR>", desc = "next buffer" },
     { "<leader>/", ":CommentToggle<CR>", desc = "toggle comment" },
-    { "<leader><", ":bfirst<CR>", desc = "go to first buffer" },
-    { "<leader>>", ":blast<CR>", desc = "go to last buffer" },
+    -- { "<leader><", ":bfirst<CR>", desc = "go to first buffer" },
+    -- { "<leader>>", ":blast<CR>", desc = "go to last buffer" },
     { "<leader>?", ":Cheatsheet<CR>", desc = "Cheat Sheet" },
     { "<leader>a", ":Alpha<CR>", desc = "Alpha start menu" },
     { "<leader>e", ":Neotree toggle<cr>", desc = "NeoTree" },
@@ -131,7 +131,7 @@ if status_ok then
 
     { "<leader>l", group = "LSP" },
     { "<leader>lq", vim.diagnostic.setloclist, desc = "Quickfix" },
-    { "<leader>lr", vim.lsp.buf.rename, desc = "Rename" },
+    -- { "<leader>lr", vim.lsp.buf.rename, desc = "Rename" },
 
     { "<leader>o", group = "Obsidian options" },
     { "<leader>on", ":ObsidianNew<CR>", desc = "Obsidion: New document" },
@@ -139,14 +139,6 @@ if status_ok then
     { "<leader>ow", ":ObsidianWorkspace<CR>", desc = "Obsidion: workspace" },
 
     { "<leader>s", group = "Search options" },
-    -- {
-    --   "<leader>sp",
-    --   ":lua require('spectre').open_file_search({select_word=true})<CR>",
-    --   desc = "Search word in current file",
-    -- },
-    -- { "<leader>ss", ":lua require('spectre').open()<CR>", desc = "Search/Replace in files" },
-    -- { "<leader>sw", ":lua require('spectre').open_visual({select_word=true})<CR>", desc = "Search current word" },
-
     {
       "<leader>sp",
       function()
@@ -188,9 +180,6 @@ if status_ok then
     {
       mode = { "v" },
       { "<leader>/", ":CommentToggle<CR>", desc = "toggle comments" },
-
-      -- { "<leader>s", group = "Search options" },
-      -- { "<leader>sw", ":lua require('spectre').open_visual()<CR>", desc = "Search current word (spectre)" },
 
       { "<leader>t", group = "tabularize" },
       { "<leader>t,", "<cmd>Tabularize/,/<CR>", desc = " , " },
