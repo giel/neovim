@@ -65,14 +65,15 @@ vim.g.loaded_ruby_provider = 0
 --opts.rocks.hererocks = false
 --opts.rocks.enabled = false
 
+-- new UI for 0.12
 require('vim._core.ui2').enable({
     enable = true,
-    -- msg = {
-    --     target = "cmd", -- options: cmd(classic), msg(similar to noice)
-    --     pager = { height = 1 },
-    --     msg   = { height = 0.5, timeout = 4500 },
-    --     dialog = { height = 0.5 },
-    --     cmd    = { height = 0.5 },
-    -- },
+    msg = {
+        target = "msg", -- options: cmd(classic), msg(similar to noice)
+        pager = { height = 1 },
+        msg   = { height = 0.5, timeout = 4500 },
+        dialog = { height = 0.5 },
+        cmd    = { height = 0.5 },
+    },
 })
 
