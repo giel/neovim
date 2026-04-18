@@ -4,7 +4,9 @@
 -- - bigfile: Open big files without freezing Neovim. (replaces LunarVim/bigfile.nvim)
 -- - bufdelete: Delete buffers without disrupting window layout. (replaces famiu/bufdelete.nvim)
 -- - dashboard: A start page for Neovim.
+-- - dim: Focus on the active scope by dimming the rest.
 -- - explorer: A file explorer for Neovim. (like nvim-neo-tree/neo-tree.nvim)
+-- - gh: A modern GitHub CLI integration for Neovim that brings GitHub issues and pull requests directly into your editor.
 -- - git: Git utilities for Neovim
 -- - gitbrowse: Open the repo of the active file in the browser (e.g., GitHub)
 -- - image: Image viewer using Kitty Graphics Protocol, supported by kitty, wezterm and ghostty
@@ -35,6 +37,7 @@ return {
     debug = { enabled = false },
     dim = { enabled = true },
     explorer = { enabled = false },
+    gh = { enabled = false },
     git = { enabled = true },
     gitbrowse = { enabled = true },
     image = { enabled = false },

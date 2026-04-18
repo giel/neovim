@@ -115,7 +115,7 @@ if status_ok then
     { "<leader>a", ":Alpha<CR>", desc = "Alpha start menu" },
     { "<leader>e", ":Neotree toggle<cr>", desc = "NeoTree" },
 
-    { "<leader>b", group = "browse Telescope" },
+    { "<leader>b", group = "browse fzf" },
 
     { "<leader>c", group = "code related" },
     { "<leader>cS", ":w<CR>:source %<CR>", desc = "save&source current buffer" },
@@ -137,23 +137,6 @@ if status_ok then
     { "<leader>on", ":ObsidianNew<CR>", desc = "Obsidion: New document" },
     { "<leader>oo", ":ObsidianOpen<CR>", desc = "Obsidion: Open buffer" },
     { "<leader>ow", ":ObsidianWorkspace<CR>", desc = "Obsidion: workspace" },
-
-    { "<leader>s", group = "Search options" },
-    {
-      "<leader>sp",
-      function()
-        require("grug-far").open({ prefills = { paths = vim.fn.expand("%") } })
-      end,
-      desc = "Search word in current file",
-    },
-    { "<leader>ss", ":GrugFar<CR>", desc = "Search/Replace in files" },
-    {
-      "<leader>sw",
-      function()
-        require("grug-far").open({ prefills = { search = vim.fn.expand("<cword>") } })
-      end,
-      desc = "Search current word",
-    },
 
     { "<leader>t", group = "tabs/buffers actions" },
     { "<leader>tl", ":BufferLineCloseLeft<CR>", desc = "close all buffers to the left" },

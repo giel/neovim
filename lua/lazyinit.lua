@@ -51,8 +51,14 @@ local lazyoptions = {
       },
     },
   },
+  rocks = {
+    enabled = false,
+    hererocks = false,
+  },
   -- debug = true,
 }
 
 -- setup lazy
 require("lazy").setup(lazyoptions)
+
+

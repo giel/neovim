@@ -58,10 +58,21 @@ vim.opt.listchars = { tab = ">-", trail = ".", eol = "$" }
 -- vim.bo: behaves like :setlocal for buffer-local options
 -- vim.wo: behaves like :setlocal for window-local options
 
--- Use telescope or fzf. One of the two is activated.
-UseTelescope = false
--- UseTelescope = true
-
 -- Disable provider (and warning):
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+--opts.rocks.hererocks = false
+--opts.rocks.enabled = false
+
+require('vim._core.ui2').enable({
+    enable = true,
+    -- msg = {
+    --     target = "cmd", -- options: cmd(classic), msg(similar to noice)
+    --     pager = { height = 1 },
+    --     msg   = { height = 0.5, timeout = 4500 },
+    --     dialog = { height = 0.5 },
+    --     cmd    = { height = 0.5 },
+    -- },
+})
+

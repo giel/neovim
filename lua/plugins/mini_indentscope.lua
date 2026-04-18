@@ -1,16 +1,16 @@
--- https://github.com/echasnovski/mini.indentscope
+-- https://github.com/nvim-mini/mini.indentscope
 -- Visualize and work with indent scope
 
 -- similair to indent-blankline, but only show vertical line in the scope of the cursor,
 -- so this one disabled
 return {
-  "echasnovski/mini.indentscope",
+  "nvim-mini/mini.indentscope",
   -- version = "*",
   version = false,
   enabled = false,
   event = { "BufReadPre", "BufNewFile" },
   opts = {
-    symbol = "│",
+    symbol = "┊",
     options = { try_as_border = true },
   },
   init = function()

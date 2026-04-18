@@ -42,19 +42,10 @@ return {
       table.insert(dashboard.section.buttons.val, 2, button)
     end
 
-    if UseTelescope then
-      insertButton(
-        dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>")
-      )
-      insertButton(dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"))
-      insertButton(dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"))
-      insertButton(dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"))
-    else
-      insertButton(dashboard.button("p", " " .. " Find project", ":FzfProjects<CR>"))
-      insertButton(dashboard.button("f", " " .. " Find file", ":FzfLua files <CR>"))
-      insertButton(dashboard.button("r", " " .. " Recent files", ":FzfLua oldfiles <CR>"))
-      insertButton(dashboard.button("t", " " .. " Find text", ":FzfLua live_grep <CR>"))
-    end
+    insertButton(dashboard.button("p", " " .. " Find project", ":FzfProjects<CR>"))
+    insertButton(dashboard.button("f", " " .. " Find file", ":FzfLua files <CR>"))
+    insertButton(dashboard.button("r", " " .. " Recent files", ":FzfLua oldfiles <CR>"))
+    insertButton(dashboard.button("t", " " .. " Find text", ":FzfLua live_grep <CR>"))
 
     local function footer()
       return ":Alpha - https://github.com/giel/neovim.git"
