@@ -16,6 +16,9 @@ map("n", "X", '"_x', { desc = "Delete char, no copy to register" })
 -- deletes selected text and paste from the system clipboard
 map("v", "<leader>p", [["_d"+p]], { desc = "Delete selected text,paste from system clipboard" })
 
+map("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
+map({"n","v"}, "<leader>x", '"_d', { desc = "Delete without yanking" })
+
 -- for mini.surround turn of pressing 's' to delete character under cursor
 --- Note: if 'timeoutlen' is low enough to cause occasional usage of |s| key
 --- (that deletes character under cursor), disable it with the following:
