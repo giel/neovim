@@ -16,7 +16,7 @@ vim.opt.splitright = true                       -- force all vertical splits to 
 vim.opt.swapfile = false                        -- creates a swapfile
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 vim.opt.timeout = true                          -- use timeoutlen? (default true)
-vim.opt.timeoutlen = 1000                       -- time in ms to wait for a key code sequence to complete. (default 1000)
+vim.opt.timeoutlen = 300                        -- time in ms to wait for a key code sequence to complete. (default 1000)
 -- vim.opt.ttimeout = true                         -- TUI: use ttimeoutlen? (default true)
 -- vim.opt.ttimeoutlen = 800                       -- TUI: Time in ms to wait for a key code sequence to complete. (default 50)
 vim.opt.undofile = true                         -- enable persistent undo
@@ -66,14 +66,14 @@ vim.g.loaded_ruby_provider = 0
 --opts.rocks.enabled = false
 
 -- new UI for 0.12
-require('vim._core.ui2').enable({
-    enable = true,
-    msg = {
-        target = "msg", -- options: cmd(classic), msg(similar to noice)
-        pager = { height = 1 },
-        msg   = { height = 0.5, timeout = 4500 },
-        dialog = { height = 0.5 },
-        cmd    = { height = 0.5 },
-    },
-})
+-- require('vim._core.ui2').enable({
+--     enable = true,
+--     msg = {
+--         target = "msg", -- options: cmd(classic), msg(similar to noice)
+--         pager = { height = 1 },
+--         msg   = { height = 0.5, timeout = 4500 },
+--         dialog = { height = 0.5 },
+--         cmd    = { height = 0.5 },
+--     },
+-- })
 
