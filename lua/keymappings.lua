@@ -69,9 +69,9 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Oil keybindings
 -- Open parent directory in current window
-map("n", "-", "<cmd>Oil<cr>", { desc = "Oil: Open parent dir" })
+-- map("n", "-", "<cmd>Oil<cr>", { desc = "Oil: Open parent dir" })
 -- Open parent directory in floating window
-map("n", "<space>-", require("oil").toggle_float, { desc = "Oil: Open parent dir floating" })
+-- map("n", "<space>-", require("oil").toggle_float, { desc = "Oil: Open parent dir floating" })
 
 -- Better indenting
 map("v", "<", "<gv", { desc = "Move to left" })
